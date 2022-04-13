@@ -1,0 +1,128 @@
+.why {
+    position: relative;
+    padding-bottom: 8rem;
+
+    &__expert-title h2 {
+        font: var(--title-L);
+
+        @media (max-width: 1240px) {
+            font-size: 6rem;
+        }
+
+        @media (max-width: 720px) {
+            font-size: 5rem;
+        }
+
+        @media (max-width: 570px) {
+            font-size: 4rem;
+        }
+    }
+
+    &__wrapper {
+        padding: 0 9.7rem 0 9.8rem;
+         @media (max-width: 1150px) {
+            padding: 0 4rem 0 4rem;
+        }
+
+         @media (max-width: 994px) {
+            padding: 0;
+        }
+    }
+
+    &__item__title {
+        text-transform: uppercase;
+        font: var(--body-XX);
+        max-width: 28rem;
+        @media (max-width: 830px) {
+            max-width: 22rem;
+        }
+        @media (max-width: 570px) {
+            font-size: 2.5rem;
+        }
+    }
+
+    &__item__text {
+        font: var(--body-S);
+        max-width: 32rem;
+        @media (max-width: 915px) {
+            max-width: 26rem;
+        }
+        @media (max-width: 570px) {
+            font-size: 1.4rem;
+        }
+    }
+
+    &__item_content {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        @media (max-width: 560px) {
+            gap: 0.8rem;
+        }
+    }
+
+    &__item {
+        display: flex;
+        gap: 2.5rem;
+    }
+
+    &__item__svg {
+        width: 7.5rem;
+        height: 7.5rem;
+        border-radius: 50%;
+        align-items: center;
+        display: flex;
+        background-color: #F0F4FE;
+        justify-content: center;
+        @media (max-width: 560px) {
+            width: 6rem;
+        height: 6rem;
+        }
+    }
+
+    &__item__svg svg {
+       width: inherit;
+       fill: none;
+    }
+
+    &__items {
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        row-gap: 7rem;
+        padding-top: 7.8rem;
+        column-gap: 4rem;
+        margin-right: 1.5rem;
+         @media (max-width: 1580px) {
+            margin-right: 0;
+            justify-content: flex-start;
+        }
+        @media (max-width: 790px) {
+            justify-content: center;
+            padding-top: 3rem;
+            row-gap: 3.5rem;
+        }
+         @media (max-width: 560px) {
+           row-gap: 2.7rem;
+        }
+    }
+
+    &__button {
+        display: none;
+        @media (max-width: 789px) {
+            display: block;
+            font: var(--other-L);
+            color: #1B74E3;
+            border-radius: 7px;
+            border: 1px solid #1B74E3;
+            padding: 2.15rem 5.6rem;
+            margin: 0 auto;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 560px) {
+            width: 100%;
+            padding: 2rem 5.6rem;
+        }
+        }
+}

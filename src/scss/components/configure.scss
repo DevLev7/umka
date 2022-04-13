@@ -1,0 +1,241 @@
+.configure {
+  width: 100vw;
+  min-height: 100vh;
+  padding-bottom: 6rem;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2.5rem;
+    padding: 10.5rem 9.7rem 7.7rem;
+
+    background: linear-gradient(265.25deg, rgba(63, 137, 228, 0.9) 32.92%, rgba(63, 137, 228, 0.81) 70.46%), url("../img/configure-bg.png");
+    background-size: cover;
+    border-radius: 1rem;
+
+    color: #fff;
+    
+  }
+
+  &__graphic-column {
+    grid-column: span 8;
+  }
+
+  &__title {
+    max-width: 64.1rem;
+    margin-bottom: 6rem;
+  }
+
+  &__graphic {
+    width: 100%;
+    max-width: 84.4rem;
+    aspect-ratio: 844 / 395;
+  }
+
+  &__text-column {
+    grid-column: span 4;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__tabs {
+    display: flex;
+    margin-bottom: 5.5rem ;
+  }
+
+  &__tab-wrapper {
+    flex: 1 1 12rem;
+  }
+
+  &__tab {
+    position: relative;
+
+    padding-top: 2.3rem;
+
+    cursor: pointer;
+
+    &.active {
+      .configure__tab-text {
+        color: #fff;
+      }
+
+      .configure__tab-upperline {
+        top: 0;
+
+        height: 0.3rem;
+
+        background-color: #fff;
+      }
+    }
+  }
+
+  &__tab-upperline {
+    position: absolute;
+    top: 0.1rem;
+    left: 0;
+
+    width: 100%;
+    height: 0.1rem;
+
+    background-color: rgba(255, 255, 255, 0.5);
+
+    transition: 0.2s;
+  }
+
+  &__tab-text {
+    font: var(--body-XX);
+    color: rgba(255, 255, 255, 0.5);
+
+    transition: 0.2s;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-grow: 1;
+  }
+
+  &__form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__form-group {
+    margin: 0;
+    padding: 0;
+
+    border: 1px solid #fff;
+    border-radius: 1rem;
+  }
+
+  &__form-group-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem 1.5rem 1.5rem 2rem;
+  }
+
+  &__form-group-title {
+    font: var(--body-XL);
+  }
+
+  &__form-group-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.5rem;
+    height: 3.5rem;
+
+    border-radius: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.15);
+
+    color: #fff;
+
+    svg {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  &__form-group-chosen {
+    position: relative;
+
+    .configure__form-group-title {
+      position: absolute;
+      left: 1.8rem;
+      bottom: calc(100% - 1rem);
+
+      padding: 0 0.3rem;
+
+      background-color: #5394E3;
+
+      font: var(--other-M);
+    }
+  }
+
+  &__chosen-equipments {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    padding: 1.5rem;
+  }
+
+  &__chosen-equipment {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 0.75rem 0.5rem 0.75rem 1.5rem;
+
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 0.5rem;
+  }
+
+  &__chosen-equipment-text {
+    font: var(--body-S-bold);
+  }
+
+  &__chosen-equipment-delete {
+    color: rgba(255, 255, 255, 0.3);
+    
+    svg {
+      transform: rotate(45deg);
+
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  &__chosenequipment-more {
+    padding: 1.05rem 1.5rem;
+
+    background-color: #fff;
+    border-radius: 0.5rem;
+    
+    font: var(--body-S-bold);
+    color: var(--accent-primary);
+  }
+
+  &__form-price-block {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+    margin-top: auto;
+  }
+
+  &__form-price-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  &__form-price-description {
+    flex: 1;
+    max-width: 18rem;
+
+    font: var(--body-S);
+
+    opacity: 0.4;
+  }
+
+  &__form-price {
+    font: var(--title-S-narrow);
+    padding-right: 9px;
+  }
+
+  &__form-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 2.5rem;
+
+    svg {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+}

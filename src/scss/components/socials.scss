@@ -1,0 +1,24 @@
+.socials {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-width: 16.5rem;
+
+  &__item {
+    cursor: pointer;
+
+    svg {
+      width: 3rem;
+      height: 3rem;
+      opacity: 0.6;
+
+      transition: 0.3s;
+    }
+
+    &:hover {
+      svg {
+        opacity: 1;
+      }
+    }
+  }
+}

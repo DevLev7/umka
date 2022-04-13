@@ -1,0 +1,114 @@
+.container {
+    width: 100%;
+    max-width: calc(var(--max-container-width) + 2 * var(--content-padding));
+    margin: 0 auto;
+    padding: 0 var(--content-padding);
+    @supports (width: max(20vw, 100px)) {
+        padding-left: max(env(safe-area-inset-left, 1.4rem), var(--content-padding));
+        padding-right: max(env(safe-area-inset-right, 1.4rem), var(--content-padding));
+    }
+}
+
+.wide-container {
+    width: 100%;
+    max-width: calc(var(--max-wide-container-width) + 2 * var(--content-padding));
+    margin: 0 auto;
+    padding: 0 var(--content-padding);
+    @supports (width: max(20vw, 100px)) {
+        padding-left: max(env(safe-area-inset-left, 1.4rem), var(--content-padding));
+        padding-right: max(env(safe-area-inset-right, 1.4rem), var(--content-padding));
+    }
+}
+
+.page-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.page-main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-title {
+    font: var(--title-L);
+}
+
+.main-title {
+    font: var(--title-XL);
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 0 4px 50px rgba(21, 36, 90, 0.25);
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.5rem;
+
+    background-color: var(--accent-primary);
+    border: 1px solid var(--accent-primary);
+    border-radius: 1rem;
+    cursor: pointer;
+
+    font: var(--body-XL);
+    text-transform: uppercase;
+    color: #fff;
+
+    transition: 0.3s;
+
+    &:hover {
+        background-color: var(--accent-primary-hover);
+        border-color: var(--accent-primary-hover);
+    }
+
+    &--bordered {
+        background-color: transparent;
+        color: var(--accent-primary);
+
+        &:hover {
+            color: var(--accent-primary);
+            background-color: transparent;
+        }
+    }
+
+    &--light {
+        background-color: #fff;
+        border-color: #fff;
+
+        color: var(--accent-primary);
+
+        &:hover {
+            background-color: #fff;
+            border-color: #fff;
+
+            color: var(--accent-primary-hover);
+        }
+    }
+}
+
+.button-ellipse {
+    padding: 1.8rem 3.5rem;
+
+    border: 1.5px solid #fff;
+    border-radius: 99.9rem;
+
+    font: var(--body-S-bold);
+    color: #fff;
+    text-align: center;
+
+    transition: 0.3s;
+
+    &:hover {
+        background-color: var(--accent-primary-hover);
+        border-color: var(--accent-primary-hover);
+    }
+}
+
+.text-container {
+
+}

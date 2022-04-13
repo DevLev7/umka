@@ -1,0 +1,36 @@
+.billet {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  max-width: 38rem;
+  padding: 3.7rem;
+
+  border-radius: 99.9rem;
+  overflow: hidden;
+
+  @media (max-width: 770px) {
+    padding: 3rem;
+    max-width: 29rem;
+
+    .play-button {
+      width: 7.5rem;
+      height: 7.5rem;
+
+      svg {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
