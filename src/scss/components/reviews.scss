@@ -1,0 +1,110 @@
+.reviews {
+    padding: 8rem 0;
+    overflow: hidden;
+}
+
+.reviews__inner {
+    position: relative;
+    @media (max-width: 1024px) {
+        padding-bottom: 5rem;
+    }
+    &-wrap {
+        display: flex;
+    }
+    .swiper__nav {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 10vw;
+        height: 80px;
+        display: flex;
+        gap: 1rem;
+    }
+    h2 {
+        font: var(--title-L);
+        font-size: var(--calc--title-L);
+        margin-bottom: calc(35px + (75 - 35) * (100vw - 360px) / (1680 - 360));
+    }
+    .swiper {
+        width: 97vw;
+        @media (max-width: 768px) {
+            width: unset;
+        }
+    }
+    color: var(--main-primary);
+    &_items {
+    }
+    &_item-title {
+        font: var(--title-S);
+        font-size: var(--calc-title-S);
+        padding-bottom: 2rem;
+        padding-top: 6.5rem;
+    }
+    p {
+        font: var(--body-L);
+        padding-bottom: 4rem;
+    }
+    strong {
+        font: var(--body-XL);
+        color: var(--accent-primary);
+        padding-bottom: 0.5rem;
+        text-transform: uppercase;
+    }
+    span {
+        font: var(--body-S);
+        opacity: 0.6;
+        max-width: 61%;
+        // width: 100%;
+    }
+    &_item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: baseline;
+        max-width: 43.5rem;
+        &-img {
+            // border-radius: 50%;
+        }
+    }
+    &_item_video {
+        // border-radius: 50%;
+    }
+    .swiper-button-next {
+        border-radius: 50%;
+        width: 4vw;
+        height: 4vw;
+        background-color: var(--accent-primary);
+    }
+    .swiper-button-prev {
+        border-radius: 50%;
+        width: 4vw;
+        height: 4vw;
+        background-color: var(--main-tertiary);
+    }
+    .swiper-pagination {
+        width: 100%;
+        bottom: 0;
+        display: none;
+    }
+}
+.swiper-button-next::after {
+    color: #fff;
+    font-size: calc(15px + (30 - 15) * (100vw - 400px) / (1680 - 360));
+}
+.swiper-button-prev::after {
+    color: var(--accent-primary);
+    font-size: calc(15px + (30 - 15) * (100vw - 400px) / (1680 - 360));
+}
+
+@media (max-width: 1024px) {
+    // padding-bottom: 5rem;
+    // .swiper-pagination {
+    //     display: block;
+    // }
+    .reviews .swiper__nav {
+        display: none;
+    }
+    .reviews .swiper-pagination {
+        display: block;
+    }
+}

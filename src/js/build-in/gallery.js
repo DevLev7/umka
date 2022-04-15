@@ -1,4 +1,3 @@
-
 // export default function gallery() {
 //     const gallery = document.querySelector(".mySwiper");
 //     let mySwiper;
@@ -25,16 +24,34 @@
 //     });
 // }
 
-// export default function gallery() {
-//     if (window.innerWidth <= 533) {
-//         const swiper = new Swiper(".mySwiper", {
-//             effect: "cards",
-//             grabCursor: true,
-//             pagination: {
-//                 el: ".swiper-pagination",
-//             },
-//         });
-//     } else {
-//         swiper.destroy();
-//     }
-// }
+import Swiper, { Navigation, Pagination, Autoplay, EffectFade, Scrollbar, EffectCoverflow } from 'swiper';
+export default function gallerySwiper() {
+    var gallerySwiper = new Swiper('.mySwiper', {
+        // modules: [Pagination, EffectCards],
+        // effect: 'cards',
+        // cardsEffect: {
+        //     slideShadows: false,
+        // },
+
+        // grabCursor: true,
+        // pagination: {
+        //     el: '.swiper-pagination',
+        // },
+        modules: [Navigation, Pagination, Autoplay, EffectFade, Scrollbar, EffectCoverflow],
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        // loop: true,
+        slidesPerView: 1.5,
+        coverflowEffect: {
+            rotate: -2,
+            stretch: '-87%',
+            depth: 200,
+            modifier: -1,
+            slideShadows: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+        },
+    });
+}

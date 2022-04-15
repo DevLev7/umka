@@ -85,15 +85,18 @@ Parsley.addMessages('ru', {
     equalto: 'Это значение должно совпадать.',
 });
 
-let test = document.querySelectorAll('form[data-need-validation]');
-console.log(test);
 
 Parsley.setLocale('ru');
 
+console.log(document.querySelectorAll('form'));
+
 export default function validation() {
     const formsToValidate = Array.from(document.querySelectorAll('form[data-need-validation]'));
+    console.log(formsToValidate)
+    $('#form').parsley().validate();
 
-    formsToValidate.forEach((form) => {
-        $(form).parsley();
-    });
+    // formsToValidate.forEach((form) => {
+    //     $(form).parsley('#form');
+    // });
 }
+

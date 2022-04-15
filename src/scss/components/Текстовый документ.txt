@@ -1,0 +1,26 @@
+.plant {
+}
+
+.plant__wrapper {
+}
+.plant__title {
+    h2 {
+        font: var(--title-L);
+        font-size: var(--calc--title-L);
+    }
+    &_inner {
+        strong {
+            font: var(--body-XX);
+            color: var(--accent-primary);
+        }
+    }
+}
+
+.plant__inner {
+    &_slider-main {
+    }
+    &_slider-thanks {
+    }
+    &_slider-thanks-text {
+    }
+}

@@ -1,60 +1,61 @@
 :root {
-  /* Colors */
-  --main-primary: #0F1926;
-  --main-secondary: #A3AFCD;
-  --main-tertiary: #F0F4FE;
-  --main-light-blue: #EFF6FF;
+    /* Colors */
+    --main-primary: #0f1926;
+    --main-secondary: #a3afcd;
+    --main-tertiary: #f0f4fe;
+    --main-light-blue: #eff6ff;
 
+    --accent-primary: #1b74e3;
+    --accent-primary-hover: #196bd1;
+    --accent-secondary: #ee8e1e;
 
-  --accent-primary: #1B74E3;
-  --accent-primary-hover: #196BD1;
-  --accent-secondary: #EE8E1E;
+    --bg-primary: #fcfdff;
+    --bg-secondary: #2f83eb;
 
-  --bg-primary: #FCFDFF;
-  --bg-secondary: #2F83EB;
+    --disabled: rgba(15, 25, 38, 0.3);
 
-  --disabled: rgba(15, 25, 38, .3);
+    /* Containers */
+    --max-wide-container-width: 155rem;
+    --max-container-width: 135.5rem;
+    --content-padding: 1.5rem;
 
+    /* Font Family */
+    --main-ff: 'BebasNeue';
+    --secondary-ff: 'Montserrat';
 
-  /* Containers */
-  --max-wide-container-width: 155rem;
-  --max-container-width: 135.5rem;
-  --content-padding: 1.5rem;
+    /* Font Weight */
+    --bold: 700;
+    --semi-bold: 600;
+    --medium: 500;
+    // Calc
+    --calc-title-S: calc(25px + (40 - 25) * (100vw - 360px) / (1680 - 360));
+    --calc--title-L: calc(40px + (85 - 40) * (100vw - 360px) / (1680 - 360));
 
-  /* Font Family */
-  --main-ff: 'BebasNeue';
-  --secondary-ff: 'Montserrat';
+    /* Text */
+    --body-XX: var(--bold) 3rem/110% var(--main-ff);
+    --body-XL: var(--bold) 2.5rem/100% var(--main-ff);
+    --body-L-bold: var(--semi-bold) 1.8rem/125% var(--secondary-ff);
+    --body-L: var(--medium) 1.8rem/145% var(--secondary-ff);
+    --body-L-narrow: var(--medium) 1.8rem/125% var(--secondary-ff);
+    --body-M: var(--medium) 1.6rem/145% var(--secondary-ff);
+    --body-M-narrow: var(--medium) 1.6rem/125% var(--secondary-ff);
+    --body-S-bold: var(--semi-bold) 1.4rem/100% var(--secondary-ff);
+    --body-S: var(--medium) 1.4rem/125% var(--secondary-ff);
 
-  /* Font Weight */
-  --bold: 700;
-  --semi-bold: 600;
-  --medium: 500;
+    /* Titles */
+    --title-XL: var(--bold) 10rem/100% var(--main-ff);
+    --title-L: var(--bold) 8.5rem/100% var(--main-ff);
+    --title-M: var(--bold) 5.5rem/120% var(--main-ff);
+    --title-M-narrow: var(--bold) 5.5rem/100% var(--main-ff);
+    --title-S: var(--bold) 4rem/115% var(--main-ff);
+    --title-S-narrow: var(--bold) 4rem/100% var(--main-ff);
 
-  /* Text */
-  --body-XX: var(--bold) 3rem/110% var(--main-ff);
-  --body-XL: var(--bold) 2.5rem/100% var(--main-ff);
-  --body-L-bold: var(--semi-bold) 1.8rem/125% var(--secondary-ff);
-  --body-L: var(--medium) 1.8rem/145% var(--secondary-ff);
-  --body-L-narrow: var(--medium) 1.8rem/125% var(--secondary-ff);
-  --body-M: var(--medium) 1.6rem/145% var(--secondary-ff);
-  --body-M-narrow: var(--medium) 1.6rem/125% var(--secondary-ff);
-  --body-S-bold: var(--semi-bold) 1.4rem/100% var(--secondary-ff);
-  --body-S: var(--medium) 1.4rem/125% var(--secondary-ff);
-
-  /* Titles */
-  --title-XL: var(--bold) 10rem/100% var(--main-ff);
-  --title-L: var(--bold) 8.5rem/100% var(--main-ff);
-  --title-M: var(--bold) 5.5rem/120% var(--main-ff);
-  --title-M-narrow: var(--bold) 5.5rem/100% var(--main-ff);
-  --title-S: var(--bold) 4rem/115% var(--main-ff);
-  --title-S-narrow: var(--bold) 4rem/100% var(--main-ff);
-
-  /* Other Typography */
-  --other-XL: var(--bold) 24.5rem/100% var(--main-ff);
-  --other-L: var(--bold) 2rem/100% var(--main-ff);
-  --other-M: var(--bold) 1.6rem/100% var(--main-ff);
-  --other-S-bold: var(--semi-bold) 1.2rem/120% var(--secondary-ff);
-  --other-S: var(--medium) 1.2rem/120% var(--secondary-ff);
+    /* Other Typography */
+    --other-XL: var(--bold) 24.5rem/100% var(--main-ff);
+    --other-L: var(--bold) 2rem/100% var(--main-ff);
+    --other-M: var(--bold) 1.6rem/100% var(--main-ff);
+    --other-S-bold: var(--semi-bold) 1.2rem/120% var(--secondary-ff);
+    --other-S: var(--medium) 1.2rem/120% var(--secondary-ff);
 }
 
 $minWidth: 320;
