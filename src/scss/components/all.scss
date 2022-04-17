@@ -1,7 +1,7 @@
 .all {
     position: relative;
-    padding-bottom: 10rem;
-    padding-top: 8rem;
+    padding-bottom: calc(53px + (100 - 53) * (100vw - 360px) / (1680 - 360));
+    padding-top: calc(32px + (80 - 32) * (100vw - 360px) / (1680 - 360));
 
     &__wrapper {
         padding: 0 9.7rem 0 9.8rem;
@@ -82,14 +82,37 @@
         fill: #1b74e3;
     }
 
-    &__container svg g:hover circle:nth-child(even) {
-        fill: #fff;
+    &__container svg g rect {
+        display: none;
+     }
+
+     &__container svg g path:nth-of-type(3){
+        display: none;
+     }
+
+    &__container svg g:hover rect {
+       display: block;
     }
 
-    &__container svg g:hover path {
-        fill: #1b74e3;
-        width: 100px;
-        height: 100px;
+    &__container svg g:hover circle:nth-child(even) {
+        fill: #fff;
+        
+    }
+
+    &__container svg g path:nth-of-type(2) {
+        display: none;
+    }
+
+
+    &__container svg g:hover path:nth-of-type(1) {
+        display: none;
+    }
+
+    &__container svg g:hover path:nth-of-type(2) {
+        display: block;
+    }
+    &__container svg g:hover path:nth-of-type(3) {
+        display: block;
     }
 
     &__container {
@@ -215,12 +238,15 @@
         @media (max-width: 1250px) {
             width: 100%;
         }
+        @media (max-width: 1140px) {
+            bottom: 12rem;
+        }
         @media (max-width: 1100px) {
-            bottom: 17rem;
+            bottom: 14rem;
         }
 
         @media (max-width: 1050px) {
-            bottom: 19rem;
+            bottom: 13rem;
         }
     }
 
@@ -259,18 +285,12 @@
         }
     }
 
-    &__cards-hiden {
-        width: 35rem;
-        @media (max-width: 415px) {
-            width: 30rem;
-        }
-        @media (max-width: 350px) {
-            width: 27rem;
-        }
-    }
-
+   
     & .swiper {
-        margin-left: -5rem;
+        padding-bottom: 5rem;
+        width: 100%;
+        margin: 0 auto;
+        padding-right: 2rem;
         .swiper-slide {
             opacity: 0;
         }
@@ -280,12 +300,19 @@
         .swiper-slide-next {
             opacity: 0.7;
         }
+    }
 
-        @media (max-width: 415px) {
-            margin-left: -7rem;
+    & .swiper .swiper-slide-next {
+        padding-top: 6rem;
+        @media (max-width: 850px) {
+            padding-top: 4rem;
         }
-        @media (max-width: 350px) {
-            margin-left: -6rem;
+        @media (max-width: 600px) {
+            padding-top: 3rem;
         }
+    }
+
+    &__cards-hiden img {
+        border-radius: 1rem;
     }
 }

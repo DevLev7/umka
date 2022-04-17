@@ -1,6 +1,6 @@
 .plant {
-    padding-bottom: 8rem;
-    padding-top: 10rem;
+    padding-top: calc(32px + (80 - 32) * (100vw - 360px) / (1680 - 360));
+    padding-bottom: calc(65px + (80 - 65) * (100vw - 360px) / (1680 - 360));
 }
 
 .plant__wrapper {
@@ -40,6 +40,11 @@
                 margin-top: 0;
             }
         }
+        @media (max-width: 533px) {
+            & {
+                width: 100%;
+            }
+        }
     }
     &_inner {
         strong {
@@ -68,6 +73,7 @@
     gap: 8.5rem;
     width: 87%;
     min-width: 0 !important;
+
     @media (max-width: 1180px) {
         & {
             width: 100%;
@@ -76,11 +82,13 @@
     @media (max-width: 1023px) {
         & {
             flex-direction: column;
+            gap: 5.5rem;
         }
     }
     @media (max-width: 533px) {
         & {
             gap: 3rem;
+            overflow: hidden;
         }
     }
 
@@ -90,8 +98,104 @@
     &_slider {
         position: relative;
         margin-left: -7rem;
+        @media (max-width: 1023px) {
+            & {
+                padding-bottom: 3rem;
+            }
+        }
+        .swiper-pagination {
+            width: 100%;
+            bottom: 0;
+            display: none;
+            @media (max-width: 1023px) {
+                & {
+                    display: block;
+                }
+            }
+        }
+        .swiper-button-prev {
+            background-color: transparent;
+            border-radius: 50%;
+            left: 30px;
+            width: 3.3vw;
+            height: 3.3vw;
+            // opacity: 0.5;
+            border: 2px solid #ffffff;
+            bottom: 3rem;
+            top: unset;
+        }
+        .swiper-button-next {
+            left: 12%;
+            width: 3.3vw;
+            height: 3.3vw;
+            // opacity: 0.5;
+            border: 2px solid #ffffff;
+            background-color: transparent;
+            bottom: 3rem;
+            top: unset;
+            border-radius: 50%;
+            @media (max-width: 1180px) {
+                & {
+                    left: 14%;
+                }
+            }
+        }
+        .swiper-button-prev::after {
+            color: #fff;
+            font-size: 16px;
+            @media (max-width: 1180px) {
+                & {
+                    font-size: 12px;
+                }
+            }
+        }
+        .swiper-button-next::after {
+            color: #fff;
+            font-size: 16px;
+            @media (max-width: 1180px) {
+                & {
+                    font-size: 12px;
+                }
+            }
+        }
+        .swiper-slide .swiper-button-prev,
+        .swiper-slide .swiper-button-next {
+            display: none;
+        }
+        .swiper-slide-active .swiper-button-prev,
+        .swiper-slide-active .swiper-button-next {
+            display: block;
+            @media (max-width: 1023px) {
+                & {
+                    display: none;
+                }
+            }
+        }
+        .swiper-slide.video {
+            position: relative;
+            display: block;
+        }
+        .swiper-slide.video::after {
+            position: absolute;
+            background-size: contain;
+            content: '';
+            background-image: url(../img/play2.png);
+            background-repeat: no-repeat;
+            width: 12.5vw;
+            height: 6vw;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
         img {
             border-radius: 10px;
+            width: 100%;
+            max-width: unset;
+        }
+        @media (max-width: 1600px) {
+            & {
+                margin-left: -2rem;
+            }
         }
         @media (max-width: 1023px) {
             & {
@@ -100,6 +204,30 @@
         }
     }
     &_slider-main {
+        width: 60vw;
+        @media (max-width: 1023px) {
+            & {
+                width: unset;
+            }
+        }
+        @media (max-width: 533px) {
+            & {
+                gap: 3rem;
+            }
+            .swiper {
+                margin-left: -17%;
+                width: 123vw !important;
+            }
+            .swiper-slide {
+                opacity: 0;
+            }
+            .swiper-slide-active {
+                opacity: 1;
+            }
+            .swiper-slide-next {
+                opacity: 0.5;
+            }
+        }
         p {
             width: 55%;
             margin-left: auto;
@@ -113,9 +241,9 @@
     }
     &_slider-thanks {
         flex: 0 0 19%;
+        padding-top: 1.5rem;
         .swiper {
             overflow: hidden;
-
             .swiper-slide {
                 opacity: 0;
             }
@@ -125,9 +253,45 @@
             .swiper-slide-next {
                 opacity: 0.6;
             }
+            .swiper-button-next,
+            .swiper-button-prev {
+                border-radius: 50%;
+                width: 2.3vw;
+                height: 2.3vw;
+                font-weight: 400;
+                padding: 0;
+                box-shadow: 0px 4px 12px 0px rgb(34 60 80 / 57%);
+                margin-top: 0;
+                top: 0;
+            }
+            .swiper__nav {
+                position: absolute;
+                top: 4px;
+                right: 0px;
+                width: 5.6vw;
+            }
+            .swiper-button-prev {
+                background-color: var(--main-tertiary);
+                // right: 23%;
+                left: unset;
+            }
+            .swiper-button-next::after {
+                color: #fff;
+                font-size: 12px;
+            }
+            .swiper-button-prev::after {
+                font-size: 12px;
+                color: var(--accent-primary);
+            }
+            .swiper-button-next {
+                background-color: var(--accent-primary);
+            }
             @media (max-width: 1023px) {
                 .swiper-slide {
                     opacity: 1;
+                }
+                .swiper__nav {
+                    display: none;
                 }
             }
         }
@@ -184,6 +348,8 @@
         @media (max-width: 1023px) {
             & {
                 display: flex;
+                justify-content: space-between;
+                gap: 0.5rem;
             }
         }
     }

@@ -1,62 +1,62 @@
 .configure-poster {
-  padding-bottom: 8rem;
+    padding-bottom: calc(30px + (80 - 30) * (100vw - 360px) / (1680 - 360));
 
-  &__wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.5rem 2rem;
-    padding: 8rem 9.7rem 7.7rem;
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem 2rem;
+        padding: 8rem 9.7rem 7.7rem;
 
-    background-color: var(--main-tertiary);
-    border-radius: 1rem;
+        background-color: var(--main-tertiary);
+        border-radius: 1rem;
 
-    @media (max-width: 1300px) {
-      padding: 5rem 7rem 4.5rem;
+        @media (max-width: 1300px) {
+            padding: 5rem 7rem 4.5rem;
+        }
+
+        @media (max-width: 1140px) {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        @media (max-width: 880px) {
+            padding: 2.5rem 2rem 3em;
+        }
+
+        @media (max-width: 320px) {
+            padding: 1.5rem;
+        }
     }
 
-    @media (max-width: 1140px) {
-      align-items: flex-start;
-      flex-direction: column;
+    &__text {
+        max-width: 33.7rem;
+
+        @media (max-width: 1140px) {
+            max-width: 60rem;
+        }
+
+        h2 {
+            font: var(--title-M);
+
+            @media (max-width: 770px) {
+                font-size: 4rem;
+            }
+
+            @media (max-width: 570px) {
+                font-size: 3rem;
+            }
+
+            span {
+                color: var(--accent-primary);
+            }
+        }
     }
 
-    @media (max-width: 880px) {
-      padding: 2.5rem 2rem 3em;
+    &__img {
+        img {
+            min-height: 5rem;
+            mix-blend-mode: multiply;
+        }
     }
-
-    @media (max-width: 320px) {
-      padding: 1.5rem
-    }
-  }
-
-  &__text {
-    max-width: 33.7rem;
-
-    @media (max-width: 1140px) {
-      max-width: 60rem;
-    }
-
-    h2 {
-      font: var(--title-M);
-
-      @media (max-width: 770px) {
-        font-size: 4rem;
-      }
-
-      @media (max-width: 570px) {
-        font-size: 3rem;
-      }
-      
-      span {
-        color: var(--accent-primary);
-      }
-    }
-  }
-
-  &__img {
-    img {
-      min-height: 5rem;
-      mix-blend-mode: multiply;
-    }
-  }
 }

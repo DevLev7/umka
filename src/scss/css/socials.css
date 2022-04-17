@@ -1,0 +1,25 @@
+.socials {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-width: 16.5rem;
+}
+
+.socials__item {
+  cursor: pointer;
+}
+
+.socials__item svg {
+  width: 3rem;
+  height: 3rem;
+  opacity: 0.6;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.socials__item:hover svg {
+  opacity: 1;
+}
+/*# sourceMappingURL=socials.css.map */

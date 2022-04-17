@@ -1,5 +1,5 @@
 .reviews {
-    padding: 8rem 0;
+    padding: calc(32px + (80 - 32) * (100vw - 360px) / (1680 - 360)) 0;
     overflow: hidden;
 }
 

@@ -1,6 +1,6 @@
 .map {
     position: relative;
-    padding-bottom: 8rem;
+    padding-bottom: calc(30px + (80 - 30) * (100vw - 360px) / (1680 - 360));
 
     &__wrapper {
         background-image: url(../img/map.png);
@@ -26,7 +26,7 @@
             background-size: 175%;
         }
         @media (max-width: 650px) {
-            padding: 2.5rem  2rem 18.9rem 2rem;
+            padding: 2.5rem 2rem 18.9rem 2rem;
             background-position: 14% 111%;
             background-size: 221%;
         }
@@ -50,17 +50,16 @@
         @media (max-width: 350px) {
             background-size: 400%;
         }
-      
     }
 
     &__wrapper h2 {
         font: var(--title-M);
-        color: #1B74E3;
-    
+        color: #1b74e3;
+
         @media (max-width: 1200px) {
             font-size: 4rem;
         }
-         @media (max-width: 550px) {
+        @media (max-width: 550px) {
             font-size: 3rem;
         }
     }

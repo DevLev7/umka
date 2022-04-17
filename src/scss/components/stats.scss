@@ -3,7 +3,7 @@
     width: 100vw;
     min-height: 100vh;
     padding-top: 16rem;
-    padding-bottom: 8rem;
+    padding-bottom: calc(32px + (80 - 32) * (100vw - 360px) / (1680 - 360));
 
     @media (max-width: 1245px) {
         padding-top: 9rem;
@@ -52,6 +52,9 @@
 
     &__list-wrapper {
         position: relative;
+        .pin-spacer {
+            pointer-events: none;
+        }
     }
 
     &__list {

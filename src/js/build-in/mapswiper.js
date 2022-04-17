@@ -5,15 +5,23 @@ export default function mapswiper() {
         modules: [Navigation, Pagination, Autoplay, EffectFade, Scrollbar, EffectCoverflow],
 
         effect: 'coverflow',
-        grabCursor: true,
-        loop: true,
-        slidesPerView: 1.5,
+        // grabCursor: true,
+        // loop: true,
+        slidesPerView: 1,
         coverflowEffect: {
             rotate: -2,
-            stretch: '-90%',
+            stretch: '-92%',
             depth: 100,
             modifier: -1,
             slideShadows: false,
+        },
+        breakpoints:{
+            500: {
+                stretch: '-95%',
+            }
+        },
+        pagination: {
+            el: '.all .swiper-pagination',
         },
     });
 }

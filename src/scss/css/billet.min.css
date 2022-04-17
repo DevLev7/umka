@@ -1,0 +1,2 @@
+.billet{position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;max-width:38rem;padding:3.7rem;border-radius:99.9rem;overflow:hidden}@media (max-width: 770px){.billet{padding:3rem;max-width:29rem}.billet .play-button{width:7.5rem;height:7.5rem}.billet .play-button svg{width:2.5rem;height:2.5rem}}.billet__bg{position:absolute;left:0;top:0;width:100%;height:100%;-o-object-fit:cover;object-fit:cover}
+/*# sourceMappingURL=billet.min.css.map */

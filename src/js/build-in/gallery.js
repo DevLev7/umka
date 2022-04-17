@@ -51,7 +51,7 @@ export default function gallerySwiper() {
             slideShadows: false,
         },
         pagination: {
-            el: '.swiper-pagination',
+            el: '.swiper__nav .swiper-pagination',
         },
     });
 }

@@ -9,11 +9,22 @@ export default function moreButon() {
         });
     }
 
+
     function getImage() {
-        const random = Math.floor(Math.random() * card.length);
+       const random = Math.floor(Math.random() * card.length);
         for (let i = 0; i < point.children.length; i++) {
             card[i].classList.remove('now');
             card[random].classList.add('now');
+            
         }
     }
+    
+
 }
+
+
+
+
+
+
+   

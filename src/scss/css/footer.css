@@ -1,0 +1,222 @@
+.footer {
+  margin: 0rem auto 3.125rem auto;
+  max-width: 135.5rem;
+  width: 100%;
+}
+
+@media (max-width: 1023px) {
+  .footer {
+    max-width: unset;
+    margin: 3rem 0 3rem 0;
+  }
+}
+
+@media (max-width: 533px) {
+  .footer {
+    max-width: unset;
+    margin: 1.87rem 0 0;
+  }
+  .footer .container {
+    padding: 0;
+  }
+}
+
+.footer__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 2rem;
+}
+
+@media (max-width: 533px) {
+  .footer__inner {
+    row-gap: 0.67rem;
+  }
+}
+
+.footer__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 767px) {
+  .footer__content {
+    gap: 1.87rem;
+  }
+}
+
+@media (max-width: 533px) {
+  .footer__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.footer__content-info {
+  opacity: 0.6;
+  font-size: 0.87rem;
+  line-height: 1.25;
+  font-weight: 500;
+}
+
+@media (max-width: 1023px) {
+  .footer__content-info {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 533px) {
+  .footer__content-info {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    text-align: center;
+  }
+}
+
+.footer__content-info span {
+  display: block;
+}
+
+.footer__content-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: "BebasNeue", sans-serif;
+  font-weight: 700;
+  font-size: 1.875rem;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-column-gap: 3.1rem;
+          column-gap: 3.1rem;
+}
+
+@media (max-width: 1023px) {
+  .footer__content-main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media (max-width: 533px) {
+  .footer__content-main {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+@media (max-width: 374px) {
+  .footer__content-main {
+    display: none;
+  }
+}
+
+.footer__content-main li a {
+  color: var(--accent-primary);
+  font-size: calc(18px + (30 - 18) * (100vw - 360px) / (1920 - 535));
+  line-height: 1.1;
+}
+
+.footer__content-contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+}
+
+@media (max-width: 533px) {
+  .footer__content-contacts {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+}
+
+.footer__content-contacts svg {
+  opacity: 0.6;
+}
+
+.footer__addition {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 533px) {
+  .footer__addition {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 1.87rem;
+  }
+}
+
+.footer__addition-download {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: var(--accent-primary);
+  -webkit-column-gap: 5px;
+          column-gap: 5px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.footer__addition-developed {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 0.93rem;
+          column-gap: 0.93rem;
+  color: var(--accent-primary);
+}
+
+@media (max-width: 533px) {
+  .footer__addition-developed {
+    padding: 0.7rem 0;
+    background: #f0f4fe;
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.footer__addition-developed span {
+  opacity: 0.3;
+  font-weight: 500;
+}
+/*# sourceMappingURL=footer.css.map */

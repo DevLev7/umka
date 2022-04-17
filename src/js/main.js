@@ -17,12 +17,15 @@ import reviews from './build-in/reviews';
 import plants from './build-in/plants';
 import mapswiper from './build-in/mapswiper';
 import cardsHover from './build-in/cardsHover';
+import features from './build-in/features';
+import fraturesSwiper from './build-in/fraturesSwiper';
+// import validation from './build-in/validation';
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import editableTextContainer from './custom/editableTextContainer';
-// import validation from './build-in/validation';
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -48,6 +51,8 @@ document.addEventListener('DOMContentLoaded', function () {
     configuretabs();
     plants();
     cardsHover();
+    features();
+    fraturesSwiper();
 });
 
 document.addEventListener('lazyloaded', () => {

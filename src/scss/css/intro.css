@@ -1,0 +1,255 @@
+.intro {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  width: 100vw;
+  min-height: 100vh;
+  padding-top: var(--intro-padding-top);
+  padding-bottom: 10rem;
+}
+
+@media (max-width: 992px) {
+  .intro {
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+  }
+}
+
+@media (max-width: 1024px) {
+  .intro {
+    min-height: 64rem;
+    padding-bottom: 3rem;
+  }
+}
+
+.intro__bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media (max-width: 1050px) {
+  .intro__bg {
+    -o-object-position: 85% 100%;
+       object-position: 85% 100%;
+  }
+}
+
+.intro__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  padding-bottom: 3rem;
+}
+
+.intro__title {
+  max-width: 64rem;
+  margin-bottom: 6.5rem;
+}
+
+@media (max-width: 992px) {
+  .intro__title {
+    font: var(--title-M);
+    margin-bottom: auto;
+  }
+}
+
+@media (max-width: 400px) {
+  .intro__title {
+    font: var(--title-S-narrow);
+  }
+}
+
+.intro__footer {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(25rem, 39rem) 1fr;
+      grid-template-columns: minmax(25rem, 39rem) 1fr;
+  gap: 3.5rem 7rem;
+}
+
+@media (max-width: 1290px) {
+  .intro__footer {
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 980px) {
+  .intro__footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+}
+
+.intro__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (max-width: 980px) {
+  .intro__buttons {
+    max-width: 40rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .intro__buttons {
+    max-width: 33rem;
+  }
+}
+
+.intro__button-top svg {
+  width: 4rem;
+  height: 4rem;
+}
+
+@media (max-width: 500px) {
+  .intro__button-top {
+    padding: 2.2rem 2.5rem;
+    font: var(--other-L);
+  }
+  .intro__button-top svg {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+@media (max-width: 340px) {
+  .intro__button-top {
+    padding: 1.5rem;
+    font-size: 1.8rem;
+  }
+}
+
+.intro__button-bottom {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1.8rem 1fr auto;
+      grid-template-columns: 1.8rem 1fr auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 34rem;
+  margin: 0 auto;
+  padding: 1.1rem 1.2rem;
+  background-color: var(--accent-secondary);
+  border-radius: 0 0 1rem 1rem;
+  color: #fff;
+}
+
+@media (max-width: 980px) {
+  .intro__button-bottom {
+    max-width: 36rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .intro__button-bottom {
+    max-width: 30rem;
+  }
+}
+
+@media (max-width: 340px) {
+  .intro__button-bottom {
+    max-width: 90%;
+  }
+}
+
+.intro__button-bottom-icon {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.intro__button-bottom-text {
+  font: var(--body-S-bold);
+}
+
+@media (max-width: 500px) {
+  .intro__button-bottom-text {
+    font: var(--other-S-bold);
+  }
+}
+
+.intro__button-bottom-timer {
+  font: var(--other-L);
+}
+
+.intro__button-bottom-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.intro__slider {
+  max-width: 51rem;
+}
+
+@media (max-width: 980px) {
+  .intro__slider {
+    max-width: none;
+  }
+}
+
+.intro__ribbon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 26.4rem;
+  height: 27.3rem;
+  padding: 2.2rem 2.5rem;
+  background: url("../img/intro-ribbon.png") no-repeat left 0 top 0;
+  background-size: cover;
+}
+
+@media (max-width: 1260px) {
+  .intro__ribbon {
+    display: none;
+  }
+}
+
+.intro__ribbon-text {
+  max-width: 16rem;
+  font: var(--body-XX);
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.intro__ribbon-icon {
+  position: absolute;
+  right: 2.5rem;
+  bottom: 3rem;
+  width: 9.6rem;
+  height: 10.3rem;
+}
+/*# sourceMappingURL=intro.css.map */

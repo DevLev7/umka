@@ -1,0 +1,227 @@
+.plant {
+  padding-bottom: 8rem;
+  padding-top: 10rem;
+}
+
+.plant__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 95%;
+  gap: 4rem;
+}
+
+@media (max-width: 1180px) {
+  .plant__title {
+    width: 100%;
+  }
+}
+
+@media (max-width: 533px) {
+  .plant__title {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.plant__title h2 {
+  font: var(--title-L);
+  font-size: var(--calc--title-L);
+  width: 69%;
+  margin-top: 7rem;
+  margin-bottom: calc(25px + (60 - 25) * (100vw - 360px) / (1680 - 360));
+}
+
+@media (max-width: 1180px) {
+  .plant__title h2 {
+    margin-top: 0;
+  }
+}
+
+.plant__title_inner strong {
+  font: var(--body-XX);
+  color: var(--accent-primary);
+  margin-bottom: 3rem;
+  display: block;
+}
+
+@media (max-width: 533px) {
+  .plant__title_inner strong {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+}
+
+@media (max-width: 533px) {
+  .plant__title_inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.plant__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8.5rem;
+  width: 87%;
+  min-width: 0 !important;
+}
+
+@media (max-width: 1180px) {
+  .plant__inner {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1023px) {
+  .plant__inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media (max-width: 533px) {
+  .plant__inner {
+    gap: 3rem;
+  }
+}
+
+.plant__inner p {
+  font: var(--body-L-narrow);
+}
+
+.plant__inner_slider {
+  position: relative;
+  margin-left: -7rem;
+}
+
+.plant__inner_slider img {
+  border-radius: 10px;
+}
+
+@media (max-width: 1023px) {
+  .plant__inner_slider {
+    margin-left: 0;
+  }
+}
+
+.plant__inner_slider-main p {
+  width: 55%;
+  margin-left: auto;
+  margin-bottom: calc(25px + (78 - 25) * (100vw - 360px) / (1680 - 360));
+}
+
+@media (max-width: 533px) {
+  .plant__inner_slider-main p {
+    width: 100%;
+  }
+}
+
+.plant__inner_slider-thanks {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 19%;
+          flex: 0 0 19%;
+}
+
+.plant__inner_slider-thanks .swiper {
+  overflow: hidden;
+}
+
+.plant__inner_slider-thanks .swiper .swiper-slide {
+  opacity: 0;
+}
+
+.plant__inner_slider-thanks .swiper .swiper-slide-active {
+  opacity: 1;
+}
+
+.plant__inner_slider-thanks .swiper .swiper-slide-next {
+  opacity: 0.6;
+}
+
+@media (max-width: 1023px) {
+  .plant__inner_slider-thanks .swiper .swiper-slide {
+    opacity: 1;
+  }
+}
+
+.plant__inner_slider-thanks button {
+  background-color: var(--accent-primary);
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2rem 2.5rem;
+  gap: 3.6rem;
+  width: 100%;
+  margin-top: 2rem;
+  white-space: nowrap;
+  font: var(--body-XL);
+  color: #fff;
+}
+
+.plant__inner_slider-thanks button svg {
+  fill: transparent;
+}
+
+@media (max-width: 1023px) {
+  .plant__inner_slider-thanks button {
+    width: 50%;
+  }
+}
+
+@media (max-width: 533px) {
+  .plant__inner_slider-thanks button {
+    width: 100%;
+  }
+}
+
+.plant__inner_slider-thanks-text strong {
+  font: var(--title-M);
+  color: var(--accent-primary);
+  font-size: calc(30px + (55 - 30) * (100vw - 360px) / (1680 - 360));
+}
+
+.plant__inner_slider-thanks-text p:not(:last-child) {
+  margin-bottom: 4rem;
+}
+
+.plant__inner_slider-thanks-text .swiper-wrapper {
+  margin-left: -19%;
+}
+
+@media (max-width: 1023px) {
+  .plant__inner_slider-thanks-text .swiper-wrapper {
+    margin-left: 0;
+  }
+}
+
+.plant__inner .plant__inner_info {
+  margin-bottom: 4rem;
+}
+
+@media (max-width: 1023px) {
+  .plant__inner .plant__inner_info-cont {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+/*# sourceMappingURL=plants.css.map */

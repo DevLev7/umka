@@ -1,5 +1,5 @@
 .gallery {
-    padding: 8rem 0;
+    padding: calc(32px + (80 - 32) * (100vw - 360px) / (1680 - 360)) 0;
 }
 
 .gallery__wrapper {
@@ -8,6 +8,9 @@
         font: var(--title-L);
         font-size: var(--calc--title-L);
         padding-left: 9.8rem;
+        @media (max-width: 1023px) {
+            padding-left: 0;
+        }
     }
     &-items {
         display: grid;
@@ -24,6 +27,12 @@
     &-item {
         border-radius: 10px;
         height: 225px;
+        transition: all 0.5s linear;
+        :hover {
+            transition: all 0.5s linear;
+            transform: scale(1.02);
+            box-shadow: 5px 12px 27px -2px rgba(34, 60, 80, 0.46);
+        }
         @media (max-width: 533px) {
             padding: 0 20px;
         }
@@ -106,6 +115,7 @@
 
 .mySwiper {
     height: 200px;
+    overflow: visible;
     .swiper-slide-shadow {
         background-color: transparent;
     }
@@ -119,7 +129,11 @@
         opacity: 0;
     }
     .swiper-slide-next {
-        opacity: 0.7;
+        opacity: 0.5;
+        margin-bottom: -3rem;
+        @media (max-width: 376px) {
+            margin-bottom: 0;
+        }
     }
     .swiper-slide-prev {
         opacity: 0;
@@ -129,20 +143,21 @@
         opacity: 1;
     }
     .swiper-slide {
-        width: 81vw !important;
+        width: 90% !important;
     }
     .swiper-wrapper {
-        margin-left: -11% !important;
+        margin-left: -14% !important;
     }
 }
 
 .swiper__nav {
     position: relative;
-    padding-bottom: 1.87rem;
-
+    padding-bottom: 4rem;
+    .swiper-pagination {
+        bottom: 0;
+    }
     .gallery__wrapper-item--mobile-one {
         position: relative;
-
         ::before {
             position: absolute;
             content: '';
@@ -159,7 +174,7 @@
 }
 .gallery__wrapper-items--mobile-btn {
     color: var(--accent-primary);
-    font-size: 1.25rem;
+    font-size: 2rem;
     text-transform: uppercase;
     border-radius: 10px;
     border: 2px solid var(--accent-primary);
@@ -167,7 +182,7 @@
     text-align: center;
     font-family: 'BebasNeue', sans-serif;
     display: none;
-    padding: 1.25rem;
+    padding: 2rem;
     margin-top: 2rem;
     @media (max-width: 533px) {
         display: block;
@@ -179,9 +194,7 @@
         display: block;
     }
 }
-.swiper-pagination {
-    bottom: 0;
-}
+
 .swiper-pagination-bullet {
     background: #a3afcd;
     opacity: 0.5;
