@@ -41,7 +41,7 @@
     &__title {
         max-width: 64rem;
         margin-bottom: 6.5rem;
-        font-size: calc(30px + (100 - 30) * (100vw - 360px) / (1680 - 360));
+        font-size: calc(30px + (100 - 30) * (100vw - 360px) / (1920 - 360));
 
         @media (max-width: 1439px) {
             max-width: 75rem;

@@ -1,5 +1,5 @@
 .configure {
-    width: 100vw;
+    width: 100%;
     // min-height: 100vh;
     padding-bottom: calc(32px + (80 - 32) * (100vw - 360px) / (1680 - 360));
 
@@ -377,4 +377,8 @@
     color: #1b74e3;
     padding: 1rem 1.5rem;
     display: flex;
+
+    .configure__chosen-equipment-more {
+        display: initial;
+    }
 }
