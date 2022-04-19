@@ -3582,7 +3582,6 @@ body:not(.loaded) .modal {
 }
 
 .configure {
-  width: 100vw;
   min-height: 100vh;
   padding-bottom: calc(32px + 48 * (100vw - 360px) / 1320);
 }
