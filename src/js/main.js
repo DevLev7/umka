@@ -19,13 +19,14 @@ import mapswiper from './build-in/mapswiper';
 import cardsHover from './build-in/cardsHover';
 import features from './build-in/features';
 import fraturesSwiper from './build-in/fraturesSwiper';
+import timer from './build-in/timer';
+
 // import validation from './build-in/validation';
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import editableTextContainer from './custom/editableTextContainer';
-
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -53,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
     cardsHover();
     features();
     fraturesSwiper();
+    timer();
 });
 
 document.addEventListener('lazyloaded', () => {

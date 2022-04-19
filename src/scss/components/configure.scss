@@ -1,18 +1,16 @@
 .configure {
     width: 100vw;
-    min-height: 100vh;
+    // min-height: 100vh;
     padding-bottom: calc(32px + (80 - 32) * (100vw - 360px) / (1680 - 360));
 
     &__wrapper {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         gap: 2.5rem;
-        padding: 10.5rem 9.7rem 7.7rem;
-
+        padding: calc(25px + (105 - 25) * (100vw - 360px) / (1680 - 360)) calc(15px + (97 - 15) * (100vw - 360px) / (1680 - 360));
         background: linear-gradient(265.25deg, rgba(63, 137, 228, 0.9) 32.92%, rgba(63, 137, 228, 0.81) 70.46%), url('../img/configure-bg.png');
         background-size: cover;
         border-radius: 1rem;
-
         color: #fff;
         @media (max-width: 1327px) {
             padding: 10.5rem 3.7rem 7.7rem;
@@ -58,6 +56,9 @@
         width: 100%;
         max-width: 84.4rem;
         aspect-ratio: 844 / 395;
+        @media (max-width: 1445px) {
+            width: 96%;
+        }
     }
 
     &__text-column {
@@ -158,7 +159,7 @@
     &__form-fields {
         display: flex;
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 1.2rem;
         @media (max-width: 400px) {
             gap: 0.5rem;
         }
@@ -167,7 +168,6 @@
     &__form-group {
         margin: 0;
         padding: 0;
-
         border: 1px solid #fff;
         border-radius: 1rem;
         @media (max-width: 400px) {
@@ -180,7 +180,8 @@
         grid-template-columns: 1fr auto;
         align-items: center;
         gap: 1.5rem;
-        padding: 1.5rem 1.5rem 1.5rem 2rem;
+        justify-content: center;
+        padding: 1.7rem 1.5rem 1.5rem 2rem;
         @media (max-width: 400px) {
             padding: 0.6rem 1rem 0.6rem 1.5rem;
         }

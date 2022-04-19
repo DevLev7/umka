@@ -28,11 +28,11 @@
         border-radius: 10px;
         height: 225px;
         transition: all 0.5s linear;
-        :hover {
-            transition: all 0.5s linear;
-            transform: scale(1.02);
-            box-shadow: 5px 12px 27px -2px rgba(34, 60, 80, 0.46);
+        background-color: transparent;
+        img {
+            border-radius: 10px;
         }
+
         @media (max-width: 533px) {
             padding: 0 20px;
         }
@@ -43,6 +43,12 @@
             object-fit: cover;
         }
     }
+    &-item:hover {
+        transition: all 0.5s linear;
+        transform: scale(1.02);
+        box-shadow: 5px 12px 27px -2px rgba(34, 60, 80, 0.46);
+    }
+
     &-item--one {
         grid-column: span 3;
         height: unset;

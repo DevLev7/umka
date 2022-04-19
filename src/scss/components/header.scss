@@ -4,7 +4,7 @@
     right: 0;
     top: 0;
     z-index: 100;
-    padding: 4rem 0;
+    padding: 2rem 0;
     transition: 0.3s;
 
     @media (max-width: 1439px) {
@@ -80,7 +80,6 @@
     &__menu-item {
         font: var(--body-S);
         color: #fff;
-
         transition: 0.3s;
 
         &:hover {

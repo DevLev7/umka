@@ -85,6 +85,10 @@
         }
         svg {
             opacity: 0.6;
+            transition: all 0.3s ease-in-out;
+        }
+        :hover svg {
+            opacity: 1;
         }
     }
 }

@@ -5,9 +5,10 @@
 
 .reviews__inner {
     position: relative;
-    @media (max-width: 1024px) {
-        padding-bottom: 5rem;
+    @media (max-width: 1439px) {
+        padding: 0 2rem;
     }
+
     &-wrap {
         display: flex;
     }
@@ -15,10 +16,11 @@
         position: absolute;
         top: 0;
         right: 0;
-        width: 10vw;
-        height: 80px;
+        width: 11vw;
+        height: 58px;
         display: flex;
         gap: 1rem;
+        margin-right: 19rem;
     }
     h2 {
         font: var(--title-L);
@@ -27,6 +29,9 @@
     }
     .swiper {
         width: 97vw;
+        @media (max-width: 1024px) {
+            padding-bottom: 5rem;
+        }
         @media (max-width: 768px) {
             width: unset;
         }
@@ -71,14 +76,14 @@
     }
     .swiper-button-next {
         border-radius: 50%;
-        width: 4vw;
-        height: 4vw;
+        width: 4.4vw;
+        height: 4.4vw;
         background-color: var(--accent-primary);
     }
     .swiper-button-prev {
         border-radius: 50%;
-        width: 4vw;
-        height: 4vw;
+        width: 4.4vw;
+        height: 4.4vw;
         background-color: var(--main-tertiary);
     }
     .swiper-pagination {

@@ -10,15 +10,22 @@ export default function reviews() {
             prevEl: '.swiper-button-prev',
         },
         breakpoints: {
-            1210: {
+            1440: {
                 slidesPerView: 3.7,
                 spaceBetween: 40,
                 pagination: {
                     el: '.reviews .swiper-pagination',
                 },
             },
-            700: {
-                slidesPerView: 3,
+            1210: {
+                slidesPerView: 3.2,
+                spaceBetween: 55,
+                pagination: {
+                    el: '.reviews .swiper-pagination',
+                },
+            },
+            769: {
+                slidesPerView: 2.3,
                 spaceBetween: 40,
             },
             320: {

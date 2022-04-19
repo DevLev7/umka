@@ -1,5 +1,5 @@
 import gsap from 'gsap';
-import {Swiper} from "swiper";
+import { Swiper } from 'swiper';
 
 const slider = new Swiper('.intro-slider', {
     slidesPerView: 2,
@@ -7,9 +7,9 @@ const slider = new Swiper('.intro-slider', {
     loop: true,
     breakpoints: {
         690: {
-            spaceBetween: 40
-        }
-    }
+            spaceBetween: 40,
+        },
+    },
 });
 
 export default function intro() {
@@ -31,7 +31,7 @@ export default function intro() {
 
     slider.on('slideChangeTransitionStart', () => {
         initLineAnimation(tl);
-    })
+    });
 
     initLineAnimation(tl);
 }
@@ -40,5 +40,5 @@ function initLineAnimation(tl) {
     tl.restart();
     tl.clear();
     const progress = document.querySelector('.swiper-slide-active .intro-slider__progressbar-progress');
-    tl.to(progress, {width: '100%', duration: 6, onComplete: () => slider.slideNext(), clearProps: "all"})
+    tl.to(progress, { width: '100%', duration: 6, onComplete: () => slider.slideNext(), clearProps: 'all' });
 }

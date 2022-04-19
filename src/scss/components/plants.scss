@@ -5,23 +5,23 @@
 
 .plant__wrapper {
     .wide-container {
-        // max-width: 1680px;
-        // width: 100%;
-        // padding-left: 0;
-        // @media (max-width: 1180px) {
-        //     max-width: unset;
-        // }
+    }
+    @media (max-width: 533px) {
+        & {
+            overflow: hidden;
+        }
     }
 }
 .plant__title {
     display: flex;
     justify-content: space-between;
-    width: 95%;
     gap: 4rem;
+    margin-left: 10rem;
 
-    @media (max-width: 1180px) {
+    @media (max-width: 1279px) {
         & {
             width: 100%;
+            margin-left: 0;
         }
     }
     @media (max-width: 533px) {
@@ -33,7 +33,7 @@
         font: var(--title-L);
         font-size: var(--calc--title-L);
         width: 69%;
-        margin-top: 7rem;
+        margin-top: 5rem;
         margin-bottom: calc(25px + (60 - 25) * (100vw - 360px) / (1680 - 360));
         @media (max-width: 1180px) {
             & {
@@ -52,6 +52,7 @@
             color: var(--accent-primary);
             margin-bottom: 3rem;
             display: block;
+
             @media (max-width: 533px) {
                 & {
                     order: 1;
@@ -74,21 +75,22 @@
     width: 87%;
     min-width: 0 !important;
 
-    @media (max-width: 1180px) {
+    @media (max-width: 1279px) {
         & {
-            width: 100%;
+            gap: 5.5rem;
         }
     }
     @media (max-width: 1023px) {
         & {
             flex-direction: column;
             gap: 5.5rem;
+            width: 100%;
         }
     }
     @media (max-width: 533px) {
         & {
             gap: 3rem;
-            overflow: hidden;
+            // overflow: hidden;
         }
     }
 
@@ -204,7 +206,10 @@
         }
     }
     &_slider-main {
-        width: 60vw;
+        width: 82%;
+        @media (max-width: 1279px) {
+            width: 66vw;
+        }
         @media (max-width: 1023px) {
             & {
                 width: unset;
@@ -229,9 +234,13 @@
             }
         }
         p {
-            width: 55%;
+            width: 49%;
             margin-left: auto;
             margin-bottom: calc(25px + (78 - 25) * (100vw - 360px) / (1680 - 360));
+            @media (max-width: 1023px) {
+                width: 100%;
+                margin-top: 2.5rem;
+            }
             @media (max-width: 533px) {
                 & {
                     width: 100%;
@@ -241,9 +250,9 @@
     }
     &_slider-thanks {
         flex: 0 0 19%;
-        padding-top: 1.5rem;
+
         .swiper {
-            overflow: hidden;
+            overflow: visible;
             .swiper-slide {
                 opacity: 0;
             }
@@ -266,8 +275,8 @@
             }
             .swiper__nav {
                 position: absolute;
-                top: 4px;
-                right: 0px;
+                top: 18px;
+                right: -9px;
                 width: 5.6vw;
             }
             .swiper-button-prev {
