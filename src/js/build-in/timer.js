@@ -4,7 +4,6 @@ export default function timer() {
   let mydata = document.querySelector('.intro__button-bottom-timer');
   let maindate = mydata.dataset.date;
   maindate = maindate.split('/').join().replace(/[,]/g, '');
-  console.log(maindate)
   
   Number(maindate).dataset;
 
@@ -15,7 +14,6 @@ export default function timer() {
       seconds = Math.floor((t / 1000) % 60),
       minutes = Math.floor((t / 1000 / 60) % 60),
       hours = Math.floor((t / 1000 / 60 / 60) % 24);
-    console.log(hours);
     return {
       total: t,
       days: days,

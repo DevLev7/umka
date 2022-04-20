@@ -290,7 +290,7 @@
                                 </li>
                             </ul>
                         </fieldset>
-                        <fieldset class="configure__form-group">
+                        <fieldset data-choise="equipment" class="configure__form-group">
                             <div class="configure__form-group-header">
                                 <h3 class="configure__form-group-title">Выбрать оборудование</h3>
                                 <button class="configure__form-group-button">
@@ -300,10 +300,26 @@
                                 </button>
                             </div>
                             <div class="configure__form-group-body">
-
+                                <ul class="configure__form-group-list">
+                                    {{#each equipment }}
+                                    <li class="configure__form-group-item">
+                                        <input id="equipment{{@key}}" data-price="{{this.price}}" class="configure__form-checkbox" type="checkbox">
+                                        <div class="configure__form-checkboxCustom">
+                                            <svg>
+                                                <use xlink:href="#checked"></use>
+                                            </svg>
+                                        </div>
+                                        <label for="equipment{{@key}}">
+                                            <div class="configure__form-text">
+                                                <p>{{this.title}}</p>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    {{/each}}
+                                </ul>
                             </div>
                         </fieldset>
-                        <fieldset class="configure__form-group">
+                        <fieldset data-choise="equipment" class="configure__form-group">
                             <div class="configure__form-group-header">
                                 <h3 class="configure__form-group-title">Выбрать дополнительные опции</h3>
                                 <button class="configure__form-group-button">
@@ -312,8 +328,24 @@
                                     </svg>
                                 </button>
                             </div>
-                            <div class="configure__form-group-body">
-
+                            <div class="configure__form-group-body additionalOptions">
+                                <ul class="configure__form-group-list">
+                                    {{#each additionalOptions }}
+                                    <li class="configure__form-group-item">
+                                        <input id="additionalOptions{{@key}}" data-price="{{this.price}}" class="configure__form-checkbox" type="checkbox">
+                                        <div class="configure__form-checkboxCustom">
+                                            <svg>
+                                                <use xlink:href="#checked"></use>
+                                            </svg>
+                                        </div>
+                                        <label for="additionalOptions{{@key}}">
+                                            <div class="configure__form-text">
+                                                <p>{{this.title}}</p>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    {{/each}}
+                                </ul>
                             </div>
                         </fieldset>
                     </div>
@@ -362,7 +394,7 @@
                                 </li>
                             </ul>
                         </fieldset>
-                        <fieldset class="configure__form-group">
+                        <fieldset data-choise="equipment" class="configure__form-group">
                             <div class="configure__form-group-header">
                                 <h3 class="configure__form-group-title">Выбрать оборудование тест</h3>
                                 <button class="configure__form-group-button">
@@ -371,11 +403,11 @@
                                     </svg>
                                 </button>
                             </div>
-                            <div class="configure__form-group-body">
+                            <div data-config="equipment" class="configure__form-group-body">
 
                             </div>
                         </fieldset>
-                        <fieldset class="configure__form-group">
+                        <fieldset data-choise="equipment" class="configure__form-group">
                             <div class="configure__form-group-header">
                                 <h3 class="configure__form-group-title">Выбрать дополнительные опции тест</h3>
                                 <button class="configure__form-group-button">
@@ -384,7 +416,7 @@
                                     </svg>
                                 </button>
                             </div>
-                            <div class="configure__form-group-body">
+                            <div data-config="additionalOptions" class="configure__form-group-body">
 
                             </div>
                         </fieldset>

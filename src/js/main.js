@@ -20,6 +20,7 @@ import cardsHover from './build-in/cardsHover';
 import features from './build-in/features';
 import fraturesSwiper from './build-in/fraturesSwiper';
 import timer from './build-in/timer';
+import ChooseConfigure from './build-in/chooseConfigure.js'
 
 // import validation from './build-in/validation';
 
@@ -55,6 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
     features();
     fraturesSwiper();
     timer();
+    ChooseConfigure()
 });
 
 document.addEventListener('lazyloaded', () => {

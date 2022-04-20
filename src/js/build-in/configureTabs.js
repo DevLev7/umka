@@ -6,7 +6,8 @@ export default function configuretabs() {
           tabContent = document.querySelectorAll('.configure__graphic'),
           tabline = document.querySelectorAll('.configure__tab-upperline'),
           newTabline = document.querySelectorAll('.configure__tab-upperline-hidden'),
-        form = document.querySelectorAll('.configure__form');
+        form = document.querySelectorAll('.configure__form'),
+        equipments         = document.querySelectorAll('[data-choise="equipment"]');
     
       tab.forEach(function(tab, i) {
         tab.addEventListener('click', function() {
@@ -16,6 +17,11 @@ export default function configuretabs() {
           tabline[i].classList.add('tab-content_show');
           form[i].classList.add('tab-content_show');
           newTabline[i].classList.add('tab-content_show');
+          equipments.forEach(equipment => {
+            if(equipment.classList.contains('active')){
+              equipment.classList.remove('active')
+            }
+          })
         });
       });
 
