@@ -51,12 +51,8 @@ export default function ChooseConfigure() {
     function addInChosen(chosenConfig, arrOfConfig, counter, sign, deleteConfigName) {
         let deleteIndex     = arrOfConfig.indexOf(`${deleteConfigName}`),
             countOEquipment = parseInt(counter.innerText)
-            console.log(deleteConfigName);
         if(sign !== 'plus') {
-            console.log(deleteConfigName);
-            let newArray = arrOfConfig.filter(function(f) { return f !== deleteConfigName })
-            console.log(deleteConfigName);
-            console.log(newArray);
+            // let newArray = arrOfConfig.filter(function(f) { return f !== deleteConfigName })
             if(arrOfConfig.length <= 1) {
                 arrOfConfig.splice(deleteIndex, 1)
                 chosenConfig[0].querySelector('.configure__chosen-equipment-text').innerText = arrOfConfig[0]
@@ -107,7 +103,6 @@ export default function ChooseConfigure() {
             }
             
         }else {
-            console.log(nameConfig);
             sum -= price
             if(selectedConfig === arrOfUaz) {
                 addInChosen(chosenEquipmentUaz, arrOfUaz, countOfConfig, 'minus')
