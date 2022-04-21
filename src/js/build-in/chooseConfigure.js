@@ -14,7 +14,7 @@ export default function ChooseConfigure() {
           counterOfEquipmentUaz   = configOfUaz.querySelector('.configure__chosen-equipment-counter'),
           counterOfEquipmentIsuzu = configOfIsuzu.querySelector('.configure__chosen-equipment-counter'),
           chosenEquipmentUaz      = configOfUaz.querySelectorAll('.configure__chosen-equipment-wrapper'),
-          chosenEquipmentIsuzu    = configOfUaz.querySelectorAll('.configure__chosen-equipment-wrapper')
+          chosenEquipmentIsuzu    = configOfIsuzu.querySelectorAll('.configure__chosen-equipment-wrapper')
           
     
     const arrOfUaz   = [],
@@ -49,25 +49,23 @@ export default function ChooseConfigure() {
     // Табы
 
     function addInChosen(chosenConfig, arrOfConfig, counter, sign, deleteConfigName) {
-        let deleteIndex     = arrOfConfig.indexOf(`${deleteConfigName}`),
-            countOEquipment = parseInt(counter.innerText)
+        let countOEquipment = parseInt(counter.innerText)
         if(sign !== 'plus') {
-            // let newArray = arrOfConfig.filter(function(f) { return f !== deleteConfigName })
-            if(arrOfConfig.length <= 1) {
-                arrOfConfig.splice(deleteIndex, 1)
+            if(arrOfConfig.length < 1) {
                 chosenConfig[0].querySelector('.configure__chosen-equipment-text').innerText = arrOfConfig[0]
                 chosenConfig[0].classList.remove('active')
-            } else if (arrOfConfig.length > 1 && arrOfConfig.length <= 2) {
-                arrOfConfig.splice(deleteIndex, 1)
+            } else if (arrOfConfig.length >= 1 && arrOfConfig.length < 2) {
                 chosenConfig[1].querySelector('.configure__chosen-equipment-text').innerText = arrOfConfig[1]
                 chosenConfig[1].classList.remove('active')
-            } else {
-                arrOfConfig.splice(deleteIndex, 1)
+            } else if(arrOfConfig.length >= 2 && arrOfConfig.length < 3) {
+                chosenConfig[0].querySelector('.configure__chosen-equipment-text').innerText = arrOfConfig[0]
+                chosenConfig[1].querySelector('.configure__chosen-equipment-text').innerText = arrOfConfig[1]
+                chosenConfig[2].classList.remove('active')
+            }else {
                 countOEquipment = arrOfConfig.length - 2
                 counter.innerText = countOEquipment
                 chosenConfig[0].querySelector('.configure__chosen-equipment-text').innerText = arrOfConfig[0]
                 chosenConfig[1].querySelector('.configure__chosen-equipment-text').innerText = arrOfConfig[1]
-                console.log(arrOfConfig[0], arrOfConfig[1], arrOfConfig[2]);
             }
         }else {
             if(arrOfConfig.length <= 1){
@@ -82,10 +80,7 @@ export default function ChooseConfigure() {
             }else {
                 countOEquipment = arrOfConfig.length - 2
                 counter.innerText = countOEquipment
-                chosenConfig[2].style.display = 'flex'
-                setTimeout(()=>{
-                    chosenConfig[2].classList.add('active')
-                },100)
+                chosenConfig[2].classList.add('active')
             }
         }
     }
@@ -95,7 +90,7 @@ export default function ChooseConfigure() {
 
         if(sign === 'plus') {
             sum += price
-            selectedConfig.push(nameConfig.toLowerCase())
+            selectedConfig.push(nameConfig)
             if(selectedConfig === arrOfUaz) {
                 addInChosen(chosenEquipmentUaz, arrOfUaz, countOfConfig, 'plus', nameConfig)
             }else {
@@ -104,10 +99,11 @@ export default function ChooseConfigure() {
             
         }else {
             sum -= price
+            selectedConfig.splice(nameConfig, 1)
             if(selectedConfig === arrOfUaz) {
-                addInChosen(chosenEquipmentUaz, arrOfUaz, countOfConfig, 'minus')
+                addInChosen(chosenEquipmentUaz, arrOfUaz, countOfConfig, 'minus', nameConfig)
             }else {
-                addInChosen(chosenEquipmentIsuzu, arrOfIsuzu, countOfConfig, 'minus')
+                addInChosen(chosenEquipmentIsuzu, arrOfIsuzu, countOfConfig, 'minus', nameConfig)
             }
         }
         
@@ -147,5 +143,22 @@ export default function ChooseConfigure() {
             }
         })
     });
+
+    // Show more
+
+    // function showMore(choseArray) {
+    //     for(let i = 0; i < choseArray.length; i++) {
+    //         console.log(choseArray[i]);
+    //     }
+    // }
+
+    // chosenEquipmentUaz[2].addEventListener('click', function(e){
+    //     e.preventDefault()
+    //     showMore(arrOfUaz)
+    // })
+    // chosenEquipmentIsuzu[2].addEventListener('click', function(e){
+    //     e.preventDefault()
+    //     showMore(arrOfIsuzu)
+    // })
 
 }
