@@ -5,7 +5,8 @@ export default function ChooseConfigure() {
           counterOfEquipment      = document.querySelector('.configure__chosen-equipment-counter'),
           totalPrice              = document.querySelectorAll('.configure__form-price'),
           checkBox                = document.querySelectorAll('.configure__form-checkbox'),
-          choiceOfCar             = document.querySelectorAll('.configure__tab '),
+          choiceOfCar             = document.querySelectorAll('.configure__tab-desktop'),
+          choiceOfCarMobile       = document.querySelectorAll('.configure__tab-mobile'),
           configOfUaz             = document.querySelector('[data-config="configUaz"]'),
           configOfIsuzu           = document.querySelector('[data-config="configIsuzu"]'),
           totalPriceUaz           = configOfUaz.querySelector('.configure__form-price'),
@@ -28,6 +29,14 @@ export default function ChooseConfigure() {
               equipment.classList.remove('active')
             }
         })
+    }
+
+    for (let button of choiceOfCarMobile) {
+        button.addEventListener('click', function () {
+            choiceOfCarMobile.forEach(btn => btn.classList.remove('active'));
+            this.classList.toggle('active');
+            this.getAttribute('data-carName') === 'isuzu' ? showOrHideConfig(configOfIsuzu, configOfUaz) : showOrHideConfig(configOfUaz, configOfIsuzu)
+        });
     }
     
     for (let button of choiceOfCar) {
