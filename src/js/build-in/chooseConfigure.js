@@ -40,44 +40,45 @@ export default function ChooseConfigure() {
     // Табы
 
     function addInChosen(chosenConfig, arrOfConfig, counter, sign, deleteConfigName) {
-        if(arrOfConfig.length <= 1){
-            chosenConfig[0].querySelector('.configure__chosen-equipment-text').innerText = arrOfConfig[0]
-            chosenConfig[0].classList.add('active')
-        }else if(arrOfConfig.length > 1 && arrOfConfig.length <= 2) {
-            for(let i = 0; i <= arrOfConfig.length; i++) {
-                chosenConfig[1].classList.add('active')
+        let deleteIndex     = arrOfConfig.indexOf(`${deleteConfigName}`),
+            countOEquipment = parseInt(counter.innerText)
+
+        if(sign !== 'plus') {
+            if(arrOfConfig.length <= 1) {
+                arrOfConfig.splice(deleteIndex, 1)
+                chosenConfig[0].querySelector('.configure__chosen-equipment-text').innerText = arrOfConfig[0]
+                chosenConfig[0].classList.remove('active')
+            } else if (arrOfConfig.length > 1 && arrOfConfig.length <= 2) {
+                arrOfConfig.splice(deleteIndex, 1)
                 chosenConfig[1].querySelector('.configure__chosen-equipment-text').innerText = arrOfConfig[1]
+                chosenConfig[1].classList.remove('active')
+            } else {
+                arrOfConfig.splice(deleteIndex, 1)
+                countOEquipment = arrOfConfig.length - 2
+                counter.innerText = countOEquipment
+                chosenConfig[0].querySelector('.configure__chosen-equipment-text').innerText = arrOfConfig[0]
+                chosenConfig[1].querySelector('.configure__chosen-equipment-text').innerText = arrOfConfig[1]
+                console.log(arrOfConfig[0], arrOfConfig[1], arrOfConfig[2]);
             }
+            console.log(arrOfConfig);
         }else {
-            let countOEquipment = parseInt(counter.innerText)
-            countOEquipment = arrOfConfig.length - 2
-            counter.innerText = countOEquipment
-            if(sign === 'plus') {
+            if(arrOfConfig.length <= 1){
+                chosenConfig[0].querySelector('.configure__chosen-equipment-text').innerText = arrOfConfig[0]
+                chosenConfig[0].classList.add('active')
+            }else if(arrOfConfig.length > 1 && arrOfConfig.length <= 2) {
+                for(let i = 0; i <= arrOfConfig.length; i++) {
+                    chosenConfig[1].classList.add('active')
+                    chosenConfig[1].querySelector('.configure__chosen-equipment-text').innerText = arrOfConfig[1]
+                }
+    
+            }else {
+                countOEquipment = arrOfConfig.length - 2
+                counter.innerText = countOEquipment
                 chosenConfig[2].style.display = 'flex'
                 setTimeout(()=>{
                     chosenConfig[2].classList.add('active')
                 },100)
-            }else {
-                let deleteIndex = arrOfConfig.indexOf(`${deleteConfigName}`);
-                arrOfConfig.splice(deleteIndex, 1)
-                countOEquipment = arrOfConfig.length - 2
-                counter.innerText = countOEquipment
-                for(let i = 0; i <= arrOfConfig.length; i++) {
-                    chosenConfig[0].querySelector('.configure__chosen-equipment-text').innerText = arrOfConfig[0]
-                    chosenConfig[1].querySelector('.configure__chosen-equipment-text').innerText = arrOfConfig[1]
-                }
-                if(arrOfConfig.length < 1) {
-                    chosenConfig[0].classList.remove('active')
-                }else if(arrOfConfig.length > 1 && arrOfConfig.length <= 2) {
-                    chosenConfig[1].classList.remove('active')
-                }else if(arrOfConfig.length > 2) {
-                    chosenConfig[2].classList.add('active')
-                }else {
-                    chosenConfig[2].style.display = 'none'
-                    chosenConfig[2].classList.remove('active')
-                }
             }
-
         }
     }
           
@@ -86,7 +87,7 @@ export default function ChooseConfigure() {
 
         if(sign === 'plus') {
             sum += price
-            selectedConfig.push(nameConfig)
+            selectedConfig.push(nameConfig.toLowerCase())
             if(selectedConfig === arrOfUaz) {
                 addInChosen(chosenEquipmentUaz, arrOfUaz, countOfConfig, 'plus', nameConfig)
             }else {

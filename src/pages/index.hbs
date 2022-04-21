@@ -10,7 +10,7 @@
             <h1 class="intro__title main-title">Умка — Льдозаливочная машина для открытых арен </h1>
             <div class="intro__footer">
                 <div class="intro__buttons">
-                    <button class="intro__button-top button">
+                    <button data-src="#order" data-fancybox class="intro__button-top button">
                         <span>Подберите УМКУ со скидкой 10%</span>
                         <svg>
                             <use xlink:href="#gear-icon"></use>
@@ -195,7 +195,9 @@
         <div class="overview__inner">
             <video class="overview__video" src="assets/video/umka.mp4" autoplay loop muted></video>
             <div class="overview__video-billet">
+                <a data-fancybox href="https://www.youtube.com/watch?v=_sI_Ps7JSEk">
                 {{> billet }}
+                </a>
                 <span class="overview__video-description">
                     Видеообзор эксперта <sup>9 минут</sup>
                 </span>
@@ -356,8 +358,8 @@
                             <span class="configure__form-price-description">Стоимость выбранной конфигурации от</span>
                             <span class="configure__form-price">7 000 000 руб.</span>
                         </div>
-                        <button class="configure__form-button button button--light">
-                            <span>Отправить заявку</span>
+                        <button class="configure__form-button button--light">
+                            Отправить заявку
                             <svg>
                                 <use xlink:href="#message-icon"></use>
                             </svg>
@@ -371,7 +373,7 @@
                             <ul class="configure__chosen-equipments">
                                 <li class="configure__chosen-equipment-wrapper">
                                     <div class="configure__chosen-equipment">
-                                        <span class="configure__chosen-equipment-text"</span>
+                                        <span class="configure__chosen-equipment-text"></span>
                                         <button class="configure__chosen-equipment-delete">
                                             <svg>
                                                 <use xlink:href="#plus-icon"></use>
@@ -381,7 +383,7 @@
                                 </li>
                                 <li class="configure__chosen-equipment-wrapper">
                                     <div class="configure__chosen-equipment">
-                                        <span class="configure__chosen-equipment-text"</span>
+                                        <span class="configure__chosen-equipment-text"></span>
                                         <button class="configure__chosen-equipment-delete">
                                             <svg>
                                                 <use xlink:href="#plus-icon"></use>
@@ -461,8 +463,8 @@
                             <span class="configure__form-price-description">Стоимость выбранной конфигурации от</span>
                             <span class="configure__form-price">7 000 000 руб.</span>
                         </div>
-                        <button class="configure__form-button button button--light">
-                            <span>Отправить заявку</span>
+                        <button class="configure__form-button button--light">
+                            Отправить заявку
                             <svg>
                                 <use xlink:href="#message-icon"></use>
                             </svg>
@@ -760,15 +762,15 @@
                 <div class="expert__expert-title">
                     <h3>получите консультацию нашего эксперта</h3>
                 </div>
-                <form id="form" data-parsley-validate="">
+                <form id="form" data-need-validation>
                     <div class="expert__item">
-                        <input type="text" required id="name" data-need-validation><label for="name">Ваше имя</label>
+                        <input type="text" required id="name" data-parsley ><label for="name">Ваше имя</label>
                     </div>
                     <div class="expert__item">
-                        <input class="phone" required id="phone" type="tel" data-need-validation="phone"><label for="name">ваш
+                        <input class="phone" required id="phone" type="tel" data-parsley-phone ><label for="phone">ваш
                             телефон</label>
                     </div>
-                    <button type="submit"><span>Отправить</span>
+                    <button type="submit" class="button--light">Отправить
                         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
                                 d="M17.469 31.1833L35.7807 21.4633C36.9624 20.8366 36.9624 19.15 35.7807 18.5216L17.4957 8.81665C16.1157 8.08331 14.569 9.46665 15.154 10.91L18.8024 19.91L15.124 29.0933C14.5474 30.5383 16.0924 31.9133 17.469 31.1833Z"
@@ -795,7 +797,6 @@
 </section>
 <section class="gallery">
     <div class="wide-container">
-
         <div class="gallery__wrapper">
             <h2>Медиагалерея</h2>
             <div class="gallery__wrapper-items ">
@@ -820,7 +821,7 @@
                     <img src="./img/img6.webp" alt="" />
                 </div>
                 <div class="gallery__wrapper-item gallery__wrapper-item--link ">
-                    <a href="">
+                    <a href="#">
                         <img src="./img/img7.png" alt="" />
                         <div class="gallery__wrapper-item-text">
                             <p>Перейти в медиагалерею</p>
@@ -852,7 +853,7 @@
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
-                <a class="gallery__wrapper-items--mobile-btn" href="">Перейти в медиагалерею</a>
+                <a class="gallery__wrapper-items--mobile-btn button--light" href="">Перейти в медиагалерею</a>
             </div>
         </div>
 </section>
@@ -1932,12 +1933,12 @@
                         
                     </div>
                     <div class="characters__buttons-container">
-                        <button class="characters__button">
-                            <span>Консультация эксперта</span>
+                        <button data-src="#consultant" data-fancybox  class="characters__button button">
+                            Консультация эксперта
                             <img src="img/image.png" alt="">
                         </button>
-                        <button class="characters__button second">
-                            <span>Консультация эксперта</span>
+                        <button data-src="#document" data-fancybox class="characters__button second button--light">
+                           Тех. документация
                             <img src="img/document.png" alt="">
                         </button>
                     </div>
@@ -1950,13 +1951,11 @@
 <section class="reviews">
     <div class="wide-container">
         <div class="reviews__inner">
-          
             <h2>Отзывы клиентов</h2>
             <div class="swiper__nav">
             <button class="swiper-button-prev">
             </button>
             <button class="swiper-button-next">
-          
                 </button>
             </div>
             <div class="reviews__inner-slider swiper">
@@ -1984,7 +1983,9 @@
                         г. Казань</span>
                 </div>
                 <div class="reviews__inner_item swiper-slide autoheight">
+                    <a data-fancybox="gallery" href="./img/cover.png">
                    <img src="./img/cover.png"class="reviews__inner_item-img" alt="">
+                   </a>
                   
                     <div class="reviews__inner_item-title">Очень вместительная и производительная модель!</div>
                     <p>Подбирали модель для заливки на открытых катках, к нашему удивлению эта машина способна обрабатывать по 30 катков в день. Думаю это не предел, будем бить рекорды!</p>
@@ -2020,7 +2021,7 @@
                 <span class="order__inner-main-text">
                     Оставляйте заявку на любую комлпектацию модели через сайт или по номеру телефона
                 </span>
-                <button class="order__inner-main-btn">Быстрая заявка
+                <button data-src="#order" data-fancybox class="order__inner-main-btn button--light">Быстрая заявка
                     <div class="order__inner-main-icon"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M35 26.6751V8.33341C35 7.41341 34.2533 6.66675 33.3333 6.66675H6.66667C5.74667 6.66675 5 7.41341 5 8.33341V33.3334L14.8483 28.4334L33.3417 28.3417C34.2583 28.3367 35 27.5917 35 26.6751Z" stroke="#1B74E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M11.666 12.7058H27.666" stroke="#1B74E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -2262,7 +2263,7 @@
                         </div>
                     </div>
                     <div class="all__three__elements">
-                        <button><span>Подробнее о сервисе</span>
+                        <button class="button">Подробнее о сервисе
                         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M19.9957 13.3332C19.7657 13.3332 19.5791 13.5198 19.5807 13.7498C19.5807 13.9798 19.7674 14.1665 19.9974 14.1665C20.2274 14.1665 20.4141 13.9798 20.4141 13.7498C20.4141 13.5198 20.2274 13.3332 19.9957 13.3332" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M20 35V35C11.715 35 5 28.285 5 20V20C5 11.715 11.715 5 20 5V5C28.285 5 35 11.715 35 20V20C35 28.285 28.285 35 20 35Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -2293,15 +2294,23 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <img class="" src="./img/sl_lip.png" alt="">
-                        <button class="swiper-button-next"></button>
-                        <button class="swiper-button-prev"></button>
+                   
                     </div>
                       <div class="swiper-slide video">
-                       <a href="" class=""> <img class="" src="./img/sl_lip2.png" alt="">
-                        <button class="swiper-button-next"></button>
-                        <button class="swiper-button-prev"></button></a>
+                       <a data-fancybox href="https://www.youtube.com/watch?v=_sI_Ps7JSEk" class=""> <img class="" src="./img/sl_lip2.png" alt="">
+                       <div class="video__icon">
+                      <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="50" cy="50" r="50" fill="#1B74E3"/>
+<path d="M65.1641 49.1341C65.8307 49.519 65.8307 50.4813 65.1641 50.8662L43.1641 63.5679C42.4974 63.9528 41.6641 63.4717 41.6641 62.7019L41.6641 37.2985C41.6641 36.5287 42.4974 36.0475 43.1641 36.4324L65.1641 49.1341Z" fill="white"/>
+</svg>
+
+Видео о заводе
+                       </div>
+                       </a>
                     </div>
-                </div>                           
+                </div>   
+                <button class="swiper-button-next"></button>
+                <button class="swiper-button-prev"></button>                        
             </div>
                    <div class="swiper-pagination"></div>
         </div>
@@ -2321,9 +2330,9 @@
                
                 <div class="plant__inner_thanks swiper">
                     <div class="swiper-wrapper">
-                    <img class="swiper-slide" src="./img/th.png" alt="">
-                    <img class="swiper-slide" src="./img/th.png" alt="">
-                    <img class="swiper-slide" src="./img/th.png" alt="">
+                    <img data-fancybox class="swiper-slide" src="./img/th.png" alt="">
+                    <img data-fancybox class="swiper-slide" src="./img/th.png" alt="">
+                    <img data-fancybox class="swiper-slide" src="./img/th.png" alt="">
                 </div>
                         
              <div class="swiper__nav">
@@ -2331,7 +2340,7 @@
                 <button class="swiper-button-prev"></button></div>
                 </div>
                 </div>
-                <button>посетить завод
+                <button data-src="#order" data-fancybox class="button">посетить завод
                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M5.19625 20.7785C4.93458 20.2935 4.93458 19.7052 5.19625 19.2202C8.34958 13.3885 14.1746 8.3335 19.9996 8.3335C25.8246 8.3335 31.6496 13.3885 34.8029 19.2218C35.0646 19.7068 35.0646 20.2952 34.8029 20.7802C31.6496 26.6118 25.8246 31.6668 19.9996 31.6668C14.1746 31.6668 8.34958 26.6118 5.19625 20.7785Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M23.5355 16.4645C25.4881 18.4171 25.4881 21.5829 23.5355 23.5355C21.5829 25.4881 18.4171 25.4881 16.4645 23.5355C14.5118 21.5829 14.5118 18.4171 16.4645 16.4645C18.4171 14.5118 21.5829 14.5118 23.5355 16.4645" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -2408,14 +2417,14 @@
                     </div>
                     <div class="callback__content-container__second-callback">
                         <p>Закажите звонок</p>
-                        <form action="">
+                        <form action=""data-need-validation>
                             <div class="callback__item">
-                                <input required type="text" id="name1"><label for="name1">Ваше имя</label>
+                                <input required type="text" id="name1" data-parsley><label for="name1">Ваше имя</label>
                             </div>
                             <div class="callback__item">
-                                <input required type="tel" id="name2"><label for="name2">ваш телефон</label>
+                                <input required type="tel" id="name2"data-parsley-phone><label for="name2">ваш телефон</label>
                             </div>
-                            <button type="submit"><span>Отправить</span>
+                            <button type="submit" class="button--light">Отправить
                                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -2452,5 +2461,135 @@
         </div>
     </div>
 </section>
+<div id="consultant" style="display: none; width: 500px;" class="popup ct">
+    <div class="form form-style-1 hideLabels">
+        <div class="form-header">
+            <div class="form-head animate-top">
+                Получите консультацию
+                нашего эксперта
+            </div>
+            <div class="form-desk animate-top">
+                Заполните форму и наш эксперт
+                свяжется с вами в ближайшее время </div>
+        </div>
+
+        <form id="form" data-need-validation>
+            <div class="expert__item">
+                <input type="text" required id="name5" data-parsley><label for="name">Ваше имя</label>
+            </div>
+            <div class="expert__item">
+                <input class="phone" required id="phone5" type="tel" data-parsley-phone><label for="name">ваш
+                    телефон</label>
+            </div>
+            <button class="button" type="submit">Отправить
+                <svg width="36" height="26" viewBox="0 0 36 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M15.469 24.1833L33.7807 14.4633C34.9624 13.8366 34.9624 12.15 33.7807 11.5216L15.4957 1.81665C14.1157 1.08331 12.569 2.46665 13.154 3.90998L16.8024 12.91L13.124 22.0933C12.5474 23.5383 14.0924 24.9133 15.469 24.1833Z"
+                        stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M16.8047 12.9167L34.6714 13" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M4.67188 17.9998H7.33854" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M3 12.9998H7.33333" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M1.33594 7.99984H7.33594" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+
+            </button>
+        </form>
+        <div class="expert__agree">
+                    <div class="expert__agree-star">*</div>
+                    <div class="expert__agree-text">Нажимая кнопку «Отправить» вы соглашаетесь с политикой
+                        конфиденциальности</div>
+                </div>
+    </div>
+</div>
+<div id="document" style="display: none; width: 500px;" class="popup ct">
+    <div class="form form-style-1 hideLabels">
+        <div class="form-header">
+            <div class="form-head animate-top">
+                Оставьте заявку на тех. документацию
+            </div>
+            <div class="form-desk animate-top">
+                Заполните форму и наш эксперт
+                свяжется с вами в ближайшее время </div>
+        </div>
+
+        <form id="form" data-need-validation>
+            <div class="expert__item">
+                <input type="text" required id="name4" data-parsley><label for="name">Ваше имя</label>
+            </div>
+            <div class="expert__item">
+                <input class="phone" required id="phone4" type="tel" data-parsley-phone><label for="name">ваш
+                    телефон</label>
+            </div>
+            <button class="button" type="submit">Отправить
+                <svg width="36" height="26" viewBox="0 0 36 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M15.469 24.1833L33.7807 14.4633C34.9624 13.8366 34.9624 12.15 33.7807 11.5216L15.4957 1.81665C14.1157 1.08331 12.569 2.46665 13.154 3.90998L16.8024 12.91L13.124 22.0933C12.5474 23.5383 14.0924 24.9133 15.469 24.1833Z"
+                        stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M16.8047 12.9167L34.6714 13" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M4.67188 17.9998H7.33854" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M3 12.9998H7.33333" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M1.33594 7.99984H7.33594" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+
+            </button>
+        </form>
+        <div class="expert__agree">
+                    <div class="expert__agree-star">*</div>
+                    <div class="expert__agree-text">Нажимая кнопку «Отправить» вы соглашаетесь с политикой
+                        конфиденциальности</div>
+                </div>
+    </div>
+</div>
+<div id="order" style="display: none; width: 500px;" class="popup ct">
+    <div class="form form-style-1 hideLabels">
+        <div class="form-header">
+            <div class="form-head animate-top">
+                Оставьте заявку на модель           
+                 </div>
+            <div class="form-desk animate-top">
+                Заполните форму и наш эксперт
+                свяжется с вами в ближайшее время </div>
+        </div>
+
+        <form id="form" data-need-validation>
+            <div class="expert__item">
+                <input type="text" required id="name3" data-parsley><label for="name">Ваше имя</label>
+            </div>
+            <div class="expert__item">
+                <input class="phone" required id="phone3" type="tel" data-parsley-phone><label for="name">ваш
+                    телефон</label>
+            </div>
+            <button class="button" type="submit">Отправить
+                <svg width="36" height="26" viewBox="0 0 36 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M15.469 24.1833L33.7807 14.4633C34.9624 13.8366 34.9624 12.15 33.7807 11.5216L15.4957 1.81665C14.1157 1.08331 12.569 2.46665 13.154 3.90998L16.8024 12.91L13.124 22.0933C12.5474 23.5383 14.0924 24.9133 15.469 24.1833Z"
+                        stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M16.8047 12.9167L34.6714 13" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M4.67188 17.9998H7.33854" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M3 12.9998H7.33333" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M1.33594 7.99984H7.33594" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+
+            </button>
+        </form>
+        <div class="expert__agree">
+                    <div class="expert__agree-star">*</div>
+                    <div class="expert__agree-text">Нажимая кнопку «Отправить» вы соглашаетесь с политикой
+                        конфиденциальности</div>
+                </div>
+    </div>
+</div>
 {{/content}}
 {{/extend}}

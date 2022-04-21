@@ -54,13 +54,14 @@
         display: flex;
         gap: 1rem;
         padding-top: 2.5rem;
+        align-items: flex-start;
 
         @media (max-width: 800px) {
             flex-wrap: wrap;
         }
 
         @media (max-width: 560px) {
-            gap: 0.6rem;
+            gap: 2rem;
         }
     }
 
@@ -73,9 +74,11 @@
         width: 24rem;
         font-size: 2.5rem;
         height: 8rem;
+        @media (max-width: 1023px) {
+            width: 100%;
+        }
 
         @media (max-width: 560px) {
-            width: 100%;
             height: 6rem;
             border-radius: 5px;
         }
@@ -87,22 +90,29 @@
         top: -6px;
         background-color: #4b88db;
         padding: 0 3px;
+        left: 2.5rem;
+        transform: translateY(0%);
     }
 
-    input:required+label {
+    input:required + label {
+        transition: all 0.3s ease;
         font-size: 1.6rem;
         font-weight: 700;
         top: -6px;
         background-color: #4b88db;
         padding: 0 3px;
+        left: 2.5rem;
+        transform: translateY(0%);
     }
 
-    input:invalid+label {
+    input:invalid + label {
+        transition: all 0.3s ease;
         font: var(--body-XL);
         color: #fff;
         position: absolute;
         left: 2.5rem;
-        top: 28px;
+        top: 50%;
+        transform: translateY(-50%);
     }
 
     // &__item input:focus + label {
@@ -111,7 +121,6 @@
     // }
 
     // .hideLabels label.label-none, .hideLabels label.label-none, .hideLabels .form-control:focus + label
-
 
     &__item {
         position: relative;
@@ -142,7 +151,7 @@
 
     &__container-form form button {
         border: 1px solid #fff;
-        padding: 1.875rem 2.5rem 1.875rem 2.5rem;
+        padding: 2.075rem 2.5rem 1.875rem 2.5rem;
         border-radius: 10px;
         color: #1b74e3;
         font: var(--body-XL);

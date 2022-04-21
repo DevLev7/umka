@@ -62,6 +62,7 @@
     }
 
     &__container svg {
+        transition: opacity 0.5s linear;
         @media (max-width: 1570px) {
             flex: 0 0 56%;
             padding-left: 1rem;
@@ -83,36 +84,37 @@
     }
 
     &__container svg g rect {
-        display: none;
-     }
+        transition: opacity 0.5s linear;
+        opacity: 0;
+    }
 
-     &__container svg g path:nth-of-type(3){
-        display: none;
-     }
+    &__container svg g path:nth-of-type(3) {
+        transition: opacity 0.5s linear;
+        opacity: 0;
+    }
 
     &__container svg g:hover rect {
-       display: block;
+        opacity: 1;
     }
 
     &__container svg g:hover circle:nth-child(even) {
         fill: #fff;
-        
     }
 
     &__container svg g path:nth-of-type(2) {
-        display: none;
+        transition: opacity 0.5s linear;
+        opacity: 0;
     }
 
-
     &__container svg g:hover path:nth-of-type(1) {
-        display: none;
+        opacity: 0;
     }
 
     &__container svg g:hover path:nth-of-type(2) {
-        display: block;
+        opacity: 1;
     }
     &__container svg g:hover path:nth-of-type(3) {
-        display: block;
+        opacity: 1;
     }
 
     &__container {
@@ -186,15 +188,11 @@
     }
 
     &__three__elements button {
-        background-color: #1b74e3;
-        font: var(--body-XL);
-        border-radius: 1rem;
-        color: #fff;
-        align-self: center;
-        padding: 3rem 3rem 3rem 2.5rem;
+        // padding: 3rem 3rem 3rem 2.5rem;
         width: 43.5rem;
         justify-content: space-between;
-        align-items: center;
+        padding-top: 2.2rem;
+
         @media (max-width: 1340px) {
             width: unset;
             max-width: 40rem;
@@ -202,14 +200,13 @@
         @media (max-width: 1250px) {
             width: 100%;
         }
-        @media (max-width: 1250px) {
-            width: 100%;
-        }
+
         @media (max-width: 500px) {
             width: unset;
             flex: unset;
             width: 100%;
             max-width: unset;
+            padding: 2.2rem 2.5rem;
         }
     }
 
@@ -223,7 +220,7 @@
         bottom: 1rem;
         opacity: 0.5;
         z-index: 0;
-        transition: all 0.5s ease-in-out;
+        transition: opacity 0.5s linear;
         border-radius: 1rem;
         @media (max-width: 1570px) {
             margin-left: auto;
@@ -267,7 +264,7 @@
         bottom: 0;
         opacity: 1;
         z-index: 10;
-        transition: all 0.5s ease-in-out;
+        transition: opacity 0.5s linear;
         border-radius: 1rem;
         @media (max-width: 1250px) {
             padding-top: 4rem;
@@ -285,7 +282,6 @@
         }
     }
 
-   
     & .swiper {
         padding-bottom: 5rem;
         width: 100%;

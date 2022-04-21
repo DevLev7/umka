@@ -49,16 +49,13 @@
     align-items: center;
     justify-content: space-between;
     padding: 2.5rem;
-
     background-color: var(--accent-primary);
     border: 1px solid var(--accent-primary);
     border-radius: 1rem;
     cursor: pointer;
-
     font: var(--body-XL);
     text-transform: uppercase;
     color: #fff;
-
     transition: 0.3s;
 
     &:hover {
@@ -79,21 +76,27 @@
     &--light {
         background-color: #fff;
         border-color: #fff;
-
+        border-radius: 1rem;
+        font: var(--body-XL);
         color: var(--accent-primary);
-
+        padding: 2rem 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
         &:hover {
             background-color: #fff;
             border-color: #fff;
-
             color: var(--accent-primary-hover);
+        }
+        &:hover svg {
+            stroke: var(--accent-primary-hover);
         }
     }
 }
 
 .button-ellipse {
     padding: 1.8rem 3.5rem;
-
     border: 1.5px solid #fff;
     border-radius: 99.9rem;
 
@@ -110,5 +113,33 @@
 }
 
 .text-container {
+}
+.parsley-errors-list li {
+    background-color: var(--accent-secondary);
+    padding: 0.5rem 1rem;
+    border-radius: 0px 0px 10px 10px;
+    margin-top: -1rem;
+    color: #fff;
+    z-index: 1000;
+    position: relative;
+}
+.parsley-error {
+    border: 1px solid var(--accent-secondary) !important;
+}
+.parsley-error:focus ~ label,
+.parsley-error:not(:focus):valid ~ label {
+    font-size: 1.6rem;
+    font-weight: 700;
+    top: -6px;
+    background-color: #4b88db;
+    padding: 0 3px;
+    left: 2.5rem;
+}
 
+.parsley-errors-list {
+    margin-bottom: 0;
+}
+
+a:hover {
+    color: #EFF6FF;
 }

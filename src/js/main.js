@@ -22,7 +22,8 @@ import fraturesSwiper from './build-in/fraturesSwiper';
 import timer from './build-in/timer';
 import ChooseConfigure from './build-in/chooseConfigure.js'
 
-// import validation from './build-in/validation';
+import validation from './build-in/validation';
+import fancybox from './build-in/fancybox';
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -46,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
     intro();
     moreButon();
     editableTextContainer();
-    // validation();
+    validation();
     swipercharacters();
     tabs();
     mapswiper();
@@ -57,6 +58,8 @@ document.addEventListener('DOMContentLoaded', function () {
     fraturesSwiper();
     timer();
     ChooseConfigure()
+    // fancybox();
+
 });
 
 document.addEventListener('lazyloaded', () => {

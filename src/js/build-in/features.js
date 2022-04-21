@@ -4,8 +4,7 @@ export default function features() {
     // let test = document.querySelector('.all__container');
 
     for (let i = 0; i < point.children.length; i++) {
-        console.log(point.children[i].querySelector('.features__item-title'));
-        point.children[i].querySelector('.features__item-title').addEventListener('mouseover', function (event) {
+        point.children[i].querySelector('.features__item').addEventListener('mouseover', function (event) {
             getImage();
         });
     }

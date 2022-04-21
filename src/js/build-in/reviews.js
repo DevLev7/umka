@@ -9,20 +9,17 @@ export default function reviews() {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
+        pagination: {
+            el: '.reviews__inner-slider .swiper-pagination',
+        },
         breakpoints: {
             1440: {
                 slidesPerView: 3.7,
                 spaceBetween: 40,
-                pagination: {
-                    el: '.reviews .swiper-pagination',
-                },
             },
             1210: {
                 slidesPerView: 3.2,
                 spaceBetween: 55,
-                pagination: {
-                    el: '.reviews .swiper-pagination',
-                },
             },
             769: {
                 slidesPerView: 2.3,
@@ -30,7 +27,7 @@ export default function reviews() {
             },
             320: {
                 slidesPerView: 1.2,
-                spaceBetween: 20,
+                spaceBetween: 40,
             },
             490: {
                 slidesPerView: 2,

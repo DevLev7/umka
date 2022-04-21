@@ -75,6 +75,9 @@
             font-size: calc(18px + (30 - 18) * (100vw - 360px) / (1920 - 535));
             line-height: 1.1;
         }
+        li:hover a {
+            color: var(--accent-primary-hover);
+        }
     }
     &-contacts {
         display: flex;
@@ -101,7 +104,9 @@
         flex-direction: column;
         gap: 1.87rem;
     }
-
+    &-download:hover {
+        color: var(--accent-primary-hover);
+    }
     &-download {
         display: flex;
         align-items: center;
@@ -109,6 +114,7 @@
         column-gap: 5px;
         font-size: 1.4rem;
         font-weight: 600;
+        cursor: pointer;
     }
     &-icon {
     }
@@ -116,6 +122,7 @@
         display: flex;
         column-gap: 0.93rem;
         color: var(--accent-primary);
+        cursor: pointer;
         @media (max-width: 533px) {
             padding: 0.7rem 0;
             background: #f0f4fe;

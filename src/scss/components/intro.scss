@@ -135,7 +135,7 @@
         }
 
         @media (max-width: 500px) {
-            max-width: 30rem;
+            max-width: 28rem;
         }
 
         @media (max-width: 340px) {
@@ -225,5 +225,8 @@
             width: 7.6rem;
             height: 8.3rem;
         }
+    }
+    .button {
+        padding-top: 2.7rem;
     }
 }

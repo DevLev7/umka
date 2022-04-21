@@ -8,6 +8,7 @@ export default function plants() {
             reverseDirection: true,
             spaceBetween: 35,
             initialSlide: 1,
+            speed: 700,
             navigation: {
                 nextEl: '.plant__inner_slider .swiper-button-next',
                 prevEl: '.plant__inner_slider .swiper-button-prev',
@@ -40,6 +41,7 @@ export default function plants() {
             grabCursor: true,
             centeredSlides: true,
             loop: true,
+             speed: 700,
             slidesPerView: 1.5,
             coverflowEffect: {
                 rotate: -2,
@@ -66,6 +68,7 @@ export default function plants() {
         grabCursor: true,
         centeredSlides: true,
         loop: true,
+         speed: 700,
         slidesPerView: 1.5,
         coverflowEffect: {
             rotate: -2,
