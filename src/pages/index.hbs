@@ -245,26 +245,26 @@
             <div class="configure__text-column">
                 <ul class="configure__tabs">
                     <li class="configure__tab-wrapper">
-                        <div class="configure__tab active">
-                            <div class="configure__tab-upperline tab-content_show"></div>
-                            <span class="configure__tab-text tab-header_show">На базе уаз</span>
+                        <div data-carName="uaz" class="configure__tab active">
+                            <div class="configure__tab-upperline"></div>
+                            <span class="configure__tab-text">На базе уаз</span>
                         </div>
                     </li>
                     <li class="configure__tab-wrapper">
-                        <div class="configure__tab">
+                        <div data-carName="isuzu" class="configure__tab">
                             <div class="configure__tab-upperline"></div>
                             <span class="configure__tab-text">На базе isuzu</span>
                         </div>
                     </li>
                 </ul>
-                <form class="configure__form tab-content_show">
+                <form data-config="configUaz" class="configure__form tab-content_show">
                     <div class="configure__form-fields">
                         <fieldset class="configure__form-group configure__form-group-chosen">
                             <h3 class="configure__form-group-title">Выбранное оборудование</h3>
                             <ul class="configure__chosen-equipments">
                                 <li class="configure__chosen-equipment-wrapper">
                                     <div class="configure__chosen-equipment">
-                                        <span class="configure__chosen-equipment-text">Навеска</span>
+                                        <span class="configure__chosen-equipment-text"></span>
                                         <button class="configure__chosen-equipment-delete">
                                             <svg>
                                                 <use xlink:href="#plus-icon"></use>
@@ -274,7 +274,7 @@
                                 </li>
                                 <li class="configure__chosen-equipment-wrapper">
                                     <div class="configure__chosen-equipment">
-                                        <span class="configure__chosen-equipment-text">Отвал коммунальный</span>
+                                        <span class="configure__chosen-equipment-text"></span>
                                         <button class="configure__chosen-equipment-delete">
                                             <svg>
                                                 <use xlink:href="#plus-icon"></use>
@@ -283,10 +283,12 @@
                                     </div>
                                 </li>
                                 <li class="configure__chosen-equipment-wrapper">
-                                    <button class="configure__chosen-equipment-more">
-                                        еще 
-                                        <span class="configure__chosen-equipment-counter"> 3</span>
-                                    </button>
+                                    <div class="configure__chosen-equipment-more-wrapper">
+                                        <button class="configure__chosen-equipment-more">
+                                            еще 
+                                            <span class="configure__chosen-equipment-counter"> 0</span>
+                                        </button>
+                                    </div>
                                 </li>
                             </ul>
                         </fieldset>
@@ -303,13 +305,13 @@
                                 <ul class="configure__form-group-list">
                                     {{#each equipment }}
                                     <li class="configure__form-group-item">
-                                        <input id="equipment{{@key}}" data-price="{{this.price}}" class="configure__form-checkbox" type="checkbox">
+                                        <input id="equipmentUaz{{@key}}" data-price="{{this.price}}" class="configure__form-checkbox" type="checkbox">
                                         <div class="configure__form-checkboxCustom">
                                             <svg>
                                                 <use xlink:href="#checked"></use>
                                             </svg>
                                         </div>
-                                        <label for="equipment{{@key}}">
+                                        <label for="equipmentUaz{{@key}}">
                                             <div class="configure__form-text">
                                                 <p>{{this.title}}</p>
                                             </div>
@@ -332,13 +334,13 @@
                                 <ul class="configure__form-group-list">
                                     {{#each additionalOptions }}
                                     <li class="configure__form-group-item">
-                                        <input id="additionalOptions{{@key}}" data-price="{{this.price}}" class="configure__form-checkbox" type="checkbox">
+                                        <input id="additionalOptionsUaz{{@key}}" data-price="{{this.price}}" class="configure__form-checkbox" type="checkbox">
                                         <div class="configure__form-checkboxCustom">
                                             <svg>
                                                 <use xlink:href="#checked"></use>
                                             </svg>
                                         </div>
-                                        <label for="additionalOptions{{@key}}">
+                                        <label for="additionalOptionsUaz{{@key}}">
                                             <div class="configure__form-text">
                                                 <p>{{this.title}}</p>
                                             </div>
@@ -362,14 +364,14 @@
                         </button>
                     </div>
                 </form>
-                 <form class="configure__form">
+                 <form data-config="configIsuzu" class="configure__form">
                     <div class="configure__form-fields">
                         <fieldset class="configure__form-group configure__form-group-chosen">
                             <h3 class="configure__form-group-title">Выбранное оборудование</h3>
                             <ul class="configure__chosen-equipments">
                                 <li class="configure__chosen-equipment-wrapper">
                                     <div class="configure__chosen-equipment">
-                                        <span class="configure__chosen-equipment-text">Навеска</span>
+                                        <span class="configure__chosen-equipment-text"</span>
                                         <button class="configure__chosen-equipment-delete">
                                             <svg>
                                                 <use xlink:href="#plus-icon"></use>
@@ -379,7 +381,7 @@
                                 </li>
                                 <li class="configure__chosen-equipment-wrapper">
                                     <div class="configure__chosen-equipment">
-                                        <span class="configure__chosen-equipment-text">Отвал коммунальный</span>
+                                        <span class="configure__chosen-equipment-text"</span>
                                         <button class="configure__chosen-equipment-delete">
                                             <svg>
                                                 <use xlink:href="#plus-icon"></use>
@@ -389,35 +391,68 @@
                                 </li>
                                 <li class="configure__chosen-equipment-wrapper">
                                     <button class="configure__chosen-equipment-more">
-                                        еще 3
+                                        еще 
+                                        <span class="configure__chosen-equipment-counter"></span>
                                     </button>
                                 </li>
                             </ul>
                         </fieldset>
                         <fieldset data-choise="equipment" class="configure__form-group">
                             <div class="configure__form-group-header">
-                                <h3 class="configure__form-group-title">Выбрать оборудование тест</h3>
+                                <h3 class="configure__form-group-title">Выбрать оборудование</h3>
                                 <button class="configure__form-group-button">
                                     <svg>
                                         <use xlink:href="#plus-icon"></use>
                                     </svg>
                                 </button>
                             </div>
-                            <div data-config="equipment" class="configure__form-group-body">
-
+                            <div class="configure__form-group-body">
+                                <ul class="configure__form-group-list">
+                                    {{#each equipment }}
+                                    <li class="configure__form-group-item">
+                                        <input id="equipmentIsuzu{{@key}}" data-price="{{this.price}}" class="configure__form-checkbox" type="checkbox">
+                                        <div class="configure__form-checkboxCustom">
+                                            <svg>
+                                                <use xlink:href="#checked"></use>
+                                            </svg>
+                                        </div>
+                                        <label for="equipmentIsuzu{{@key}}">
+                                            <div class="configure__form-text">
+                                                <p>{{this.title}}</p>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    {{/each}}
+                                </ul>
                             </div>
                         </fieldset>
                         <fieldset data-choise="equipment" class="configure__form-group">
                             <div class="configure__form-group-header">
-                                <h3 class="configure__form-group-title">Выбрать дополнительные опции тест</h3>
+                                <h3 class="configure__form-group-title">Выбрать дополнительные опции</h3>
                                 <button class="configure__form-group-button">
                                     <svg>
                                         <use xlink:href="#plus-icon"></use>
                                     </svg>
                                 </button>
                             </div>
-                            <div data-config="additionalOptions" class="configure__form-group-body">
-
+                            <div class="configure__form-group-body additionalOptions">
+                                <ul class="configure__form-group-list">
+                                    {{#each additionalOptions }}
+                                    <li class="configure__form-group-item">
+                                        <input id="additionalOptionsIsuzu{{@key}}" data-price="{{this.price}}" class="configure__form-checkbox" type="checkbox">
+                                        <div class="configure__form-checkboxCustom">
+                                            <svg>
+                                                <use xlink:href="#checked"></use>
+                                            </svg>
+                                        </div>
+                                        <label for="additionalOptionsIsuzu{{@key}}">
+                                            <div class="configure__form-text">
+                                                <p>{{this.title}}</p>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    {{/each}}
+                                </ul>
                             </div>
                         </fieldset>
                     </div>

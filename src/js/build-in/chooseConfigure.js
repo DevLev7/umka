@@ -1,38 +1,129 @@
 export default function ChooseConfigure() {
-    let   equipments         = document.querySelectorAll('[data-choise="equipment"]'),      
-          additionalOptions  = document.querySelector('[data-config="additionalOptions"]'),
-          chosenEquipment    = document.querySelectorAll('.configure__chosen-equipment-wrapper'),
-          counterOfEquipment = document.querySelector('.configure__chosen-equipment-counter'),
-          totalPrice         = document.querySelector('.configure__form-price'),
-          addEquipmentBtns   = document.querySelectorAll('.configure__form-group-button'),
-          checkBox           = document.querySelectorAll('.configure__form-checkbox')
+    let   equipments              = document.querySelectorAll('[data-choise="equipment"]'),      
+          additionalOptions       = document.querySelector('[data-config="additionalOptions"]'),
+          chosenEquipment         = document.querySelectorAll('.configure__chosen-equipment-wrapper'),
+          counterOfEquipment      = document.querySelector('.configure__chosen-equipment-counter'),
+          totalPrice              = document.querySelectorAll('.configure__form-price'),
+          checkBox                = document.querySelectorAll('.configure__form-checkbox'),
+          choiceOfCar             = document.querySelectorAll('.configure__tab '),
+          configOfUaz             = document.querySelector('[data-config="configUaz"]'),
+          configOfIsuzu           = document.querySelector('[data-config="configIsuzu"]'),
+          totalPriceUaz           = configOfUaz.querySelector('.configure__form-price'),
+          totalPriceIsuzu         = configOfIsuzu .querySelector('.configure__form-price'),
+          counterOfEquipmentUaz   = configOfUaz.querySelector('.configure__chosen-equipment-counter'),
+          counterOfEquipmentIsuzu = configOfIsuzu.querySelector('.configure__chosen-equipment-counter'),
+          chosenEquipmentUaz      = configOfUaz.querySelectorAll('.configure__chosen-equipment-wrapper'),
+          chosenEquipmentIsuzu    = configOfUaz.querySelectorAll('.configure__chosen-equipment-wrapper')
           
-    function addOrDeleteEquipment(price, sign, elementOfSVG) {
-        let sum             = parseInt(totalPrice.innerText.slice(0, totalPrice.innerText.length - 4).split(' ').join('')),
-            countOEquipment = parseInt(counterOfEquipment.innerText)
+    
+    const arrOfUaz   = [],
+          arrOfIsuzu = []
+    
+    // Табы
+    function showOrHideConfig(show, hide) {
+        show.classList.add('tab-content_show')
+        hide.classList.remove('tab-content_show')
+        equipments.forEach(equipment => {
+            if(equipment.classList.contains('active')){
+              equipment.classList.remove('active')
+            }
+        })
+    }
+    
+    for (let button of choiceOfCar) {
+        button.addEventListener('click', function () {
+            choiceOfCar.forEach(btn => btn.classList.remove('active'));
+            this.classList.toggle('active');
+            this.getAttribute('data-carName') === 'isuzu' ? showOrHideConfig(configOfIsuzu, configOfUaz) : showOrHideConfig(configOfUaz, configOfIsuzu)
+        });
+    }
+    // Табы
+
+    function addInChosen(chosenConfig, arrOfConfig, counter, sign, deleteConfigName) {
+        if(arrOfConfig.length <= 1){
+            chosenConfig[0].querySelector('.configure__chosen-equipment-text').innerText = arrOfConfig[0]
+            chosenConfig[0].classList.add('active')
+        }else if(arrOfConfig.length > 1 && arrOfConfig.length <= 2) {
+            for(let i = 0; i <= arrOfConfig.length; i++) {
+                chosenConfig[1].classList.add('active')
+                chosenConfig[1].querySelector('.configure__chosen-equipment-text').innerText = arrOfConfig[1]
+            }
+        }else {
+            let countOEquipment = parseInt(counter.innerText)
+            countOEquipment = arrOfConfig.length - 2
+            counter.innerText = countOEquipment
+            if(sign === 'plus') {
+                chosenConfig[2].style.display = 'flex'
+                setTimeout(()=>{
+                    chosenConfig[2].classList.add('active')
+                },100)
+            }else {
+                let deleteIndex = arrOfConfig.indexOf(`${deleteConfigName}`);
+                arrOfConfig.splice(deleteIndex, 1)
+                countOEquipment = arrOfConfig.length - 2
+                counter.innerText = countOEquipment
+                for(let i = 0; i <= arrOfConfig.length; i++) {
+                    chosenConfig[0].querySelector('.configure__chosen-equipment-text').innerText = arrOfConfig[0]
+                    chosenConfig[1].querySelector('.configure__chosen-equipment-text').innerText = arrOfConfig[1]
+                }
+                if(arrOfConfig.length < 1) {
+                    chosenConfig[0].classList.remove('active')
+                }else if(arrOfConfig.length > 1 && arrOfConfig.length <= 2) {
+                    chosenConfig[1].classList.remove('active')
+                }else if(arrOfConfig.length > 2) {
+                    chosenConfig[2].classList.add('active')
+                }else {
+                    chosenConfig[2].style.display = 'none'
+                    chosenConfig[2].classList.remove('active')
+                }
+            }
+
+        }
+    }
+          
+    function addOrDeleteEquipment(price, sign, config, countOfConfig, selectedConfig, nameConfig, elementOfSVG) {
+        let sum = parseInt(config.innerText.slice(0, config.innerText.length - 4).split(' ').join(''))
+
         if(sign === 'plus') {
             sum += price
-            countOEquipment++
+            selectedConfig.push(nameConfig)
+            if(selectedConfig === arrOfUaz) {
+                addInChosen(chosenEquipmentUaz, arrOfUaz, countOfConfig, 'plus', nameConfig)
+            }else {
+                addInChosen(chosenEquipmentIsuzu, arrOfIsuzu, countOfConfig, 'plus', nameConfig)
+            }
+            
         }else {
             sum -= price
-            countOEquipment--
+            if(selectedConfig === arrOfUaz) {
+                addInChosen(chosenEquipmentUaz, arrOfUaz, countOfConfig, 'minus')
+            }else {
+                addInChosen(chosenEquipmentIsuzu, arrOfIsuzu, countOfConfig, 'minus')
+            }
         }
         
-        totalPrice.innerText = `${sum.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, " ")} руб`
-        counterOfEquipment.innerText = countOEquipment
+        config.innerText = `${sum.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, " ")} руб`
+    }
+
+    function plusOrMinus(element, selectedConfiguration, selectedCount, arrConfigs) {
+        let nameOfConfig = element.parentElement.querySelector('.configure__form-text p').innerText
+
+        if(!element.classList.contains('added')) {
+            element.classList.add('added')
+            addOrDeleteEquipment(parseInt(element.getAttribute('data-price')), 'plus', selectedConfiguration, selectedCount, arrConfigs, nameOfConfig)
+        }else {
+            element.classList.remove('added')
+            addOrDeleteEquipment(parseInt(element.getAttribute('data-price')), 'minus', selectedConfiguration, selectedCount, arrConfigs, nameOfConfig)
+        }
     }
 
     checkBox.forEach(item => {
         item.addEventListener('change', ()=> {
-            if(!item.classList.contains('added')){
-                item.classList.add('added')
-                addOrDeleteEquipment(parseInt(item.getAttribute('data-price')), 'plus')
-                
+            if(configOfUaz.classList.contains('tab-content_show')) {
+                plusOrMinus(item, totalPriceUaz, counterOfEquipmentUaz, arrOfUaz )
             }else {
-                item.classList.remove('added')
-                addOrDeleteEquipment(parseInt(item.getAttribute('data-price')), 'minus')
+                plusOrMinus(item, totalPriceIsuzu, counterOfEquipmentIsuzu, arrOfIsuzu )
             }
-            
         })
     })
 
