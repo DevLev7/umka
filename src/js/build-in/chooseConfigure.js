@@ -51,9 +51,12 @@ export default function ChooseConfigure() {
     function addInChosen(chosenConfig, arrOfConfig, counter, sign, deleteConfigName) {
         let deleteIndex     = arrOfConfig.indexOf(`${deleteConfigName}`),
             countOEquipment = parseInt(counter.innerText)
-        let newArray = arrOfConfig.filter(function(f) { return f !== deleteConfigName })
-        console.log(newArray);
+            console.log(deleteConfigName);
         if(sign !== 'plus') {
+            console.log(deleteConfigName);
+            let newArray = arrOfConfig.filter(function(f) { return f !== deleteConfigName })
+            console.log(deleteConfigName);
+            console.log(newArray);
             if(arrOfConfig.length <= 1) {
                 arrOfConfig.splice(deleteIndex, 1)
                 chosenConfig[0].querySelector('.configure__chosen-equipment-text').innerText = arrOfConfig[0]
