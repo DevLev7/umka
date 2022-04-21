@@ -25,35 +25,35 @@ export default function configuretabs() {
   //     });
   //   });
 
-  //   // newTab.forEach(function(tab, i) {
-  //   //   tab.addEventListener('click', function() {
-  //   //     hideTab();
-  //   //     this.classList.add('tab-header_show');
-  //   //     tabContent[i].classList.add('tab-content_show');
-  //   //     tabline[i].classList.add('tab-content_show');
-  //   //     form[i].classList.add('tab-content_show');
-  //   //     newTabline[i].classList.add('tab-content_show');
-  //   //   });
-  //   // });
+    // newTab.forEach(function(tab, i) {
+    //   tab.addEventListener('click', function() {
+    //     hideTab();
+    //     this.classList.add('tab-header_show');
+    //     tabContent[i].classList.add('tab-content_show');
+    //     tabline[i].classList.add('tab-content_show');
+    //     form[i].classList.add('tab-content_show');
+    //     newTabline[i].classList.add('tab-content_show');
+    //   });
+    // });
   
-  //   function hideTab() {
-  //     tab.forEach((item) => {
-  //       item.classList.remove('tab-header_show');
-  //     });
-  //     newTab.forEach((item) => {
-  //       item.classList.remove('tab-header_show');
-  //     });
-  //     tabContent.forEach((item) => {
-  //       item.classList.remove('tab-content_show');
-  //     });
-  //     tabline.forEach((item) => {
-  //         item.classList.remove('tab-content_show');
-  //       });
-  //     form.forEach((item) => {
-  //         item.classList.remove('tab-content_show');
-  //     });
-  //     newTabline.forEach((item) => {
-  //         item.classList.remove('tab-content_show');
-  //     });
-  //   }
+    // function hideTab() {
+    //   tab.forEach((item) => {
+    //     item.classList.remove('tab-header_show');
+    //   });
+    //   newTab.forEach((item) => {
+    //     item.classList.remove('tab-header_show');
+    //   });
+    //   tabContent.forEach((item) => {
+    //     item.classList.remove('tab-content_show');
+    //   });
+    //   tabline.forEach((item) => {
+    //       item.classList.remove('tab-content_show');
+    //     });
+    //   form.forEach((item) => {
+    //       item.classList.remove('tab-content_show');
+    //   });
+    //   newTabline.forEach((item) => {
+    //       item.classList.remove('tab-content_show');
+    //   });
+    // }
   }
