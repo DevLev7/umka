@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
     features();
     fraturesSwiper();
     timer();
-    ChooseConfigure()
+    // ChooseConfigure()
     // fancybox();
 
 });
