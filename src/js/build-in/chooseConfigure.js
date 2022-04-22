@@ -14,8 +14,9 @@ export default function ChooseConfigure() {
           counterOfEquipmentUaz   = configOfUaz.querySelector('.configure__chosen-equipment-counter'),
           counterOfEquipmentIsuzu = configOfIsuzu.querySelector('.configure__chosen-equipment-counter'),
           chosenEquipmentUaz      = configOfUaz.querySelectorAll('.configure__chosen-equipment-wrapper'),
-          chosenEquipmentIsuzu    = configOfIsuzu.querySelectorAll('.configure__chosen-equipment-wrapper')
-          
+          chosenEquipmentIsuzu    = configOfIsuzu.querySelectorAll('.configure__chosen-equipment-wrapper'),
+          deleteEquipmentUaz      = configOfUaz.querySelectorAll('.configure__chosen-equipment-delete'),
+          deleteEquipmentIsuzu    = configOfIsuzu.querySelectorAll('.configure__chosen-equipment-delete')
     
     const arrOfUaz   = [],
           arrOfIsuzu = []
@@ -48,19 +49,34 @@ export default function ChooseConfigure() {
     }
     // Табы
 
+    function showOrHideChoice(elem, show) {
+        if(show === 'show') {
+            elem.style.display = ''
+            setTimeout(() => {
+                elem.classList.add('active')
+            },100)
+        }else {
+            elem.style.display = 'none'
+            setTimeout(() => {
+                elem.classList.remove('active')
+            },100)
+        }
+    }
+
     function addInChosen(chosenConfig, arrOfConfig, counter, sign, deleteConfigName) {
         let countOEquipment = parseInt(counter.innerText)
         if(sign !== 'plus') {
             if(arrOfConfig.length < 1) {
-                chosenConfig[0].querySelector('.configure__chosen-equipment-text').innerText = arrOfConfig[0]
+                chosenConfig[0].querySelector('.configure__chosen-equipment-text').innerText = ''
                 chosenConfig[0].classList.remove('active')
             } else if (arrOfConfig.length >= 1 && arrOfConfig.length < 2) {
-                chosenConfig[1].querySelector('.configure__chosen-equipment-text').innerText = arrOfConfig[1]
-                chosenConfig[1].classList.remove('active')
+                chosenConfig[0].querySelector('.configure__chosen-equipment-text').innerText = arrOfConfig[0]
+                chosenConfig[1].querySelector('.configure__chosen-equipment-text').innerText = ''
+                showOrHideChoice(chosenConfig[1])
             } else if(arrOfConfig.length >= 2 && arrOfConfig.length < 3) {
                 chosenConfig[0].querySelector('.configure__chosen-equipment-text').innerText = arrOfConfig[0]
                 chosenConfig[1].querySelector('.configure__chosen-equipment-text').innerText = arrOfConfig[1]
-                chosenConfig[2].classList.remove('active')
+                showOrHideChoice(chosenConfig[2])
             }else {
                 countOEquipment = arrOfConfig.length - 2
                 counter.innerText = countOEquipment
@@ -73,14 +89,14 @@ export default function ChooseConfigure() {
                 chosenConfig[0].classList.add('active')
             }else if(arrOfConfig.length > 1 && arrOfConfig.length <= 2) {
                 for(let i = 0; i <= arrOfConfig.length; i++) {
-                    chosenConfig[1].classList.add('active')
                     chosenConfig[1].querySelector('.configure__chosen-equipment-text').innerText = arrOfConfig[1]
+                    showOrHideChoice(chosenConfig[1], 'show')
                 }
     
             }else {
                 countOEquipment = arrOfConfig.length - 2
                 counter.innerText = countOEquipment
-                chosenConfig[2].classList.add('active')
+                showOrHideChoice(chosenConfig[2], 'show')
             }
         }
     }
@@ -99,7 +115,9 @@ export default function ChooseConfigure() {
             
         }else {
             sum -= price
-            selectedConfig.splice(nameConfig, 1)
+            console.log(selectedConfig.indexOf(nameConfig));
+            selectedConfig.splice(selectedConfig.indexOf(nameConfig), 1)
+            console.log(selectedConfig);
             if(selectedConfig === arrOfUaz) {
                 addInChosen(chosenEquipmentUaz, arrOfUaz, countOfConfig, 'minus', nameConfig)
             }else {
@@ -143,6 +161,40 @@ export default function ChooseConfigure() {
             }
         })
     });
+
+    // Delete choice element
+
+    let deleteCheckbox,
+    clickEvent = new Event('change')
+    function whatDelete(deletedElem, listOfElem, config) {
+        listOfElem.forEach(elem => {
+            if(
+                deletedElem.previousElementSibling.innerText == elem.parentElement.querySelector('.configure__form-text p').innerText
+                && elem.getAttribute('data-config') === config
+            ) {
+                elem.checked = false;
+                return deleteCheckbox = elem
+            }
+        })
+    }
+
+    deleteEquipmentUaz.forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault()
+            whatDelete(item, checkBox, 'uaz')
+            deleteCheckbox.dispatchEvent(clickEvent)
+            console.log(deleteCheckbox);
+        })
+    })
+
+    deleteEquipmentIsuzu.forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault()
+            whatDelete(item, checkBox, 'isuzu')
+            deleteCheckbox.dispatchEvent(clickEvent)
+            console.log(deleteCheckbox);
+        })
+    })
 
     // Show more
 

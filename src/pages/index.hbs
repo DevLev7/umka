@@ -274,7 +274,7 @@
                                         </button>
                                     </div>
                                 </li>
-                                <li class="configure__chosen-equipment-wrapper">
+                                <li style="display: none" class="configure__chosen-equipment-wrapper">
                                     <div class="configure__chosen-equipment">
                                         <span class="configure__chosen-equipment-text"></span>
                                         <button class="configure__chosen-equipment-delete">
@@ -284,7 +284,7 @@
                                         </button>
                                     </div>
                                 </li>
-                                <li class="configure__chosen-equipment-wrapper">
+                                <li style="display: none" class="configure__chosen-equipment-wrapper">
                                     <div class="configure__chosen-equipment-more-wrapper">
                                         <button class="configure__chosen-equipment-more">
                                             еще 
@@ -307,7 +307,7 @@
                                 <ul class="configure__form-group-list">
                                     {{#each equipment }}
                                     <li class="configure__form-group-item">
-                                        <input id="equipmentUaz{{@key}}" data-price="{{this.price}}" class="configure__form-checkbox" type="checkbox">
+                                        <input id="equipmentUaz{{@key}}" data-config="uaz" data-price="{{this.price}}" class="configure__form-checkbox" type="checkbox">
                                         <div class="configure__form-checkboxCustom">
                                             <svg>
                                                 <use xlink:href="#checked"></use>
@@ -381,7 +381,7 @@
                                         </button>
                                     </div>
                                 </li>
-                                <li class="configure__chosen-equipment-wrapper">
+                                <li style="display: none" class="configure__chosen-equipment-wrapper">
                                     <div class="configure__chosen-equipment">
                                         <span class="configure__chosen-equipment-text"></span>
                                         <button class="configure__chosen-equipment-delete">
@@ -391,7 +391,7 @@
                                         </button>
                                     </div>
                                 </li>
-                                <li class="configure__chosen-equipment-wrapper">
+                                <li style="display: none" class="configure__chosen-equipment-wrapper">
                                     <button class="configure__chosen-equipment-more">
                                         еще 
                                         <span class="configure__chosen-equipment-counter"></span>
@@ -412,7 +412,7 @@
                                 <ul class="configure__form-group-list">
                                     {{#each equipment }}
                                     <li class="configure__form-group-item">
-                                        <input id="equipmentIsuzu{{@key}}" data-price="{{this.price}}" class="configure__form-checkbox" type="checkbox">
+                                        <input id="equipmentIsuzu{{@key}}" data-config="isuzu" data-price="{{this.price}}" class="configure__form-checkbox" type="checkbox">
                                         <div class="configure__form-checkboxCustom">
                                             <svg>
                                                 <use xlink:href="#checked"></use>
