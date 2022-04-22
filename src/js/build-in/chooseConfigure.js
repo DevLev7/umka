@@ -16,7 +16,9 @@ export default function ChooseConfigure() {
           chosenEquipmentUaz      = configOfUaz.querySelectorAll('.configure__chosen-equipment-wrapper'),
           chosenEquipmentIsuzu    = configOfIsuzu.querySelectorAll('.configure__chosen-equipment-wrapper'),
           deleteEquipmentUaz      = configOfUaz.querySelectorAll('.configure__chosen-equipment-delete'),
-          deleteEquipmentIsuzu    = configOfIsuzu.querySelectorAll('.configure__chosen-equipment-delete')
+          deleteEquipmentIsuzu    = configOfIsuzu.querySelectorAll('.configure__chosen-equipment-delete'),
+          choosedAllConfigUaz     = configOfUaz.querySelector('.configure__chosen-equipmentsAll'),
+          choosedAllConfigIsuzu   = configOfIsuzu.querySelector('.configure__chosen-equipmentsAll')
     
     const arrOfUaz   = [],
           arrOfIsuzu = []
@@ -183,7 +185,7 @@ export default function ChooseConfigure() {
             e.preventDefault()
             whatDelete(item, checkBox, 'uaz')
             deleteCheckbox.dispatchEvent(clickEvent)
-            console.log(deleteCheckbox);
+            console.log(checkBox);
         })
     })
 
@@ -192,25 +194,52 @@ export default function ChooseConfigure() {
             e.preventDefault()
             whatDelete(item, checkBox, 'isuzu')
             deleteCheckbox.dispatchEvent(clickEvent)
-            console.log(deleteCheckbox);
         })
     })
 
     // Show more
 
-    // function showMore(choseArray) {
-    //     for(let i = 0; i < choseArray.length; i++) {
-    //         console.log(choseArray[i]);
-    //     }
-    // }
+    function createElement(chooseList, text, dataSet) {
+        const newElementsOfConfig = document.createElement('li')
+        newElementsOfConfig.classList.add('configure__chosen-equipment-wrapper', 'active')
+        newElementsOfConfig.setAttribute('data-config', dataSet)
+        newElementsOfConfig.innerHTML = 
+        `
+            <div class="configure__chosen-equipment">
+                <span class="configure__chosen-equipment-text">${text}</span>
+                <button class="configure__chosen-equipment-delete">
+                    <svg>
+                        <use xlink:href="#plus-icon"></use>
+                    </svg>
+                </button>
+            </div>
+        `
+        chooseList.appendChild(newElementsOfConfig)
+    }
 
-    // chosenEquipmentUaz[2].addEventListener('click', function(e){
-    //     e.preventDefault()
-    //     showMore(arrOfUaz)
-    // })
-    // chosenEquipmentIsuzu[2].addEventListener('click', function(e){
-    //     e.preventDefault()
-    //     showMore(arrOfIsuzu)
-    // })
+    function showMore(choseArray, list, dataAttr) {
+        for(let i = 0; i < choseArray.length; i++) {
+            createElement(list, choseArray[i], dataAttr)
+        }
+    }
+
+    chosenEquipmentUaz[2].addEventListener('click', function(e){
+        e.preventDefault()
+        showMore(arrOfUaz, choosedAllConfigUaz, 'allConfigUaz')
+        document.querySelectorAll('.configure__chosen-equipments')[0].classList.add('hide')
+        choosedAllConfigUaz.classList.add('active')
+        choosedAllConfigUaz.querySelectorAll('.configure__chosen-equipment-delete').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault()
+                whatDelete(item, checkBox, 'allConfigUaz')
+                deleteCheckbox.dispatchEvent(clickEvent)
+                console.log(deleteCheckbox);
+            })
+        })
+    })
+    chosenEquipmentIsuzu[2].addEventListener('click', function(e){
+        e.preventDefault()
+        showMore(arrOfIsuzu)
+    })
 
 }
