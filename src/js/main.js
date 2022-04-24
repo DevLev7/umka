@@ -20,7 +20,7 @@ import cardsHover from './build-in/cardsHover';
 import features from './build-in/features';
 import fraturesSwiper from './build-in/fraturesSwiper';
 import timer from './build-in/timer';
-// import ChooseConfigure from './build-in/chooseConfigure';
+import chooseConfigure from './build-in/chooseConfigure';
 // import wow from './build-in/wow.js'
 import why from './build-in/why';
 import validation from './build-in/validation';
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
     fraturesSwiper();
     timer();
     why();
-    // ChooseConfigure();
+    chooseConfigure();
 
     // fancybox();
 });

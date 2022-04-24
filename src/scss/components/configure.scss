@@ -42,7 +42,6 @@
 
     &__title {
         max-width: 64.1rem;
-        margin-bottom: 6rem;
         font-size: calc(40px + (85 - 40) * (100vw - 360px) / (1680 - 360));
         @media (max-width: 958px) {
             margin-bottom: 3rem;
@@ -539,6 +538,17 @@
 
         .configure__graphic {
             position: absolute;
+        }
+
+        @media (max-width: 600px) {
+            min-height: 200px;
+        }
+
+        @media (max-width: 415px) {
+            min-height: 160px;
+        }
+        @media (max-width: 376px) {
+            min-height: 120px;
         }
     }
 

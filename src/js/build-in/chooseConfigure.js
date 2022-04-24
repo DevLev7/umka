@@ -1,4 +1,4 @@
-export default function ChooseConfigure() {
+export default function chooseConfigure() {
     let   equipments              = document.querySelectorAll('[data-choise="equipment"]'),      
           additionalOptions       = document.querySelector('[data-config="additionalOptions"]'),
           chosenEquipment         = document.querySelectorAll('.configure__chosen-equipment-wrapper'),
