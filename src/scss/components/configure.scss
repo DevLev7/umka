@@ -12,6 +12,8 @@
         background-size: cover;
         border-radius: 1rem;
         color: #fff;
+        overflow: hidden;
+
         @media (max-width: 1327px) {
             padding: 10.5rem 3.7rem 7.7rem;
             @media (max-width: 600px) {
@@ -238,6 +240,12 @@
         padding-top: 25px;
         padding-left: 20px;
         padding-bottom: 25px;
+
+        @media (max-width: 1279px) {
+            padding-top: 15px;
+            padding-left: 10px;
+            padding-bottom: 15px;
+        }
     }
 
     &__form-group-item {
@@ -290,6 +298,10 @@
         font: var(--body-XL);
         color: var(--accent-primary);
         font-size: 20px;
+
+        @media (max-width: 1279px) {
+            padding-left: 10px;
+        }
     }
 
     &__form-group-header {
@@ -510,13 +522,69 @@
     }
 
     &__graphic {
-        display: none;
+        transform: translateX(-200rem);
+        animation: hideCar 1s ease-in-out forwards;
     }
 
     &__graphic.tab-content_show {
         display: block;
+        animation: showCar 1s ease-in-out forwards;
+    }
+
+    .configCar {
+        position: relative;
+
+        .configure__graphic {
+            position: absolute;
+        }
+    }
+
+    @keyframes hideCar {
+        from{
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-200rem);
+        }
+    }
+    @keyframes showCar {
+        from{
+            transform: translateX(-200rem);
+        }
+        to {
+            transform: translateX(0);
+        }
     }
 }
+
+.jisuzuCar * {
+    opacity: 1;
+    animation: hideConstrurt 0.3s ease-in-out forwards;
+}
+
+.jisuzuCar .jhide {
+    opacity: 0 ;
+    animation: showConstrurt 0.3s ease-in-out forwards;
+}
+
+@keyframes showConstrurt {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes hideConstrurt {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 .configure__tabs-hidden {
     display: none;
     @media (max-width: 958px) {

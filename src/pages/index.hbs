@@ -224,25 +224,26 @@
                 <h2 class="configure__title section-title">Сконфигурируйте свою умку</h2>
                 <ul class="configure__tabs-hidden">
                     <li class="configure__tab-wrapper">
-                        <div class="configure__tab configure__tab-mobile active">
+                        <div data-carName="uaz" class="configure__tab configure__tab-mobile active">
                             <div class="configure__tab-upperline"></div>
                             <span class="configure__tab-text">На базе уаз</span>
                         </div>
                     </li>
                     <li class="configure__tab-wrapper">
-                        <div class="configure__tab configure__tab-mobile">
+                        <div data-carName="isuzu" class="configure__tab configure__tab-mobile">
                             <div class="configure__tab-upperline"></div>
                             <span class="configure__tab-text">На базе isuzu</span>
                         </div>
                     </li>
                 </ul>
-                
-                <svg class="configure__graphic tab-content_show">
-                    <use xlink:href="#umka-model"></use>
-                </svg>
-                <svg class="configure__graphic">
-                    <use xlink:href="#umka-model"></use>
-                </svg>
+                <div class="configCar">
+                    <svg data-car="uaz" class="configure__graphic tab-content_show">
+                        <use xlink:href="#uaz"></use>
+                    </svg>
+                    <svg data-car="isuzu" class="configure__graphic">
+                        <use xlink:href="#isuzu"></use>
+                    </svg>
+                </div>
             </div>
             <div class="configure__text-column">
                 <ul class="configure__tabs">
@@ -310,7 +311,7 @@
                                 <ul class="configure__form-group-list">
                                     {{#each equipment }}
                                     <li class="configure__form-group-item">
-                                        <input id="equipmentUaz{{@key}}" data-config="uaz" data-price="{{this.price}}" class="configure__form-checkbox" type="checkbox">
+                                        <input id="equipmentUaz{{@key}}" data-configName="{{this.title}}" data-config="uaz" data-price="{{this.price}}" class="configure__form-checkbox" type="checkbox">
                                         <div class="configure__form-checkboxCustom">
                                             <svg>
                                                 <use xlink:href="#checked"></use>
@@ -339,7 +340,7 @@
                                 <ul class="configure__form-group-list">
                                     {{#each additionalOptions }}
                                     <li class="configure__form-group-item">
-                                        <input id="additionalOptionsUaz{{@key}}" data-price="{{this.price}}" class="configure__form-checkbox" type="checkbox">
+                                        <input id="additionalOptionsUaz{{@key}}" data-configName="{{this.title}}" data-price="{{this.price}}" class="configure__form-checkbox" type="checkbox">
                                         <div class="configure__form-checkboxCustom">
                                             <svg>
                                                 <use xlink:href="#checked"></use>
@@ -418,7 +419,7 @@
                                 <ul class="configure__form-group-list">
                                     {{#each equipment }}
                                     <li class="configure__form-group-item">
-                                        <input id="equipmentIsuzu{{@key}}" data-config="isuzu" data-price="{{this.price}}" class="configure__form-checkbox" type="checkbox">
+                                        <input id="equipmentIsuzu{{@key}}" data-configName="{{this.title}}" data-config="isuzu" data-price="{{this.price}}" class="configure__form-checkbox" type="checkbox">
                                         <div class="configure__form-checkboxCustom">
                                             <svg>
                                                 <use xlink:href="#checked"></use>
@@ -447,7 +448,7 @@
                                 <ul class="configure__form-group-list">
                                     {{#each additionalOptions }}
                                     <li class="configure__form-group-item">
-                                        <input id="additionalOptionsIsuzu{{@key}}" data-price="{{this.price}}" class="configure__form-checkbox" type="checkbox">
+                                        <input id="additionalOptionsIsuzu{{@key}}" data-configName="{{this.title}}" data-price="{{this.price}}" class="configure__form-checkbox" type="checkbox">
                                         <div class="configure__form-checkboxCustom">
                                             <svg>
                                                 <use xlink:href="#checked"></use>

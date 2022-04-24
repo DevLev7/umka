@@ -18,15 +18,22 @@ export default function ChooseConfigure() {
           deleteEquipmentUaz      = configOfUaz.querySelectorAll('.configure__chosen-equipment-delete'),
           deleteEquipmentIsuzu    = configOfIsuzu.querySelectorAll('.configure__chosen-equipment-delete'),
           choosedAllConfigUaz     = configOfUaz.querySelector('.configure__chosen-equipmentsAll'),
-          choosedAllConfigIsuzu   = configOfIsuzu.querySelector('.configure__chosen-equipmentsAll')
+          choosedAllConfigIsuzu   = configOfIsuzu.querySelector('.configure__chosen-equipmentsAll'),
+          carOfUaz                = document.querySelector('[data-car="uaz"]'),
+          carOfIsuzu              = document.querySelector('[data-car="isuzu"]')
     
     const arrOfUaz   = [],
           arrOfIsuzu = []
+
+    let deleteCheckbox,
+    clickEvent = new Event('change')
     
     // Табы
-    function showOrHideConfig(show, hide) {
+    function showOrHideConfig(show, hide, showSvg, hideSvg) {
         show.classList.add('tab-content_show')
         hide.classList.remove('tab-content_show')
+        showSvg.classList.add('tab-content_show')
+        hideSvg.classList.remove('tab-content_show')
         equipments.forEach(equipment => {
             if(equipment.classList.contains('active')){
               equipment.classList.remove('active')
@@ -38,7 +45,7 @@ export default function ChooseConfigure() {
         button.addEventListener('click', function () {
             choiceOfCarMobile.forEach(btn => btn.classList.remove('active'));
             this.classList.toggle('active');
-            this.getAttribute('data-carName') === 'isuzu' ? showOrHideConfig(configOfIsuzu, configOfUaz) : showOrHideConfig(configOfUaz, configOfIsuzu)
+            this.getAttribute('data-carName') === 'isuzu' ? showOrHideConfig(configOfIsuzu, configOfUaz, carOfIsuzu,  carOfUaz) : showOrHideConfig(configOfUaz, configOfIsuzu, carOfUaz, carOfIsuzu)
         });
     }
     
@@ -46,7 +53,7 @@ export default function ChooseConfigure() {
         button.addEventListener('click', function () {
             choiceOfCar.forEach(btn => btn.classList.remove('active'));
             this.classList.toggle('active');
-            this.getAttribute('data-carName') === 'isuzu' ? showOrHideConfig(configOfIsuzu, configOfUaz) : showOrHideConfig(configOfUaz, configOfIsuzu)
+            this.getAttribute('data-carName') === 'isuzu' ? showOrHideConfig(configOfIsuzu, configOfUaz, carOfIsuzu,  carOfUaz) : showOrHideConfig(configOfUaz, configOfIsuzu, carOfUaz, carOfIsuzu)
         });
     }
     // Табы
@@ -103,12 +110,21 @@ export default function ChooseConfigure() {
         }
     }
           
-    function addOrDeleteEquipment(price, sign, config, countOfConfig, selectedConfig, nameConfig, elementOfSVG) {
+    function addOrDeleteEquipment(price, sign, config, countOfConfig, selectedConfig, nameConfig) {
         let sum = parseInt(config.innerText.slice(0, config.innerText.length - 4).split(' ').join(''))
 
         if(sign === 'plus') {
             sum += price
+            console.log(nameConfig);
             selectedConfig.push(nameConfig)
+            document.querySelectorAll(`[data-option="${nameConfig}"]`).forEach(carElem => {
+                if(!carElem.classList.contains('jhide')) {
+                    carElem.classList.add('jhide')
+                }else {
+                    carElem.classList.remove('jhide')
+                }
+                
+            })
             if(selectedConfig === arrOfUaz) {
                 addInChosen(chosenEquipmentUaz, arrOfUaz, countOfConfig, 'plus', nameConfig)
             }else {
@@ -119,7 +135,14 @@ export default function ChooseConfigure() {
             sum -= price
             console.log(selectedConfig.indexOf(nameConfig));
             selectedConfig.splice(selectedConfig.indexOf(nameConfig), 1)
-            console.log(selectedConfig);
+            document.querySelectorAll(`[data-option="${nameConfig}"]`).forEach(carElem => {
+                if(!carElem.classList.contains('jhide')) {
+                    carElem.classList.add('jhide')
+                }else {
+                    carElem.classList.remove('jhide')
+                }
+                
+            })
             if(selectedConfig === arrOfUaz) {
                 addInChosen(chosenEquipmentUaz, arrOfUaz, countOfConfig, 'minus', nameConfig)
             }else {
@@ -130,8 +153,23 @@ export default function ChooseConfigure() {
         config.innerText = `${sum.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, " ")} руб`
     }
 
+    function addOrDeleteImportantElement(sign, item, importantElement) {
+        if(sign === 'plus') {
+            if(
+                item.getAttribute('data-configname') === 'Передняя щетка со смачиванием (необходима навеска)' ||
+                item.getAttribute('data-configname') === 'Отвал коммунальный (необходима навеска)' ||
+                item.getAttribute('data-configname') === 'Отвал «бабочка» (необходима навеска)' && !importantElement.classList.contains('added')
+            ){
+                importantElement.dispatchEvent(clickEvent)
+                importantElement.checked = true;
+            }
+        }
+    }
+
     function plusOrMinus(element, selectedConfiguration, selectedCount, arrConfigs) {
-        let nameOfConfig = element.parentElement.querySelector('.configure__form-text p').innerText
+        let nameOfConfig               = element.parentElement.querySelector('.configure__form-text p').innerText,
+            importantElementUazFront   = configOfUaz.querySelector('[data-configname="Навеска (для отвала и передней щетки)"]'),
+            importantElementIsuzuFront = configOfIsuzu.querySelector('[data-configname="Навеска (для отвала и передней щетки)"]')
 
         if(!element.classList.contains('added')) {
             element.classList.add('added')
@@ -166,14 +204,13 @@ export default function ChooseConfigure() {
 
     // Delete choice element
 
-    let deleteCheckbox,
-    clickEvent = new Event('change')
     function whatDelete(deletedElem, listOfElem, config) {
         listOfElem.forEach(elem => {
             if(
                 deletedElem.previousElementSibling.innerText == elem.parentElement.querySelector('.configure__form-text p').innerText
                 && elem.getAttribute('data-config') === config
             ) {
+                console.log(elem);
                 elem.checked = false;
                 return deleteCheckbox = elem
             }
@@ -223,23 +260,32 @@ export default function ChooseConfigure() {
         }
     }
 
-    chosenEquipmentUaz[2].addEventListener('click', function(e){
-        e.preventDefault()
-        showMore(arrOfUaz, choosedAllConfigUaz, 'allConfigUaz')
-        document.querySelectorAll('.configure__chosen-equipments')[0].classList.add('hide')
-        choosedAllConfigUaz.classList.add('active')
-        choosedAllConfigUaz.querySelectorAll('.configure__chosen-equipment-delete').forEach(item => {
+    function deleteFromMore(arr, configAll, dataConfig, whatHide, whatDeleteArr) {
+        showMore(arr, configAll, dataConfig)
+        document.querySelectorAll('.configure__chosen-equipments')[whatHide].classList.add('hide')
+        configAll.classList.add('active')
+        configAll.querySelectorAll('.configure__chosen-equipment-delete').forEach(item => {
             item.addEventListener('click', function(e) {
                 e.preventDefault()
-                whatDelete(item, checkBox, 'allConfigUaz')
+                whatDelete(item, checkBox, whatDeleteArr)
                 deleteCheckbox.dispatchEvent(clickEvent)
-                console.log(deleteCheckbox);
+                item.parentElement.parentElement.remove()
+                if(configAll.querySelectorAll('.configure__chosen-equipment-delete').length < 1) {
+                    configAll.classList.remove('active')
+                    document.querySelectorAll('.configure__chosen-equipments')[whatHide].classList.remove('hide')
+                }
             })
         })
+    }
+
+    chosenEquipmentUaz[2].addEventListener('click', function(e){
+        e.preventDefault()
+        deleteFromMore(arrOfUaz, choosedAllConfigUaz, 'allConfigUaz', 0, 'uaz')
     })
+
     chosenEquipmentIsuzu[2].addEventListener('click', function(e){
         e.preventDefault()
-        showMore(arrOfIsuzu)
+        deleteFromMore(arrOfIsuzu, choosedAllConfigIsuzu, 'allConfigIsuzu', 1, 'isuzu')
     })
 
 }
