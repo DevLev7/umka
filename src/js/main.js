@@ -17,10 +17,10 @@ import reviews from './build-in/reviews';
 import plants from './build-in/plants';
 import mapswiper from './build-in/mapswiper';
 import cardsHover from './build-in/cardsHover';
+import timer from './build-in/timer';
 import features from './build-in/features';
 import fraturesSwiper from './build-in/fraturesSwiper';
-import timer from './build-in/timer';
-import calculate from './build-in/calculate';
+// import calculate from './build-in/calculate';
 // import wow from './build-in/wow.js'
 import why from './build-in/why';
 import validation from './build-in/validation';
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
     fraturesSwiper();
     timer();
     why();
-    calculate();
+    // calculate();
 
     // fancybox();
 });
