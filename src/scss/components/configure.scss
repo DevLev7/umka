@@ -350,6 +350,12 @@
         }
     }
 
+    &__form-group.active {
+        label {
+            pointer-events: all;
+        }
+    }
+
     &__form-group-chosen {
         position: relative;
 
