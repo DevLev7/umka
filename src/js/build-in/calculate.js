@@ -150,7 +150,7 @@ export default function calculateConfig() {
             }
         }
         
-        config.innerText = `${sum.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, " ")} руб`
+        config.innerText = `${sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} руб`
     }
 
     function addOrDeleteImportantElement(sign, item, importantElement) {
