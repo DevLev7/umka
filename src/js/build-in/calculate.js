@@ -1,4 +1,4 @@
-export default function calculate() {
+export default function calculateConfig() {
     let   equipments              = document.querySelectorAll('[data-choise="equipment"]'),      
           additionalOptions       = document.querySelector('[data-config="additionalOptions"]'),
           chosenEquipment         = document.querySelectorAll('.configure__chosen-equipment-wrapper'),
