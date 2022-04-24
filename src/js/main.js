@@ -20,8 +20,9 @@ import cardsHover from './build-in/cardsHover';
 import features from './build-in/features';
 import fraturesSwiper from './build-in/fraturesSwiper';
 import timer from './build-in/timer';
-import ChooseConfigure from './build-in/chooseConfigure'
-
+// import ChooseConfigure from './build-in/chooseConfigure';
+// import wow from './build-in/wow.js'
+import why from './build-in/why';
 import validation from './build-in/validation';
 import fancybox from './build-in/fancybox';
 
@@ -33,6 +34,7 @@ import editableTextContainer from './custom/editableTextContainer';
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener('DOMContentLoaded', function () {
+    // wow();
     detectTouch();
     setScrollbarWidth();
     anchorLinks();
@@ -57,9 +59,10 @@ document.addEventListener('DOMContentLoaded', function () {
     features();
     fraturesSwiper();
     timer();
-    ChooseConfigure()
-    // fancybox();
+    why();
+    // ChooseConfigure();
 
+    // fancybox();
 });
 
 document.addEventListener('lazyloaded', () => {

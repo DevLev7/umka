@@ -150,9 +150,16 @@
     }
     .swiper-slide {
         width: 90% !important;
+        @media (max-width: 500px) {
+           width: 10%;
+        }
     }
     .swiper-wrapper {
         margin-left: -14% !important;
+        @media (max-width: 500px) {
+            width: 100%;
+    margin: 0 auto;
+        }
     }
 }
 
@@ -186,6 +193,9 @@
     margin-top: 2rem;
     @media (max-width: 533px) {
         display: block;
+    }
+    @media (max-width: 500px) {
+        font-size: 2rem;
     }
 }
 .gallery__wrapper-items--mobile {

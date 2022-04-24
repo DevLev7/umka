@@ -36,6 +36,18 @@ window.Parsley.addValidator('requiredIfChecked', {
     priority: 33,
 });
 
+window.Parsley.addValidator('name', {
+    requirementType: 'string',
+    validateString: function (value) {
+        if (value.trim() === '') return true;
+        return /^[А-ЯЁ][а-яё]*$/.test(value);
+    },
+    messages: {
+        en: 'This value should be a mobile number',
+        ru: 'Только кирилица',
+    },
+});
+
 window.Parsley.addValidator('phone', {
     requirementType: 'string',
     validateString: function (value) {
@@ -91,6 +103,6 @@ export default function validation() {
     const formsToValidate = Array.from(document.querySelectorAll('form[data-need-validation]'));
 
     formsToValidate.forEach((form) => {
-        $(form).parsley();
+        $(form).parsley().validate();
     });
 }

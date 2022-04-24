@@ -133,5 +133,12 @@
             opacity: 0.3;
             font-weight: 500;
         }
+        span::selection {
+            color: #1b74e3;
+        }
+    }
+    .footer__addition-developed:hover span {
+        opacity: 1;
+        color: var(--accent-primary);
     }
 }

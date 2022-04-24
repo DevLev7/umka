@@ -10,6 +10,8 @@ export default function statsScrolling() {
     const statThird = document.querySelector('.stats-img-3');
 
     let tl = gsap.timeline();
+    tl.to(statThird, { opacity: 0, delay: 0.5, duration: 0.5 });
+    tl.to(statFirst, { opacity: 1, delay: 0.5, duration: 0.5 }, '-=0.5');
     tl.to(statFirst, { opacity: 0, delay: 0.5, duration: 0.5 });
     tl.to(statSecond, { opacity: 1, duration: 0.5 }, '-=0.1');
     tl.to(statSecond, { opacity: 0, delay: 0.5, duration: 0.5 });

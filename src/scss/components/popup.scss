@@ -237,6 +237,7 @@
     color: #A3AFCD!important;
     right: 40px;
     top: 45px;
+    box-shadow: none;
     @media (max-width: 1180px) {
         right: 45px;
     }
@@ -327,4 +328,37 @@ input:focus ~ label,
 .has-video .fancybox__content>.carousel__button.is-close {
     top: -50px;
     right: -50px;
+}
+
+.fancybox__content :focus:not(.carousel__button.is-close) {
+    outline: none;
+}
+
+.expert__agree-text a {
+    color: #1B74E3;
+}
+.expert__agree-text:hover a {
+    color: #0f1926;
+}
+
+.fancybox__track .fancybox__slide.has-video {
+    align-self: center
+}
+
+#thanks_manager .form-style-1 button {
+    background-color: #fff;
+    color: #1B74E3;
+    @media (max-width: 500px) {
+        font-size: 2rem;
+        background-color: #1B74E3;
+        color: #fff;
+        width: 100%;
+        padding: 1.9rem;
+        border-radius: 7px;
+}
+}
+
+#thanks_manager .form-desk {
+    display: block;
+    padding-top: 5px;
 }
