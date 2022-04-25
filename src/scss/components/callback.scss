@@ -242,6 +242,10 @@
         height: 8rem;
         transition: all 0.5s ease;
 
+        &::placeholder {
+            color: #fff;
+        }
+
         @media (max-width: 1280px) {
             width: 100%;
         }
