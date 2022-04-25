@@ -30,10 +30,9 @@
 
     &__item-wrapper {
         width: 100%;
-
         background-color: #fff;
 
-        &:not(:first-child) {
+        & {
             img {
                 position: absolute;
                 opacity: 0;

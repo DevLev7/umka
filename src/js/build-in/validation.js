@@ -40,7 +40,7 @@ window.Parsley.addValidator('name', {
     requirementType: 'string',
     validateString: function (value) {
         if (value.trim() === '') return true;
-        return /^[А-ЯЁ][а-яё]*$/.test(value);
+        return /^[а-яё -]+$/.test(value);
     },
     messages: {
         en: 'This value should be a mobile number',
