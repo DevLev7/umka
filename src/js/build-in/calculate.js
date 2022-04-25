@@ -109,6 +109,20 @@ export default function calculateConfig() {
             }
         }
     }
+
+    function animateConstruct(config, option, hide) {
+        document.querySelector(config).querySelectorAll(`[data-option="${option}"]`).forEach(carElem => {
+            if(!carElem.classList.contains(hide)) {
+                carElem.classList.add('shide')
+                carElem.classList.remove('show')
+            }else {
+                console.log(carElem);
+                carElem.classList.remove(hide)
+                carElem.classList.add('show')
+            }
+            
+        })
+    }
           
     function addOrDeleteEquipment(price, sign, config, countOfConfig, selectedConfig, nameConfig) {
         let sum = parseInt(config.innerText.slice(0, config.innerText.length - 4).split(' ').join(''))
@@ -119,24 +133,8 @@ export default function calculateConfig() {
             selectedConfig.push(nameConfig)
             if(selectedConfig === arrOfUaz) {
                 addInChosen(chosenEquipmentUaz, arrOfUaz, countOfConfig, 'plus', nameConfig)
-                document.querySelectorAll(`[data-option="${nameConfig}"]`).forEach(carElem => {
-                    if(!carElem.classList.contains('shide')) {
-                        carElem.classList.add('shide')
-                    }else {
-                        carElem.classList.remove('shide')
-                    }
-                    
-                })
             }else {
                 addInChosen(chosenEquipmentIsuzu, arrOfIsuzu, countOfConfig, 'plus', nameConfig)
-                document.querySelectorAll(`[data-option="${nameConfig}"]`).forEach(carElem => {
-                    if(!carElem.classList.contains('jhide')) {
-                        carElem.classList.add('jhide')
-                    }else {
-                        carElem.classList.remove('jhide')
-                    }
-                    
-                })
             }
             
         }else {
@@ -145,25 +143,15 @@ export default function calculateConfig() {
             selectedConfig.splice(selectedConfig.indexOf(nameConfig), 1)
             if(selectedConfig === arrOfUaz) {
                 addInChosen(chosenEquipmentUaz, arrOfUaz, countOfConfig, 'minus', nameConfig)
-                document.querySelectorAll(`[data-option="${nameConfig}"]`).forEach(carElem => {
-                    if(!carElem.classList.contains('shide')) {
-                        carElem.classList.add('shide')
-                    }else {
-                        carElem.classList.remove('shide')
-                    }
-                    
-                })
             }else {
                 addInChosen(chosenEquipmentIsuzu, arrOfIsuzu, countOfConfig, 'minus', nameConfig)
-                document.querySelectorAll(`[data-option="${nameConfig}"]`).forEach(carElem => {
-                    if(!carElem.classList.contains('jhide')) {
-                        carElem.classList.add('jhide')
-                    }else {
-                        carElem.classList.remove('jhide')
-                    }
-                    
-                })
             }
+        }
+
+        if(selectedConfig === arrOfUaz) {
+            animateConstruct('.suazCar', nameConfig, 'shide')
+        }else {
+            animateConstruct('.jisuzuCar', nameConfig, 'jhide')
         }
         
         config.innerText = `${sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} руб`
@@ -222,9 +210,10 @@ export default function calculateConfig() {
 
     function whatDelete(deletedElem, listOfElem, config) {
         listOfElem.forEach(elem => {
+            // console.log(elem);
             if(
                 deletedElem.previousElementSibling.innerText == elem.parentElement.querySelector('.configure__form-text p').innerText
-                && elem.getAttribute('data-config') === config
+                && elem.getAttribute('data-config') == config
             ) {
                 console.log(elem);
                 elem.checked = false;
@@ -237,8 +226,9 @@ export default function calculateConfig() {
         item.addEventListener('click', function(e) {
             e.preventDefault()
             whatDelete(item, checkBox, 'uaz')
+            console.log(item.previousElementSibling.innerText);
             deleteCheckbox.dispatchEvent(clickEvent)
-            console.log(checkBox);
+            // console.log(checkBox);
         })
     })
 
