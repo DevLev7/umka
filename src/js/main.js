@@ -25,6 +25,7 @@ import calculateConfig from './build-in/calculate';
 import why from './build-in/why';
 import validation from './build-in/validation';
 import fancybox from './build-in/fancybox';
+import masks from './build-in/masks';
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -61,6 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
     timer();
     why();
     calculateConfig();
+    masks();
 
     // fancybox();
 });

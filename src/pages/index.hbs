@@ -774,7 +774,7 @@
                         <input type="text" required id="name" data-parsley-name ><label for="name">Ваше имя</label>
                     </div>
                     <div class="expert__item">
-                        <input class="phone" required id="phone" type="tel" data-parsley-phone ><label for="phone">ваш
+                        <input class="phone js-phone-input" required id="phone" type="tel" data-parsley-phone ><label for="phone">ваш
                             телефон</label>
                     </div>
                     <button type="submit" class="button--light" data-fancybox="" data-src="#thanks">Отправить
@@ -2429,7 +2429,7 @@
                                 <input required type="text" id="name1" data-parsley-name><label for="name1">Ваше имя</label>
                             </div>
                             <div class="callback__item">
-                                <input required type="tel" id="name2"data-parsley-phone><label for="name2">ваш телефон</label>
+                                <input class="phone js-phone-input" required type="tel" id="name2"data-parsley-phone><label for="name2">ваш телефон</label>
                             </div>
                             <button type="submit" class="button--light" data-fancybox data-src="#order">Отправить
                                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
@@ -2485,7 +2485,7 @@
                 <input type="text" required id="name5" data-parsley-name><label for="name">Ваше имя</label>
             </div>
             <div class="expert__item">
-                <input class="phone" required id="phone5" type="tel" data-parsley-phone><label for="name">ваш
+                <input class="phone js-phone-input" required id="phone5" type="tel" data-parsley-phone><label for="name">ваш
                     телефон</label>
             </div>
             <button class="button" type="submit" data-fancybox data-src="#thanks">Отправить
@@ -2528,7 +2528,8 @@
                 <input type="text" required id="name4" data-parsley-name><label for="name">Ваше имя</label>
             </div>
             <div class="expert__item">
-                <input class="email" required id="email4" type="email" data-parsley-email><label for="name">Ваш Email</label>
+                  {{!-- <input type="text" required id="name4" data-parsley-name><label for="name">Ваше имя</label> --}}
+                <input required id="email4" type="email" data-parsley-email><label for="name">Ваш Email</label>
             </div>
             <button class="button" data-fancybox data-src="#thanks_doc" type="submit">Отправить
                 <svg width="36" height="26" viewBox="0 0 36 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2569,7 +2570,7 @@
                 <input type="text" required id="name3" data-parsley-name><label for="name">Ваше имя</label>
             </div>
             <div class="expert__item">
-                <input class="phone" required id="phone3" type="tel" data-parsley-phone><label for="name">ваш
+                <input class="phone js-phone-input" required id="phone3" type="tel" data-parsley-phone><label for="name">ваш
                     телефон</label>
             </div>
             <button class="button" type="submit"data-fancybox data-src="#thanks_manager">Отправить
