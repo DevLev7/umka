@@ -532,13 +532,13 @@
     }
 
     &__graphic {
-        transform: translateX(-200rem);
-        animation: hideCar 1s ease-in-out forwards;
+        opacity: 0;
     }
 
     &__graphic.tab-content_show {
         display: block;
-        animation: showCar 1s ease-in-out forwards;
+        transition: opacity .3s ease-in-out;
+        opacity: 1;
     }
 
     .configCar {
@@ -557,23 +557,6 @@
         }
         @media (max-width: 376px) {
             min-height: 120px;
-        }
-    }
-
-    @keyframes hideCar {
-        from{
-            transform: translateX(0);
-        }
-        to {
-            transform: translateX(-200rem);
-        }
-    }
-    @keyframes showCar {
-        from{
-            transform: translateX(-200rem);
-        }
-        to {
-            transform: translateX(0);
         }
     }
 }
