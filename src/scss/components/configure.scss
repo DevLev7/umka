@@ -577,12 +577,12 @@
         }
     }
 }
-.jisuzuCar * {
+.jisuzuCar * , .suazCar * {
     opacity: 1;
     animation: hideConstrurt 0.3s ease-in-out forwards;
 }
 
-.jisuzuCar .jhide {
+.jisuzuCar .jhide, .suazCar .shide {
     opacity: 0 ;
     animation: showConstrurt 0.3s ease-in-out forwards;
 }

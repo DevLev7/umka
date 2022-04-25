@@ -117,36 +117,52 @@ export default function calculateConfig() {
             sum += price
             console.log(nameConfig);
             selectedConfig.push(nameConfig)
-            document.querySelectorAll(`[data-option="${nameConfig}"]`).forEach(carElem => {
-                if(!carElem.classList.contains('jhide')) {
-                    carElem.classList.add('jhide')
-                }else {
-                    carElem.classList.remove('jhide')
-                }
-                
-            })
             if(selectedConfig === arrOfUaz) {
                 addInChosen(chosenEquipmentUaz, arrOfUaz, countOfConfig, 'plus', nameConfig)
+                document.querySelectorAll(`[data-option="${nameConfig}"]`).forEach(carElem => {
+                    if(!carElem.classList.contains('shide')) {
+                        carElem.classList.add('shide')
+                    }else {
+                        carElem.classList.remove('shide')
+                    }
+                    
+                })
             }else {
                 addInChosen(chosenEquipmentIsuzu, arrOfIsuzu, countOfConfig, 'plus', nameConfig)
+                document.querySelectorAll(`[data-option="${nameConfig}"]`).forEach(carElem => {
+                    if(!carElem.classList.contains('jhide')) {
+                        carElem.classList.add('jhide')
+                    }else {
+                        carElem.classList.remove('jhide')
+                    }
+                    
+                })
             }
             
         }else {
             sum -= price
             console.log(selectedConfig.indexOf(nameConfig));
             selectedConfig.splice(selectedConfig.indexOf(nameConfig), 1)
-            document.querySelectorAll(`[data-option="${nameConfig}"]`).forEach(carElem => {
-                if(!carElem.classList.contains('jhide')) {
-                    carElem.classList.add('jhide')
-                }else {
-                    carElem.classList.remove('jhide')
-                }
-                
-            })
             if(selectedConfig === arrOfUaz) {
                 addInChosen(chosenEquipmentUaz, arrOfUaz, countOfConfig, 'minus', nameConfig)
+                document.querySelectorAll(`[data-option="${nameConfig}"]`).forEach(carElem => {
+                    if(!carElem.classList.contains('shide')) {
+                        carElem.classList.add('shide')
+                    }else {
+                        carElem.classList.remove('shide')
+                    }
+                    
+                })
             }else {
                 addInChosen(chosenEquipmentIsuzu, arrOfIsuzu, countOfConfig, 'minus', nameConfig)
+                document.querySelectorAll(`[data-option="${nameConfig}"]`).forEach(carElem => {
+                    if(!carElem.classList.contains('jhide')) {
+                        carElem.classList.add('jhide')
+                    }else {
+                        carElem.classList.remove('jhide')
+                    }
+                    
+                })
             }
         }
         
