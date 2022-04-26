@@ -273,6 +273,7 @@
         position: relative;
         display: flex;
         margin-top: 22px;
+        align-items: end;
 
         &:first-child {
             margin-top: 0;
@@ -330,7 +331,8 @@
         font: var(--body-XL);
         color: var(--accent-primary);
         font-size: 20px;
-
+        padding-top: 2px;
+        
         @media (max-width: 600px) {
             padding-left: 10px;
             font-size: 16px;

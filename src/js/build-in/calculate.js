@@ -29,6 +29,14 @@ export default function calculateConfig() {
 
     let deleteCheckbox,
     clickEvent = new Event('change')
+
+    document.querySelectorAll('[data-configName="Ледозаливочное оборудование «Умка»"]').forEach(item => {
+        item.removeAttribute('data-importantCheck')
+    })
+
+    document.querySelectorAll('[data-configName="Емкость для воды 2,0 куб. м."]').forEach(item => {
+        item.removeAttribute('data-importantCheck')
+    })
     
     // Табы
     function showOrHideConfig(show, hide, showSvg, hideSvg) {
@@ -132,7 +140,7 @@ export default function calculateConfig() {
             sum += price
             selectedConfig.push(nameConfig)
             if(selectedConfig === arrOfUaz) {
-                addInChosen(chosenEquipmentUaz, arrOfUaz, countOfConfig, 'plus', nameConfig)
+                addInChosen(chosenEquipmentUaz, arrOfUaz, countOfConfig, 'plus', nameConfig,)
             }else {
                 addInChosen(chosenEquipmentIsuzu, arrOfIsuzu, countOfConfig, 'plus', nameConfig)
             }
@@ -154,17 +162,17 @@ export default function calculateConfig() {
             animateConstruct('.jisuzuCar', nameConfig, 'jhide')
         }
         
-        config.innerText = `${sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} руб`
+        config.innerText = `${sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} руб.`
     }
 
-    function showOrHideSvgElement(sign, element, whatCarSvg, arrCar, classHide, classHideForMinus) {
-        if(sign === 'plus') {
-            if(
-                element.getAttribute('data-configname') === 'Передняя щетка со смачиванием (необходима навеска)' ||
-                element.getAttribute('data-configname') === 'Отвал коммунальный (необходима навеска)' ||
-                element.getAttribute('data-configname') === 'Отвал «бабочка» (необходима навеска)' ||
-                element.getAttribute('data-configname') === 'Агрегат фронтальной мойки (АФМ)'
-            ) {
+    function showOrHideSvgElement(sign, element, whatCarSvg, arrCar, classHide, whatCar, classHideForMinus) {
+        if(
+            element.getAttribute('data-configname') === 'Передняя щетка со смачиванием (необходима навеска)' && whatCar.querySelector('[data-configname="Навеска (для отвала и передней щетки)"]').checked ||
+            element.getAttribute('data-configname') === 'Отвал коммунальный (необходима навеска)' && whatCar.querySelector('[data-configname="Навеска (для отвала и передней щетки)"]').checked ||
+            element.getAttribute('data-configname') === 'Отвал «бабочка» (необходима навеска)' && whatCar.querySelector('[data-configname="Навеска (для отвала и передней щетки)"]').checked ||
+            element.getAttribute('data-configname') === 'Агрегат фронтальной мойки (АФМ)' && whatCar.querySelector('[data-configname="Навеска (для отвала и передней щетки)"]').checked
+        ) {
+            if(sign === 'plus') { 
                 for(let i = 0; i< arrCar.length-1; i++){
                     whatCarSvg.querySelectorAll('[data-importantElem="true"]').forEach(svgElem => {
                         if(
@@ -178,14 +186,7 @@ export default function calculateConfig() {
                         }
                     })
                 }
-            }
-        }else {
-            if(
-                element.getAttribute('data-configname') === 'Передняя щетка со смачиванием (необходима навеска)' ||
-                element.getAttribute('data-configname') === 'Отвал коммунальный (необходима навеска)' ||
-                element.getAttribute('data-configname') === 'Отвал «бабочка» (необходима навеска)' ||
-                element.getAttribute('data-configname') === 'Агрегат фронтальной мойки (АФМ)'
-            ) {
+            }else { 
                 let configSvg =  whatCarSvg.querySelectorAll(`[data-importantElem="true"]${classHideForMinus}`)
                 let arrOfSvgElem = []
                 for(let i = 0; i< arrCar.length; i++){
@@ -197,15 +198,16 @@ export default function calculateConfig() {
                         }
                     }
                 }
-                if(element.getAttribute('data-configname') !== arrOfSvgElem[arrOfSvgElem.length-1].getAttribute('data-option')){
+                if(
+                    whatCarSvg.querySelector(`[data-option="${element.getAttribute('data-configname')}"]`).classList.contains('show') &&
+                    !element.checked
+                ){
+                    whatCarSvg.querySelector(`[data-option="${element.getAttribute('data-configname')}"]`).classList.add(classHide)
+                    whatCarSvg.querySelector(`[data-option="${element.getAttribute('data-configname')}"]`).classList.remove('show')
+                }else {
                     arrOfSvgElem[arrOfSvgElem.length-1].classList.remove(classHide)
                     arrOfSvgElem[arrOfSvgElem.length-1].classList.add('show')
                 }
-                // else {
-                //     console.log(arrOfSvgElem);
-                //     uazElementOfSVG.querySelector(`[data-option="${item.getAttribute('data-configname')}"]`).classList.remove('show')
-                //     uazElementOfSVG.querySelector(`[data-option="${item.getAttribute('data-configname')}"]`).classList.add('shide')
-                // }
             }
         }
     }
@@ -227,26 +229,26 @@ export default function calculateConfig() {
                 importantElementBack.checked = true
             }
             if(configOfUaz.classList.contains('tab-content_show')) {
-                showOrHideSvgElement('plus', item, uazElementOfSVG, arrOfUaz, 'shide')
+                showOrHideSvgElement('plus', item, uazElementOfSVG, arrOfUaz, 'shide', configOfUaz)
             }else {
-                showOrHideSvgElement('plus', item, isuzuElementOfSVG, arrOfIsuzu, 'jhide')
+                showOrHideSvgElement('plus', item, isuzuElementOfSVG, arrOfIsuzu, 'jhide', configOfIsuzu)
             }
 
         }else {
             if(item.getAttribute('data-configname') === 'Навеска (для отвала и передней щетки)') {
-                if(configCar.querySelector('[data-configname="Передняя щетка со смачиванием (необходима навеска)"]').classList.contains('added')) {
-                    configCar.querySelector('[data-configname="Передняя щетка со смачиванием (необходима навеска)"]').dispatchEvent(clickEvent)
-                    configCar.querySelector('[data-configname="Передняя щетка со смачиванием (необходима навеска)"]').checked = false
-                }else if(configCar.querySelector('[data-configname="Отвал коммунальный (необходима навеска)"]').classList.contains('added')) {
-                    configCar.querySelector('[data-configname="Отвал коммунальный (необходима навеска)"]').dispatchEvent(clickEvent)
-                    configCar.querySelector('[data-configname="Отвал коммунальный (необходима навеска)"]').checked = false
-                }else if (configCar.querySelector('[data-configname="Отвал «бабочка» (необходима навеска)"]').classList.contains('added')) {
-                    configCar.querySelector('[data-configname="Отвал «бабочка» (необходима навеска)"]').dispatchEvent(clickEvent)
-                    configCar.querySelector('[data-configname="Отвал «бабочка» (необходима навеска)"]').checked = false
-                }else if(configCar.querySelector('[data-configname="Агрегат фронтальной мойки (АФМ)"]').classList.contains('added')) {
-                    configCar.querySelector('[data-configname="Агрегат фронтальной мойки (АФМ)"]').dispatchEvent(clickEvent)
-                    configCar.querySelector('[data-configname="Агрегат фронтальной мойки (АФМ)"]').checked = false
-                }
+                configCar.querySelectorAll('[data-importantCheck="true"]').forEach(elemHide => {
+                    if(elemHide.checked){
+                        elemHide.dispatchEvent(clickEvent)
+                        elemHide.checked = false
+                        if(configCar == configOfUaz && uazElementOfSVG.querySelector(`[data-option="${elemHide.getAttribute('data-configname')}"]`).classList.contains('show')) {
+                            uazElementOfSVG.querySelector(`[data-option="${elemHide.getAttribute('data-configname')}"]`).classList.remove('show')
+                            uazElementOfSVG.querySelector(`[data-option="${elemHide.getAttribute('data-configname')}"]`).classList.add('shide')
+                        }else if(configCar == configOfIsuzu && isuzuElementOfSVG.querySelector(`[data-option="${elemHide.getAttribute('data-configname')}"]`).classList.contains('show')) {
+                            isuzuElementOfSVG.querySelector(`[data-option="${elemHide.getAttribute('data-configname')}"]`).classList.remove('show')
+                            isuzuElementOfSVG.querySelector(`[data-option="${elemHide.getAttribute('data-configname')}"]`).classList.add('shide')
+                        }
+                    }
+                })
             }else if(item.getAttribute('data-configname') === 'Емкость для воды 2,0 куб. м.') {
                 if(configCar.querySelector('[data-configname="Ледозаливочное оборудование «Умка»"]').classList.contains('added')) {
                     configCar.querySelector('[data-configname="Ледозаливочное оборудование «Умка»"]').dispatchEvent(clickEvent)
@@ -254,9 +256,9 @@ export default function calculateConfig() {
                 }
             }
             if(configOfUaz.classList.contains('tab-content_show')) {
-                showOrHideSvgElement('minus', item, uazElementOfSVG, arrOfUaz, 'shide', '.shide',)
+                showOrHideSvgElement('minus', item, uazElementOfSVG, arrOfUaz, 'shide', configOfUaz, '.shide',)
             }else {
-                showOrHideSvgElement('minus', item, isuzuElementOfSVG, arrOfIsuzu, 'jhide', '.jhide')
+                showOrHideSvgElement('minus', item, isuzuElementOfSVG, arrOfIsuzu, 'jhide', configOfIsuzu, '.jhide')
             }
         }
     }
