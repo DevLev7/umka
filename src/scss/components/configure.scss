@@ -385,6 +385,7 @@
     }
 
     &__form-group.active {
+        background: var(--accent-primary);
         label {
             pointer-events: all;
         }

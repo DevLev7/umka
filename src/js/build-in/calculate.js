@@ -28,7 +28,8 @@ export default function calculateConfig() {
           arrOfIsuzu = []
 
     let deleteCheckbox,
-    clickEvent = new Event('change')
+    clickEvent = new Event('change'),
+    cloneClick = new Event('change')
 
     document.querySelectorAll('[data-configName="Ледозаливочное оборудование «Умка»"]').forEach(item => {
         item.removeAttribute('data-importantCheck')
@@ -147,7 +148,6 @@ export default function calculateConfig() {
             
         }else {
             sum -= price
-            console.log(selectedConfig.indexOf(nameConfig));
             selectedConfig.splice(selectedConfig.indexOf(nameConfig), 1)
             if(selectedConfig === arrOfUaz) {
                 addInChosen(chosenEquipmentUaz, arrOfUaz, countOfConfig, 'minus', nameConfig)
@@ -170,7 +170,8 @@ export default function calculateConfig() {
             element.getAttribute('data-configname') === 'Передняя щетка со смачиванием (необходима навеска)' && whatCar.querySelector('[data-configname="Навеска (для отвала и передней щетки)"]').checked ||
             element.getAttribute('data-configname') === 'Отвал коммунальный (необходима навеска)' && whatCar.querySelector('[data-configname="Навеска (для отвала и передней щетки)"]').checked ||
             element.getAttribute('data-configname') === 'Отвал «бабочка» (необходима навеска)' && whatCar.querySelector('[data-configname="Навеска (для отвала и передней щетки)"]').checked ||
-            element.getAttribute('data-configname') === 'Агрегат фронтальной мойки (АФМ)' && whatCar.querySelector('[data-configname="Навеска (для отвала и передней щетки)"]').checked
+            element.getAttribute('data-configname') === 'Агрегат фронтальной мойки (АФМ)' && whatCar.querySelector('[data-configname="Навеска (для отвала и передней щетки)"]').checked ||
+            element.getAttribute('data-configname') === 'Шнекороторное снегоуборочное оборудование' && whatCar.querySelector('[data-configname="Навеска (для отвала и передней щетки)"]').checked
         ) {
             if(sign === 'plus') { 
                 for(let i = 0; i< arrCar.length-1; i++){
@@ -218,7 +219,8 @@ export default function calculateConfig() {
                 item.getAttribute('data-configname') === 'Передняя щетка со смачиванием (необходима навеска)' && !importantElementFront.classList.contains('added') ||
                 item.getAttribute('data-configname') === 'Отвал коммунальный (необходима навеска)' && !importantElementFront.classList.contains('added') ||
                 item.getAttribute('data-configname') === 'Отвал «бабочка» (необходима навеска)' && !importantElementFront.classList.contains('added') ||
-                item.getAttribute('data-configname') === 'Агрегат фронтальной мойки (АФМ)' && !importantElementFront.classList.contains('added')
+                item.getAttribute('data-configname') === 'Агрегат фронтальной мойки (АФМ)' && !importantElementFront.classList.contains('added') ||
+                item.getAttribute('data-configname') === 'Шнекороторное снегоуборочное оборудование' && !importantElementFront.classList.contains('added')
             ){
                 importantElementFront.dispatchEvent(clickEvent)
                 importantElementFront.checked = true;
@@ -316,13 +318,11 @@ export default function calculateConfig() {
 
     function whatDelete(deletedElem, listOfElem, config) {
         listOfElem.forEach(elem => {
-            // console.log(elem);
             if(
                 deletedElem.previousElementSibling.innerText == elem.parentElement.querySelector('.configure__form-text p').innerText
                 && elem.getAttribute('data-config') == config
             ) {
-                console.log(elem);
-                elem.checked = false;
+                elem.checked = false 
                 return deleteCheckbox = elem
             }
         })
@@ -332,9 +332,7 @@ export default function calculateConfig() {
         item.addEventListener('click', function(e) {
             e.preventDefault()
             whatDelete(item, checkBox, 'uaz')
-            console.log(item.previousElementSibling.innerText);
-            deleteCheckbox.dispatchEvent(clickEvent)
-            // console.log(checkBox);
+            deleteCheckbox.dispatchEvent(cloneClick)
         })
     })
 
@@ -342,7 +340,7 @@ export default function calculateConfig() {
         item.addEventListener('click', function(e) {
             e.preventDefault()
             whatDelete(item, checkBox, 'isuzu')
-            deleteCheckbox.dispatchEvent(clickEvent)
+            deleteCheckbox.dispatchEvent(cloneClick)
         })
     })
 
@@ -380,7 +378,7 @@ export default function calculateConfig() {
             item.addEventListener('click', function(e) {
                 e.preventDefault()
                 whatDelete(item, checkBox, whatDeleteArr)
-                deleteCheckbox.dispatchEvent(clickEvent)
+                deleteCheckbox.dispatchEvent(cloneClick)
                 item.parentElement.parentElement.remove()
                 if(configAll.querySelectorAll('.configure__chosen-equipment-delete').length < 1) {
                     configAll.classList.remove('active')
