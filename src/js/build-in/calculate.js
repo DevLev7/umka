@@ -29,7 +29,8 @@ export default function calculateConfig() {
 
     let deleteCheckbox,
     clickEvent = new Event('change'),
-    cloneClick = new Event('change')
+    cloneClick = new Event('change'),
+    counterUaz = 0
 
     document.querySelectorAll('[data-configName="Ледозаливочное оборудование «Умка»"]').forEach(item => {
         item.removeAttribute('data-importantCheck')
@@ -222,12 +223,12 @@ export default function calculateConfig() {
                 item.getAttribute('data-configname') === 'Агрегат фронтальной мойки (АФМ)' && !importantElementFront.classList.contains('added') ||
                 item.getAttribute('data-configname') === 'Шнекороторное снегоуборочное оборудование' && !importantElementFront.classList.contains('added')
             ){
-                importantElementFront.dispatchEvent(clickEvent)
+                setTimeout(()=>{importantElementFront.dispatchEvent(clickEvent)},100)
                 importantElementFront.checked = true;
             }else if(
                 item.getAttribute('data-configname') === 'Ледозаливочное оборудование «Умка»' && !importantElementBack.classList.contains('added')
             ){
-                importantElementBack.dispatchEvent(clickEvent)
+                setTimeout(()=>{importantElementBack.dispatchEvent(clickEvent)},100)
                 importantElementBack.checked = true
             }
             if(configOfUaz.classList.contains('tab-content_show')) {
@@ -270,15 +271,34 @@ export default function calculateConfig() {
             importantElementUazFront   = configOfUaz.querySelector('[data-configname="Навеска (для отвала и передней щетки)"]'),
             importantElementUazBack    = configOfUaz.querySelector('[data-configname="Емкость для воды 2,0 куб. м."]'),
             importantElementIsuzuFront = configOfIsuzu.querySelector('[data-configname="Навеска (для отвала и передней щетки)"]'),
-            importantElementIsuzuBack  = configOfIsuzu.querySelector('[data-configname="Емкость для воды 2,0 куб. м."]')
+            importantElementIsuzuBack  = configOfIsuzu.querySelector('[data-configname="Емкость для воды 2,0 куб. м."]'),
+            nodeListUaz                = choosedAllConfigUaz.querySelectorAll('li'),
+            nodeListIsuzu              = choosedAllConfigIsuzu.querySelectorAll('li'),
+            resultConfigUaz            = [],
+            resultConfigIsuzu          = []
+            
 
         if(!element.classList.contains('added')) {
             element.classList.add('added')
             addOrDeleteEquipment(parseInt(element.getAttribute('data-price')), 'plus', selectedConfiguration, selectedCount, arrConfigs, nameOfConfig)
             if(configOfUaz.classList.contains('tab-content_show')) {
                 addOrDeleteImportantElement('plus', element, importantElementUazFront, importantElementUazBack, configOfUaz)
+                if(choosedAllConfigUaz.classList.contains('active')) {
+                    nodeListUaz.forEach((node) => {
+                        resultConfigUaz.push(node.querySelector('.configure__chosen-equipment-text').innerText);
+                    })
+                    let newArrUaz = arrOfUaz.filter(i => resultConfigUaz.indexOf(i) < 0)
+                    showMore(newArrUaz, choosedAllConfigUaz, 'allConfigUaz')
+                }
             }else {
                 addOrDeleteImportantElement('plus', element, importantElementIsuzuFront, importantElementIsuzuBack, configOfIsuzu)
+                if(choosedAllConfigIsuzu.classList.contains('active')) {
+                    nodeListIsuzu.forEach((node) => {
+                        resultConfigIsuzu.push(node.querySelector('.configure__chosen-equipment-text').innerText);
+                    })
+                    let newArrIsuzu = arrOfIsuzu.filter(i => resultConfigIsuzu.indexOf(i) < 0)
+                    showMore(newArrIsuzu, choosedAllConfigIsuzu, 'allConfigIsuzu')
+                }
             }
             
         }else {
@@ -364,38 +384,42 @@ export default function calculateConfig() {
         chooseList.appendChild(newElementsOfConfig)
     }
 
-    function showMore(choseArray, list, dataAttr) {
+    function showMore(choseArray, list, dataAttr, uazOrIsuzuList) {
         for(let i = 0; i < choseArray.length; i++) {
             createElement(list, choseArray[i], dataAttr)
         }
+        document.querySelectorAll('.configure__chosen-equipments')[uazOrIsuzuList].classList.add('hide')
+        list.classList.add('active')
     }
 
-    function deleteFromMore(arr, configAll, dataConfig, whatHide, whatDeleteArr) {
-        showMore(arr, configAll, dataConfig)
-        document.querySelectorAll('.configure__chosen-equipments')[whatHide].classList.add('hide')
-        configAll.classList.add('active')
-        configAll.querySelectorAll('.configure__chosen-equipment-delete').forEach(item => {
-            item.addEventListener('click', function(e) {
+    function deleteFromMore(choiseConfig, whatCar, whatArray, whatData, uazOrIsuzu){
+        choiseConfig.querySelectorAll('.configure__chosen-equipment-delete').forEach(item => {
+            item.addEventListener('click', function(e){
                 e.preventDefault()
-                whatDelete(item, checkBox, whatDeleteArr)
+                whatDelete(item, checkBox, whatCar)
                 deleteCheckbox.dispatchEvent(cloneClick)
-                item.parentElement.parentElement.remove()
-                if(configAll.querySelectorAll('.configure__chosen-equipment-delete').length < 1) {
-                    configAll.classList.remove('active')
-                    document.querySelectorAll('.configure__chosen-equipments')[whatHide].classList.remove('hide')
+                choiseConfig.innerHTML = ''
+                showMore(whatArray, choiseConfig, whatData, uazOrIsuzu)
+                if(choiseConfig.querySelectorAll('.configure__chosen-equipment-delete').length < 1) {
+                    choiseConfig.classList.remove('active')
+                    document.querySelectorAll('.configure__chosen-equipments')[uazOrIsuzu].classList.remove('hide')
+                }else {
+                    deleteFromMore(choiseConfig, whatCar, whatArray, whatData, uazOrIsuzu)
                 }
             })
         })
     }
 
     chosenEquipmentUaz[2].addEventListener('click', function(e){
+        showMore(arrOfUaz, choosedAllConfigUaz, 'allConfigUaz', 0)
+        deleteFromMore(choosedAllConfigUaz, 'uaz', arrOfUaz, 'allConfigUaz', 0)
         e.preventDefault()
-        deleteFromMore(arrOfUaz, choosedAllConfigUaz, 'allConfigUaz', 0, 'uaz')
     })
 
     chosenEquipmentIsuzu[2].addEventListener('click', function(e){
+        showMore(arrOfIsuzu, choosedAllConfigIsuzu, 'allConfigIsuzu', 1)
         e.preventDefault()
-        deleteFromMore(arrOfIsuzu, choosedAllConfigIsuzu, 'allConfigIsuzu', 1, 'isuzu')
+        deleteFromMore(choosedAllConfigIsuzu, 'isuzu', arrOfIsuzu, 'allConfigIsuzu', 1)
     })
 
 }
