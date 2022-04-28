@@ -307,16 +307,16 @@
                 height: 2.3vw;
                 font-weight: 400;
                 padding: 0;
-                box-shadow: 0px 4px 12px 0px rgb(34 60 80 / 57%);
                 margin-top: 0;
                 top: 0;
             }
             .swiper__nav {
                 position: absolute;
                 top: 18px;
-                right: -9px;
+                right: -23px;
                 width: 5.6vw;
             }
+
             .swiper-button-prev {
                 background-color: var(--main-tertiary);
                 transition: all 0.5s linear;
@@ -355,16 +355,13 @@
                 }
             }
         }
-        // button:hover {
-        //     background-color: var(--accent-primary-hover);
-        // }
         button {
             // padding: 2rem 2.5rem;
             gap: 3.6rem;
             width: 100%;
             margin-top: 2rem;
             white-space: nowrap;
-            padding-top: 2.7rem;
+            padding-top: 2.8rem;
 
             svg {
                 fill: transparent;
@@ -414,5 +411,8 @@
                 gap: 0.5rem;
             }
         }
+    }
+    .video__icon svg:hover circle {
+        fill: #196BD1;
     }
 }

@@ -1,6 +1,7 @@
 .characters {
     position: relative;
-    padding-bottom: 8rem;
+    padding-bottom: calc(53px + (100 - 53) * (100vw - 360px) / (1680 - 360));
+    padding-top: calc(32px + (80 - 32) * (100vw - 360px) / (1680 - 360));
     &__wrapper {
         padding: 9rem 9.7rem 9rem 9.8rem;
         background: #f0f4fe;
@@ -12,6 +13,10 @@
             padding: 2.5rem 2rem 2rem 2rem;
             border-radius: 5px;
         }
+    }
+
+    .characters__button.button--light:hover a {
+        color: #196BD1;
     }
 
     &__title h2 {

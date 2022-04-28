@@ -1,6 +1,6 @@
 .expert {
     position: relative;
-    padding: calc(32px + (80 - 32) * (100vw - 360px) / (1680 - 360)) 0;
+    padding-bottom: calc(53px + (100 - 53) * (100vw - 360px) / (1680 - 360));
 
     &__wrapper {
         background: url(../img/block_7.jpg);
@@ -82,6 +82,12 @@
         @media (max-width: 560px) {
             height: 6rem;
             border-radius: 5px;
+           
+        }
+        @media (max-width: 550px) {
+           width: unset;
+            width: 100%;
+           
         }
     }
 
@@ -172,8 +178,9 @@
             height: 6rem;
             border-radius: 7px;
         }
-        @media (max-width: 500px) {
+        @media (max-width: 550px) {
             font-size: 2rem;
+            width: 100%;
         }
     }
 

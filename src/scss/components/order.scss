@@ -4,10 +4,15 @@
 .wide-container {
 }
 .order__inner {
-    background-image: url(../img/block_7.jpg);
+    background-image: url(../img/block_911.jpg);
     padding: 9rem 9.8rem;
     padding: calc(25px + (90 - 25) * (100vw - 360px) / (1680 - 360)) calc(20px + (98 - 20) * (100vw - 360px) / (1680 - 360));
     border-radius: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+     @media (max-width: 500px) {
+            border-radius: 5px;
+        }
     p {
         font: var(--body-XL);
         font-family: var(--main-ff);
@@ -45,12 +50,18 @@
         @media (max-width: 1179px) {
             flex-direction: column-reverse;
         }
+        @media (max-width: 500px) {
+            gap: 2.4rem;
+        }
     }
     &-main-inner {
         margin-top: auto;
         display: flex;
         flex-direction: column;
         gap: 3rem;
+        @media (max-width: 500px) {
+            gap: 2rem;
+        }
     }
     &-main-left {
         display: flex;
@@ -115,13 +126,17 @@
         padding: 2rem;
         background-color: rgba($color: #fff, $alpha: 0.15);
         border-radius: 10px;
-        max-width: 29rem;
+        max-width: 33rem;
         // max-width: 32%;
+        
         width: 100%;
         position: relative;
         @media (max-width: 767px) {
             width: 100%;
             max-width: unset;
+        }
+        @media (max-width: 500px) {
+            padding: 1.5rem;
         }
 
         span {
@@ -209,11 +224,50 @@
             height: 80px;
         }
     }
+    @media (max-width: 500px) {
+        .order__inner-main-item:nth-child(1)::before {
+            content: '';
+            top: 38%;
+           
+        }
+        .order__inner-main-item:nth-child(2)::before {
+            content: '';
+
+            top: 38%;
+           
+        }
+        .order__inner-main-item:nth-child(3)::before {
+            content: '';
+
+            top: 38%;
+           
+        }
+    }
 
     button {
-        padding-top: 2.2rem;
+        padding-top: 2.3rem;
         @media (max-width: 500px) {
             padding-top: 1.2rem;
+            font-size: 2rem;
+            }
+    }
+    .order__hidden-text {
+        display: none;
+        @media (max-width: 767px) {
+           display: block;
+           order: 100;
+            font: var(--body-XX);
+            color: #fff;
+            padding-top: 0;
+            }
+            p {
+                margin: 0;
+            }
+    }
+
+    .order__inner-main-text {
+        @media (max-width: 500px) {
+           font-size: 1.2rem;
             }
     }
 }

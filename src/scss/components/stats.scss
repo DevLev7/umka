@@ -1,9 +1,12 @@
 .stats {
     display: flex;
-    width: 100vw;
+    width: 100%;
     min-height: 100vh;
     padding-top: 16rem;
     padding-bottom: calc(32px + (80 - 32) * (100vw - 360px) / (1680 - 360));
+     @media (min-width: 1921px) {
+        padding-bottom: 0;
+    }
 
     @media (max-width: 1245px) {
         padding-top: 9rem;

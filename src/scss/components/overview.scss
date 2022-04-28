@@ -1,12 +1,16 @@
 .overview {
     position: relative;
     padding-bottom: calc(30px + (80 - 30) * (100vw - 360px) / (1680 - 360));
-    padding-top: calc(32px + (80 - 32) * (100vw - 360px) / (1680 - 360));
 
     &__inner {
-        position: relative;
+       position: relative;
         display: flex;
         justify-content: center;
+        background-image: url(../img/video_img.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 10px;
+        background-position: top center;
         align-items: center;
         aspect-ratio: 1550 / 500;
 
@@ -80,4 +84,19 @@
             }
         }
     }
+    .video__icon svg:hover circle {
+        fill: #196BD1;
+    }
+    
+.play-button:hover{
+    background-color: #196BD1;
+  }
+  .play-button:hover {
+        background-color: #196bd1;
+    }
+    .billet:hover .overview__video {
+        filter: brightness(40%);
+        background: #000;
+    }
+  
 }

@@ -24,8 +24,9 @@ import calculateConfig from './build-in/calculate';
 // import wow from './build-in/wow.js'
 import why from './build-in/why';
 import validation from './build-in/validation';
-import fancybox from './build-in/fancybox';
 import masks from './build-in/masks';
+import media from './build-in/media';
+import modals from './build-in/modals';
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -63,8 +64,8 @@ document.addEventListener('DOMContentLoaded', function () {
     why();
     calculateConfig();
     masks();
-
-    // fancybox();
+    media();
+    modals();
 });
 
 document.addEventListener('lazyloaded', () => {

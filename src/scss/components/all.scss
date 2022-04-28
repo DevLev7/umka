@@ -141,13 +141,22 @@
         }
     }
 
-    &__three__elements {
+    &__three__elements:not(:last-child) {
         display: flex;
         gap: 2rem;
+        position: relative;
+        padding-left: 9.5rem;
+        padding-top: 2rem;
         @media (max-width: 1250px) {
             flex: 0 0 33%;
         }
         @media (max-width: 1140px) {
+            flex: 0 0 100%;
+        }
+    }
+
+    &__three__elements:last-child {
+       @media (max-width: 500px) {
             flex: 0 0 100%;
         }
     }
@@ -160,7 +169,6 @@
             font-size: 2.5rem;
         }
     }
-
     &__three__elements_text {
         font: var(--body-L-narrow);
         color: #0f1926;
@@ -176,6 +184,11 @@
     &__three__image svg {
         fill: none;
         margin: 0 auto;
+    }
+    &__three__image {
+        position: absolute;
+        top: 0;
+        left: 0;
     }
 
     &__three__one-more {

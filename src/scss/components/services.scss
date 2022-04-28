@@ -1,0 +1,18 @@
+.services {
+    position: relative;
+    width: 100%;
+    padding-bottom: 8rem;
+    margin-top: 13rem;
+
+    &__wrapper {
+        background: #F0F4FE;
+        border-radius: 10px;
+        padding: 9rem 9.7rem 5.4rem 9.8rem;
+        position: relative;
+    }
+
+    &__title h1 {
+        font-size: calc(30px + 70*(100vw - 360px)/1560);
+        font: var(--title-XL);
+    }
+}

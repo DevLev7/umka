@@ -1,11 +1,3 @@
-/* ######
-
-Как пользоваться:
-
-Пример:
-
-###### */
-
 import 'parsleyjs';
 import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
@@ -56,7 +48,7 @@ window.Parsley.addValidator('phone', {
     },
     messages: {
         en: 'This value should be a mobile number',
-        ru: 'Введите номер телефона',
+        ru: 'Введите номер',
     },
 });
 
@@ -103,6 +95,6 @@ export default function validation() {
     const formsToValidate = Array.from(document.querySelectorAll('form[data-need-validation]'));
 
     formsToValidate.forEach((form) => {
-        $(form).parsley().validate();
+        $(form).parsley();
     });
 }

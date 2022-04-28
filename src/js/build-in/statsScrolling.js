@@ -10,9 +10,9 @@ export default function statsScrolling() {
     const statThird = document.querySelector('.stats-img-3');
 
     let tl = gsap.timeline();
-    tl.to(statFirst,{opacity:0, delay: 0.1, duration: 0.2});
+    tl.to(statFirst,{opacity:0, delay: 0.4, duration: 0.2});
     tl.to(statSecond, {opacity: 1,delay: 0.1, duration: 0.2}, '-=0.15');
-    tl.to(statSecond,{opacity:0, delay: 0.1, duration: 0.2});
+    tl.to(statSecond,{opacity:0, delay: 1, duration: 0.1});
     tl.to(statThird, {opacity: 1, duration: 0.2}, '-=0.15');
 
     let tlMobile = gsap.timeline();
@@ -29,7 +29,7 @@ export default function statsScrolling() {
                 animation: tl,
                 trigger: statsList,
                 start: '20% center',
-                end: '85% 40%',
+                end: '85% 50%',
                 scrub: true,
                 pin: true,
             })

@@ -30,6 +30,7 @@
     // Calc
     --calc-title-S: calc(25px + (40 - 25) * (100vw - 360px) / (1920 - 360));
     --calc--title-L: calc(40px + (85 - 40) * (100vw - 360px) / (1920 - 360));
+    --calc--title-XL: calc(40px + (100 - 40) * (100vw - 360px) / (1680 - 360));
 
     /* Text */
     --body-XX: var(--bold) 3rem/110% var(--main-ff);

@@ -84,14 +84,16 @@
         align-items: center;
         justify-content: space-between;
         cursor: pointer;
+        border: 1px solid #1B74E3;
         &:hover {
-            background-color: #fff;
+            background-color: #EFF6FF;
             border-color: #fff;
             color: var(--accent-primary-hover);
         }
         &:hover svg {
             stroke: var(--accent-primary-hover);
         }
+         
     }
 }
 
@@ -122,7 +124,7 @@
     color: #fff;
     z-index: 1000;
     position: relative;
-    display: none;
+    // display: none;
     border: none;
 }
 
@@ -165,3 +167,34 @@ a:hover {
         margin-top: calc(25px + (40 - 25) * (100vw - 360px) / (1680 - 360));
     }
 }
+
+
+@media (min-width: 1681px) {
+    h2,
+    .callback__content-container__second-mobile a {
+        font-size: 8.5rem !important;
+    }
+    .callback__content-container__contacts-mobile a,
+    .callback__content-container__second-callback p,
+    .callback__content-container__first a {
+        font-size: 4rem !important;
+    }
+    .plant__inner_slider-thanks-text strong {
+        font-size: 5.5rem !important;
+    }
+    .plant__inner_slider .video__icon,
+    .plant__title_inner strong {
+        font-size: 3rem !important;
+    }
+}
+
+.form .button--light:hover {
+    color: #196BD1;
+    background: none;
+    border: 1px solid #196BD1;
+}
+.form .button--light:hover a {
+    color: #196BD1;
+}
+
+

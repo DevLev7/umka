@@ -29,8 +29,11 @@
         height: 225px;
         transition: all 0.5s linear;
         background-color: transparent;
+        overflow: hidden;
+
         img {
             border-radius: 10px;
+            transition: transform 0.3s;
         }
 
         @media (max-width: 533px) {
@@ -43,10 +46,10 @@
             object-fit: cover;
         }
     }
-    &-item:hover {
-        transition: all 0.5s linear;
+    &-item:hover img {
+
         transform: scale(1.02);
-        box-shadow: 5px 12px 27px -2px rgba(34, 60, 80, 0.46);
+     
     }
 
     &-item--one {
@@ -151,18 +154,17 @@
     .swiper-slide {
         width: 90% !important;
         @media (max-width: 500px) {
-           width: 10%;
+            width: 10%;
         }
     }
     .swiper-wrapper {
         margin-left: -14% !important;
         @media (max-width: 500px) {
             width: 100%;
-    margin: 0 auto;
+            margin: 0 auto;
         }
     }
 }
-
 .swiper__nav {
     position: relative;
     padding-bottom: 4rem;
@@ -215,4 +217,8 @@
     border-radius: 10px;
     width: 30px;
     opacity: 1 !important;
+}
+
+.gallery__wrapper-item {
+    cursor: pointer;
 }

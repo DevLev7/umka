@@ -177,7 +177,7 @@
         gap: 2rem;
         flex-grow: 1;
         display: none;
-
+        
         @media (max-width: 800px) {
             max-width: 266px;
         }
@@ -349,7 +349,7 @@
             padding-left: 10px;
             font-size: 18px;
         }
-        
+
         @media (max-width: 600px) {
             font-size: 16px;
         }
