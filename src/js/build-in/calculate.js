@@ -359,6 +359,7 @@ export default function calculateConfig() {
             e.target.className === 'configure__form-group-list' ||
             e.target.className === 'configure__form-group-item' ||
             e.target.className === 'configure__form-checkbox' ||
+            e.target.className === 'configure__form-checkbox added' ||
             e.target.className === 'configure__form-group-button' ||
             e.target.className === ''
         ) {
