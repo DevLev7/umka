@@ -7,7 +7,7 @@
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         gap: 2.5rem;
-        padding: calc(25px + (105 - 25) * (100vw - 360px) / (1680 - 360)) calc(15px + (97 - 15) * (100vw - 360px) / (1680 - 360));
+        padding: calc(25px + (80 - 25) * (100vw - 360px) / (1680 - 360)) calc(15px + (97 - 15) * (100vw - 360px) / (1680 - 360));
         background: linear-gradient(265.25deg, rgba(63, 137, 228, 0.9) 32.92%, rgba(63, 137, 228, 0.81) 70.46%), url('../img/configure-bg.png');
         background-size: cover;
         border-radius: 1rem;
@@ -177,6 +177,10 @@
         gap: 2rem;
         flex-grow: 1;
         display: none;
+
+        @media (max-width: 800px) {
+            max-width: 266px;
+        }
     }
 
     &__form.tab-content_show {
@@ -221,7 +225,7 @@
         width: calc(100% + 2px);
         left: -1px;
         border: 1px solid #fff;
-        max-height: 150px;
+        max-height: 242px;
         background: #fff;
         border-bottom-left-radius: 1rem;
         border-bottom-right-radius: 1rem;
@@ -245,14 +249,22 @@
         }
 
         &.additionalOptions {
-            max-height: 160px;
+            max-height: 152px;
+        }
+
+        @media (max-width: 800px) {
+            max-height: 210px;
+
+            &.additionalOptions {
+                max-height: 105px;
+            }
         }
 
         @media (max-width: 600px) {
-            max-height: 113px;
+            max-height: 200px;
 
             &.additionalOptions {
-                max-height: 160px;
+                max-height: 120px;
             }
         }
     }
@@ -262,7 +274,7 @@
         padding-left: 20px;
         padding-bottom: 25px;
 
-        @media (max-width: 600px) {
+        @media (max-width: 800px) {
             padding-top: 16px;
             padding-left: 14px;
             padding-bottom: 16px;
@@ -332,9 +344,13 @@
         color: var(--accent-primary);
         font-size: 20px;
         padding-top: 2px;
+
+        @media (max-width: 800px) {
+            padding-left: 10px;
+            font-size: 18px;
+        }
         
         @media (max-width: 600px) {
-            padding-left: 10px;
             font-size: 16px;
         }
     }
@@ -371,6 +387,7 @@
         color: #fff;
 
         svg {
+            pointer-events: none;
             width: 2rem;
             height: 2rem;
             transition: transform 0.2s ease-in-out;
@@ -509,7 +526,11 @@
         display: flex;
         flex-direction: column;
         gap: 3.5rem;
-        margin-top: auto;
+        margin-top: 135px;
+
+        @media (max-width: 800px) {
+            margin-top: 30px;
+        }
     }
 
     &__form-price-wrapper {
@@ -593,12 +614,12 @@
         }
     }
 }
-.jisuzuCar .show , .suazCar .show {
+.kisuzuCar .show , .tuazCar .show {
     opacity: 1;
     animation: showConstrurt 0.3s ease-in-out;
 }
 
-.jhide, .shide {
+.khide, .thide {
     opacity: 0 ;
     animation: hideConstrurt 0.3s ease-in-out;
 }

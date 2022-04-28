@@ -1,9 +1,5 @@
 export default function calculateConfig() {
     let   equipments              = document.querySelectorAll('[data-choise="equipment"]'),      
-          additionalOptions       = document.querySelector('[data-config="additionalOptions"]'),
-          chosenEquipment         = document.querySelectorAll('.configure__chosen-equipment-wrapper'),
-          counterOfEquipment      = document.querySelector('.configure__chosen-equipment-counter'),
-          totalPrice              = document.querySelectorAll('.configure__form-price'),
           checkBox                = document.querySelectorAll('.configure__form-checkbox'),
           choiceOfCar             = document.querySelectorAll('.configure__tab-desktop'),
           choiceOfCarMobile       = document.querySelectorAll('.configure__tab-mobile'),
@@ -21,16 +17,15 @@ export default function calculateConfig() {
           choosedAllConfigIsuzu   = configOfIsuzu.querySelector('.configure__chosen-equipmentsAll'),
           carOfUaz                = document.querySelector('[data-car="uaz"]'),
           carOfIsuzu              = document.querySelector('[data-car="isuzu"]'),
-          uazElementOfSVG         = document.querySelector('.suazCar'),
-          isuzuElementOfSVG       = document.querySelector('.jisuzuCar')
+          uazElementOfSVG         = document.querySelector('.tuazCar'),
+          isuzuElementOfSVG       = document.querySelector('.kisuzuCar')
     
     const arrOfUaz   = [],
           arrOfIsuzu = []
 
     let deleteCheckbox,
     clickEvent = new Event('change'),
-    cloneClick = new Event('change'),
-    counterUaz = 0
+    cloneClick = new Event('change')
 
     document.querySelectorAll('[data-configName="Ледозаливочное оборудование «Умка»"]').forEach(item => {
         item.removeAttribute('data-importantCheck')
@@ -53,11 +48,25 @@ export default function calculateConfig() {
         })
     }
 
+    function changeTabAll(target, car) {
+        target.forEach(item=>{
+            item.classList.remove('active')
+        })
+        target[car].classList.add('active')
+    }
+
     for (let button of choiceOfCarMobile) {
         button.addEventListener('click', function () {
             choiceOfCarMobile.forEach(btn => btn.classList.remove('active'));
             this.classList.toggle('active');
-            this.getAttribute('data-carName') === 'isuzu' ? showOrHideConfig(configOfIsuzu, configOfUaz, carOfIsuzu,  carOfUaz) : showOrHideConfig(configOfUaz, configOfIsuzu, carOfUaz, carOfIsuzu)
+            if(this.getAttribute('data-carName') === 'isuzu'){
+                changeTabAll(choiceOfCar, 1)
+                showOrHideConfig(configOfIsuzu, configOfUaz, carOfIsuzu,  carOfUaz)
+            } else {
+                changeTabAll(choiceOfCar, 0)
+                showOrHideConfig(configOfUaz, configOfIsuzu, carOfUaz, carOfIsuzu)
+            }
+             
         });
     }
     
@@ -65,9 +74,17 @@ export default function calculateConfig() {
         button.addEventListener('click', function () {
             choiceOfCar.forEach(btn => btn.classList.remove('active'));
             this.classList.toggle('active');
-            this.getAttribute('data-carName') === 'isuzu' ? showOrHideConfig(configOfIsuzu, configOfUaz, carOfIsuzu,  carOfUaz) : showOrHideConfig(configOfUaz, configOfIsuzu, carOfUaz, carOfIsuzu)
+            if(this.getAttribute('data-carName') === 'isuzu'){
+                changeTabAll(choiceOfCarMobile, 1)
+                showOrHideConfig(configOfIsuzu, configOfUaz, carOfIsuzu,  carOfUaz)
+            }else {
+                changeTabAll(choiceOfCarMobile, 0)
+                showOrHideConfig(configOfUaz, configOfIsuzu, carOfUaz, carOfIsuzu)
+            }
         });
     }
+
+
     // Табы
 
     function showOrHideChoice(elem, show) {
@@ -158,9 +175,9 @@ export default function calculateConfig() {
         }
 
         if(selectedConfig === arrOfUaz) {
-            animateConstruct('.suazCar', nameConfig, 'shide')
+            animateConstruct('.tuazCar', nameConfig, 'thide')
         }else {
-            animateConstruct('.jisuzuCar', nameConfig, 'jhide')
+            animateConstruct('.kisuzuCar', nameConfig, 'khide')
         }
         
         config.innerText = `${sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} руб.`
@@ -232,9 +249,9 @@ export default function calculateConfig() {
                 importantElementBack.checked = true
             }
             if(configOfUaz.classList.contains('tab-content_show')) {
-                showOrHideSvgElement('plus', item, uazElementOfSVG, arrOfUaz, 'shide', configOfUaz)
+                showOrHideSvgElement('plus', item, uazElementOfSVG, arrOfUaz, 'thide', configOfUaz)
             }else {
-                showOrHideSvgElement('plus', item, isuzuElementOfSVG, arrOfIsuzu, 'jhide', configOfIsuzu)
+                showOrHideSvgElement('plus', item, isuzuElementOfSVG, arrOfIsuzu, 'khide', configOfIsuzu)
             }
 
         }else {
@@ -245,10 +262,10 @@ export default function calculateConfig() {
                         elemHide.checked = false
                         if(configCar == configOfUaz && uazElementOfSVG.querySelector(`[data-option="${elemHide.getAttribute('data-configname')}"]`).classList.contains('show')) {
                             uazElementOfSVG.querySelector(`[data-option="${elemHide.getAttribute('data-configname')}"]`).classList.remove('show')
-                            uazElementOfSVG.querySelector(`[data-option="${elemHide.getAttribute('data-configname')}"]`).classList.add('shide')
+                            uazElementOfSVG.querySelector(`[data-option="${elemHide.getAttribute('data-configname')}"]`).classList.add('thide')
                         }else if(configCar == configOfIsuzu && isuzuElementOfSVG.querySelector(`[data-option="${elemHide.getAttribute('data-configname')}"]`).classList.contains('show')) {
                             isuzuElementOfSVG.querySelector(`[data-option="${elemHide.getAttribute('data-configname')}"]`).classList.remove('show')
-                            isuzuElementOfSVG.querySelector(`[data-option="${elemHide.getAttribute('data-configname')}"]`).classList.add('shide')
+                            isuzuElementOfSVG.querySelector(`[data-option="${elemHide.getAttribute('data-configname')}"]`).classList.add('thide')
                         }
                     }
                 })
@@ -259,9 +276,9 @@ export default function calculateConfig() {
                 }
             }
             if(configOfUaz.classList.contains('tab-content_show')) {
-                showOrHideSvgElement('minus', item, uazElementOfSVG, arrOfUaz, 'shide', configOfUaz, '.shide',)
+                showOrHideSvgElement('minus', item, uazElementOfSVG, arrOfUaz, 'thide', configOfUaz, '.thide',)
             }else {
-                showOrHideSvgElement('minus', item, isuzuElementOfSVG, arrOfIsuzu, 'jhide', configOfIsuzu, '.jhide')
+                showOrHideSvgElement('minus', item, isuzuElementOfSVG, arrOfIsuzu, 'khide', configOfIsuzu, '.khide')
             }
         }
     }
@@ -327,12 +344,31 @@ export default function calculateConfig() {
         btn.addEventListener('click', function(e){
             e.preventDefault()
             if(!equipment.classList.contains('active')){
+                equipments.forEach(item=>{
+                    item.classList.remove('active')
+                })
                 equipment.classList.add('active')
             }else {
                 equipment.classList.remove('active')
             }
         })
     });
+
+    document.addEventListener('click', function(e){ 
+        if(
+            e.target.className === 'configure__form-group-list' ||
+            e.target.className === 'configure__form-group-item' ||
+            e.target.className === 'configure__form-checkbox' ||
+            e.target.className === 'configure__form-group-button' ||
+            e.target.className === ''
+        ) {
+            return
+        }else {
+            equipments.forEach(equipment => {
+                equipment.classList.remove('active')
+            })
+        }
+    })
 
     // Delete choice element
 
