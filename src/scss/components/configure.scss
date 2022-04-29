@@ -616,12 +616,10 @@
 }
 .kisuzuCar .show , .tuazCar .show {
     opacity: 1;
-    animation: showConstrurt 0.3s ease-in-out;
 }
 
-.khide, .thide {
+.kisuzuCar .khide, .tuazCar .thide {
     opacity: 0 ;
-    animation: hideConstrurt 0.3s ease-in-out;
 }
 
 @keyframes hideConstrurt {

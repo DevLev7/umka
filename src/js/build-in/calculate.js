@@ -193,12 +193,12 @@ export default function calculateConfig() {
         ) {
             if(sign === 'plus') { 
                 for(let i = 0; i< arrCar.length-1; i++){
-                    whatCarSvg.querySelectorAll('[data-importantElem="true"]').forEach(svgElem => {
+                    whatCarSvg.querySelectorAll('g[data-importantelem="true"]').forEach(svgElem => {
                         if(
                             arrCar[i] === svgElem.getAttribute('data-option') && 
                             svgElem.getAttribute('data-importantelem') === 'true' &&
                             svgElem.classList.contains('show') &&
-                            whatCarSvg.querySelectorAll('[data-importantElem="true"].show').length > 1
+                            whatCarSvg.querySelectorAll('g[data-importantelem="true"].show').length > 1
                         ){
                             svgElem.classList.remove('show')
                             svgElem.classList.add(classHide)
@@ -206,7 +206,7 @@ export default function calculateConfig() {
                     })
                 }
             }else { 
-                let configSvg =  whatCarSvg.querySelectorAll(`[data-importantElem="true"]${classHideForMinus}`)
+                let configSvg =  whatCarSvg.querySelectorAll(`[data-importantelem="true"]${classHideForMinus}`)
                 let arrOfSvgElem = []
                 for(let i = 0; i< arrCar.length; i++){
                     for(let j = 0; j < configSvg.length; j++){
@@ -237,14 +237,21 @@ export default function calculateConfig() {
                 item.getAttribute('data-configname') === 'Передняя щетка со смачиванием (необходима навеска)' && !importantElementFront.classList.contains('added') ||
                 item.getAttribute('data-configname') === 'Отвал коммунальный (необходима навеска)' && !importantElementFront.classList.contains('added') ||
                 item.getAttribute('data-configname') === 'Отвал «бабочка» (необходима навеска)' && !importantElementFront.classList.contains('added') ||
-                item.getAttribute('data-configname') === 'Агрегат фронтальной мойки (АФМ)' && !importantElementFront.classList.contains('added') ||
                 item.getAttribute('data-configname') === 'Шнекороторное снегоуборочное оборудование' && !importantElementFront.classList.contains('added')
             ){
                 setTimeout(()=>{importantElementFront.dispatchEvent(clickEvent)},100)
                 importantElementFront.checked = true;
             }else if(
-                item.getAttribute('data-configname') === 'Ледозаливочное оборудование «Умка»' && !importantElementBack.classList.contains('added')
+                item.getAttribute('data-configname') === 'Агрегат фронтальной мойки (АФМ)' && !importantElementFront.classList.contains('added') && !importantElementBack.classList.contains('added')
             ){
+                setTimeout(()=>{importantElementFront.dispatchEvent(clickEvent)},100)
+                setTimeout(()=>{importantElementBack.dispatchEvent(cloneClick)},100)
+                importantElementBack.checked = true
+                importantElementFront.checked = true;
+            }else if (item.getAttribute('data-configname') === 'Агрегат фронтальной мойки (АФМ)' && !importantElementFront.classList.contains('added') && importantElementBack.classList.contains('added')) {
+                setTimeout(()=>{importantElementFront.dispatchEvent(clickEvent)},100)
+                importantElementFront.checked = true;
+            }else if (item.getAttribute('data-configname') === 'Агрегат фронтальной мойки (АФМ)' && importantElementFront.classList.contains('added') && !importantElementBack.classList.contains('added')) {
                 setTimeout(()=>{importantElementBack.dispatchEvent(clickEvent)},100)
                 importantElementBack.checked = true
             }
@@ -270,9 +277,9 @@ export default function calculateConfig() {
                     }
                 })
             }else if(item.getAttribute('data-configname') === 'Емкость для воды 2,0 куб. м.') {
-                if(configCar.querySelector('[data-configname="Ледозаливочное оборудование «Умка»"]').classList.contains('added')) {
-                    configCar.querySelector('[data-configname="Ледозаливочное оборудование «Умка»"]').dispatchEvent(clickEvent)
-                    configCar.querySelector('[data-configname="Ледозаливочное оборудование «Умка»"]').checked = false
+                if(configCar.querySelector('[data-configname="Агрегат фронтальной мойки (АФМ)"]').classList.contains('added')) {
+                    configCar.querySelector('[data-configname="Агрегат фронтальной мойки (АФМ)"]').dispatchEvent(clickEvent)
+                    configCar.querySelector('[data-configname="Агрегат фронтальной мойки (АФМ)"]').checked = false
                 }
             }
             if(configOfUaz.classList.contains('tab-content_show')) {
