@@ -285,7 +285,6 @@
         position: relative;
         display: flex;
         margin-top: 22px;
-        align-items: end;
 
         &:first-child {
             margin-top: 0;
@@ -304,6 +303,8 @@
         height: 20px;
         flex-shrink: 0;
         opacity: 0;
+        cursor: pointer;
+        z-index: 999;
     }
 
     &__form-checkboxCustom {
@@ -315,6 +316,7 @@
         border: 1px solid var(--accent-primary);
         border-radius: 7px;
         transition: 0.2s ease-in-out;
+        cursor: pointer;
 
         svg {
             width: 11px;
