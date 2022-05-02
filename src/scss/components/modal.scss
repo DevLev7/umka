@@ -33,9 +33,7 @@
 
     &__inner {
         position: relative;
-
         padding: 4rem;
-
         background-color: $modal-bg-color;
     }
 
@@ -47,12 +45,6 @@
         color: $modal-bg-color;
     }
 }
-
-// #success-modal .form {
-//     background-color: #FCFDFF;
-//     padding: 5rem;
-//     border-radius: 1rem;
-// }
 
 .modal {
     background-color: #0f1926;

@@ -14,9 +14,11 @@
             border-radius: 5px;
         }
     }
-
+    .characters__button {
+        position: relative;
+    }
     .characters__button.button--light:hover a {
-        color: #196BD1;
+        color: #196bd1;
     }
 
     &__title h2 {
@@ -101,7 +103,7 @@
     }
 
     .nav-item:hover {
-        color: #196BD1;
+        color: #196bd1;
         opacity: 1;
     }
 
@@ -187,7 +189,6 @@
         padding: 2.7rem 15.2rem 2.5rem 2.5rem;
 
         @media (max-width: 550px) {
-           
             padding: 2.5rem 14.2rem 2.5rem 2.5rem;
             border-radius: 5px;
             width: 100%;

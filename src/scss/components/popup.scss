@@ -1,22 +1,19 @@
-.fancybox__backdrop {
-    background-color: rgba(15, 25, 38, 0.85) !important;
-}
-
-.fancybox__container {
-    background-color: #333b46 !important;
-}
-// .fancybox__container.is-animated {
-//     z-index: 9999999999999999999999999999999999;
+// .fancybox__backdrop {
+//     background-color: rgba(15, 25, 38, 0.85) !important;
 // }
 
-.fancybox__track .fancybox__slide.has-video {
-    cursor: default !important;
-}
+// .fancybox__container {
+//     background-color: #333b46 !important;
+// }
 
-.fancybox__carousel.is-draggable .fancybox__slide,
-.fancybox__carousel.is-draggable .fancybox__slide .fancybox__content {
-    cursor: default;
-}
+// .fancybox__track .fancybox__slide.has-video {
+//     cursor: default !important;
+// }
+
+// .fancybox__carousel.is-draggable .fancybox__slide,
+// .fancybox__carousel.is-draggable .fancybox__slide .fancybox__content {
+//     cursor: default;
+// }
 
 .modal .form {
     cursor: default;
@@ -42,15 +39,7 @@
 }
 
 .modal {
-    border-radius: 10px;
     cursor: default !important;
-
-    // @media (max-width: 726px) {
-    //     width: 50rem !important;
-    // }
-    // @media (max-width: 540px) {
-    //     width: auto!important ;
-    // }
 
     & .form-head {
         font: var(--title-M-narrow);
@@ -81,10 +70,6 @@
             width: 100%;
             padding-top: 1rem;
         }
-
-        // @media (max-width: 726px) {
-        //     display: none;
-        // }
     }
 }
 
@@ -96,8 +81,6 @@
 }
 
 .modal {
-    //  width: 84vw!important;
-    // display: none;
     form {
         display: flex;
         gap: 1rem;
@@ -451,37 +434,11 @@
         position: unset;
     }
 }
-// .form-style-1 button {
-//     background-color: #fff;
-//     color: #1b74e3;
-//     @media (max-width: 500px) {
-//         font-size: 2rem;
-//         background-color: #1b74e3;
-//         color: #fff;
-//         width: 100%;
-//         padding: 1.9rem;
-//         border-radius: 7px;
-//     }
-// }
 
 .form-desk {
     display: block;
     padding-top: 5px;
 }
-
-// .thanks .button,
-// #success-modal .form-style-1 button {
-//     background-color: #fff;
-//     color: #1b74e3;
-//     @media (max-width: 500px) {
-//         font-size: 2rem;
-//         background-color: #1b74e3;
-//         color: #fff;
-//         width: 100%;
-//         padding: 1.9rem;
-//         border-radius: 7px;
-//     }
-// }
 
 #success-modal form {
     background-color: #fcfdff;

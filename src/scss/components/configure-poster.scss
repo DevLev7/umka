@@ -6,7 +6,6 @@
         justify-content: space-between;
         gap: 1.5rem 2rem;
         padding: 8rem 9.7rem 7.7rem;
-
         background-color: var(--main-tertiary);
         border-radius: 1rem;
 
@@ -35,8 +34,11 @@
             max-width: 60rem;
         }
 
-        h2 {
+        h3 {
             font: var(--title-M);
+            @media (min-width: 1681px) {
+                font-size: 5.5rem;
+            }
 
             @media (max-width: 770px) {
                 font-size: 4rem;

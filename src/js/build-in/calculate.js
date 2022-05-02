@@ -18,7 +18,7 @@ export default function calculateConfig() {
           carOfUaz                = document.querySelector('[data-car="uaz"]'),
           carOfIsuzu              = document.querySelector('[data-car="isuzu"]'),
           uazElementOfSVG         = document.querySelector('.tuazCar'),
-          isuzuElementOfSVG       = document.querySelector('.kisuzuCar')
+          isuzuElementOfSVG       = document.querySelector('.jisuzuCar')
     
     const arrOfUaz   = [],
           arrOfIsuzu = []
@@ -177,7 +177,7 @@ export default function calculateConfig() {
         if(selectedConfig === arrOfUaz) {
             animateConstruct('.tuazCar', nameConfig, 'thide')
         }else {
-            animateConstruct('.kisuzuCar', nameConfig, 'khide')
+            animateConstruct('.jisuzuCar', nameConfig, 'jhide')
         }
         
         config.innerText = `${sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} руб.`
@@ -258,7 +258,7 @@ export default function calculateConfig() {
             if(configOfUaz.classList.contains('tab-content_show')) {
                 showOrHideSvgElement('plus', item, uazElementOfSVG, arrOfUaz, 'thide', configOfUaz)
             }else {
-                showOrHideSvgElement('plus', item, isuzuElementOfSVG, arrOfIsuzu, 'khide', configOfIsuzu)
+                showOrHideSvgElement('plus', item, isuzuElementOfSVG, arrOfIsuzu, 'jhide', configOfIsuzu)
             }
 
         }else {
@@ -285,7 +285,7 @@ export default function calculateConfig() {
             if(configOfUaz.classList.contains('tab-content_show')) {
                 showOrHideSvgElement('minus', item, uazElementOfSVG, arrOfUaz, 'thide', configOfUaz, '.thide',)
             }else {
-                showOrHideSvgElement('minus', item, isuzuElementOfSVG, arrOfIsuzu, 'khide', configOfIsuzu, '.khide')
+                showOrHideSvgElement('minus', item, isuzuElementOfSVG, arrOfIsuzu, 'jhide', configOfIsuzu, '.jhide')
             }
         }
     }

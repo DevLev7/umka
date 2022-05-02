@@ -6,51 +6,31 @@
         <img class="intro__bg" src="img/intro-bg.jpg" alt="Умка">
     </picture>
     <div class="container">
-        {{!-- <form action="/" method="POST" data-need-validation="">
-                    <div class="expert__item" id="help-name-errors">
-                        <input type="text" name="name" required="" data-parsley-errors-container="#help-name-errors" ><label for="name">Ваше имя</label>
-                    </div>
-                    <div class="expert__item" id="help-phone-errors">
-                        <input class="phone" type="tel" name="phone" required=""
-                                        data-parsley-phone="" data-parsley-errors-container="#help-phone-errors" ><label for="phone">ваш
-                            телефон</label>
-                    </div>
-                    <button type="submit" class="button--light help__form-submit">Отправить
-                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M17.469 31.1833L35.7807 21.4633C36.9624 20.8366 36.9624 19.15 35.7807 18.5216L17.4957 8.81665C16.1157 8.08331 14.569 9.46665 15.154 10.91L18.8024 19.91L15.124 29.0933C14.5474 30.5383 16.0924 31.9133 17.469 31.1833Z"
-                                stroke="#1B74E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M18.8047 19.9167L36.6714 20" stroke="#1B74E3" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M6.67188 24.9998H9.33854" stroke="#1B74E3" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                            <path d="M5 19.9998H9.33333" stroke="#1B74E3" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                            <path d="M3.33594 14.9998H9.33594" stroke="#1B74E3" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-                    </button>
-                </form> --}}
+
         <div class="intro__inner">
-            <h1 class="intro__title main-title">Умка — Льдозаливочная машина для открытых арен </h1>
+            <h1 class="intro__title main-title aos-init" data-aos="fade-down"
+     data-aos-easing="linear"
+     data-aos-duration="700">Умка — Льдозаливочная машина для открытых арен </h1>
             <div class="intro__footer">
-                <div class="intro__buttons">
-                    <button  class="intro__button-top button">
-                        <a href="#callback-modal">
+                <div class="intro__buttons" data-aos="zoom-out-up"
+     data-aos-easing="linear"
+     data-aos-duration="700">
+                    
+                        <a href="#callback-modal"class="intro__button-top button">
 
                         <span>Подберите УМКУ со скидкой 10%</span>
-                        </a>
+                        
                         <svg>
                             <use xlink:href="#gear-icon"></use>
-                        </svg>
+                        </svg></a>
 
-                    </button>
+                
                     <button class="intro__button-bottom">
                         <svg class="intro__button-bottom-icon">
                             <use xlink:href="#time-icon"></use>
                         </svg>
                         <span class="intro__button-bottom-text">предложение ограничено</span>
-                        <span class="intro__button-bottom-timer" data-date='2022,04,30'><div id="hours"></div>:<div id="minutes"></div>:<div id="seconds"></div></span>
+                        <span class="intro__button-bottom-timer" data-date='2022,05,06'><div id="hours"></div>:<div id="minutes"></div>:<div id="seconds"></div></span>
                         <svg class="intro__button-bottom-bg">
                             <use xlink:href="#timer-bg"></use>
                         </svg>
@@ -78,7 +58,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="intro__ribbon">
+                <div class="intro__ribbon aos-init"data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000">
                     <p class="intro__ribbon-text">Лучшая альтернатива зарубежным аналогам</p>
                     <svg class="intro__ribbon-icon">
                         <use xlink:href="#rus-flag"></use>
@@ -180,7 +162,7 @@
 <section class="features">
     <div class="container">
         <div class="features__wrapper">
-            <ul class="features__list">
+            <ul class="features__list aos-init"data-aos="zoom-out"data-aos-duration="1000">
                 {{#each features }}
                 <li class="features__item-wrapper">
                     <div class="features__item">
@@ -236,9 +218,9 @@
 </section>
 <section class="configure-poster">
     <div class="wide-container">
-        <div class="configure-poster__wrapper">
-            <div class="configure-poster__text">
-                <h2>конфигурируется <span>разными типами оборудования</span></h2>
+        <div class="configure-poster__wrapper aos-init"data-aos="fade-up"data-aos-duration="1000">
+            <div class="configure-poster__text" >
+                <h3>конфигурируется <span>разными типами оборудования</span></h2>
             </div>
             <div class="configure-poster__img">
                 <img src="img/configure-poster.png" alt="Разные типа оборудования">
@@ -790,11 +772,11 @@
 </section>
 <section class="expert">
     <div class="wide-container">
-        <div class="expert__wrapper">
-            <div class="expert__man">
+        <div class="expert__wrapper aos-init"data-aos="fade-right"data-aos-duration="600">
+            <div class="expert__man "  >
                 <img src="img/person.png" alt="Профессионал">
             </div>
-            <div class="expert__container-form">
+            <div class="expert__container-form ">
                 <div class="expert__expert-title">
                     <h3>получите консультацию нашего эксперта</h3>
                 </div>
@@ -806,8 +788,8 @@
                         <input class="phone js-phone-input" required id="phone" type="tel" data-parsley-phone ><label for="phone">ваш
                             телефон</label>
                     </div>
-                    <button class="button--light">
-                    <a href="#success-modal-expert" >Отправить </a>
+                    
+                    <a href="#success-modal-expert"class="button--light" >Отправить 
                         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
                                 d="M17.469 31.1833L35.7807 21.4633C36.9624 20.8366 36.9624 19.15 35.7807 18.5216L17.4957 8.81665C16.1157 8.08331 14.569 9.46665 15.154 10.91L18.8024 19.91L15.124 29.0933C14.5474 30.5383 16.0924 31.9133 17.469 31.1833Z"
@@ -821,7 +803,7 @@
                             <path d="M3.33594 14.9998H9.33594" stroke="#1B74E3" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" />
                         </svg>
-                   </button>
+               </a>
                 </form>
                 <div class="expert__agree">
                     <div class="expert__agree-star">*</div>
@@ -836,7 +818,7 @@
     <div class="wide-container">
         <div class="gallery__wrapper">
             <h2>Медиагалерея</h2>
-            <div class="gallery__wrapper-items ">
+            <div class="gallery__wrapper-items aos-init"data-aos="fade-up"data-aos-duration="1000">
                 <div class="gallery__wrapper-item gallery__wrapper-item--one ">
                     <a href="">
                         <img src="./img/img1.webp" alt="" />
@@ -916,7 +898,7 @@
 
                     <div class="characters__tab-item tab-content_show">
 
-                        <div class="characters_block-item">
+                        <div class="characters_block-item aos-init"data-aos="zoom-in"data-aos-duration="1000" data-aos-delay="300">
                             <div class="characters_block-item-title">
                                 3 м
                             </div>
@@ -925,7 +907,7 @@
                             </div>
                         </div>
                         <div class="hidden_block_content">
-                            <div class="first_content_hiden">
+                            <div class="first_content_hiden aos-init"data-aos="zoom-in"data-aos-duration="1000" data-aos-delay="500">
                                 <div class="first_content_hiden_title">
                                     800 л
                                 </div>
@@ -933,7 +915,7 @@
                                     бункер для воды
                                 </div>
                             </div>
-                            <div class="second_content_hiden">
+                            <div class="second_content_hiden aos-init"data-aos="zoom-in"data-aos-duration="1000" data-aos-delay="800">
                                 <div class="first_content_hiden_title">
                                     4 м³
                                 </div>
@@ -1414,7 +1396,7 @@
                                     fill="#A3AFCD" />
                             </svg>
                         </div>
-                        <div class="characters_block-item">
+                        <div class="characters_block-item aos-init"data-aos="zoom-in"data-aos-duration="1000" data-aos-delay="1100">
                             <div class="characters_block-item-title">
                                 29 000 м²
                             </div>
@@ -1970,15 +1952,15 @@
                         
                     </div>
                     <div class="characters__buttons-container">
-                        <button  class="characters__button button">
-                            <a href="#callback-modal-expert"> Консультация эксперта</a>
+                        
+                            <a href="#callback-modal-expert "class="characters__button button aos-init"data-aos="fade-up-right"data-aos-duration="1000"> Консультация эксперта
                            
-                            <img src="img/image.png" alt="">
-                        </button>
-                        <button class="characters__button second button--light"> <a href="#callback-doc">
-                           Техническая документация </a>
-                            <img src="img/document.png" alt="">
-                       </button>
+                            <img src="img/image.png" alt=""></a>
+
+                       <a href="#callback-doc"class="characters__button second button--light aos-init"data-aos="fade-up-left"data-aos-duration="1000">
+                           Техническая документация 
+                            <img src="img/document.png" alt=""></a>
+                      
                        
                     </div>
                 </div>
@@ -2060,36 +2042,36 @@
                 <span class="order__inner-main-text">
                     Оставляйте заявку на любую комлпектацию модели через сайт или по номеру телефона
                 </span>
-                <button class="order__inner-main-btn button--light"> <a href="#callback-modal">Быстрая заявка
+                <a href="#callback-modal"class="order__inner-main-btn button--light">Быстрая заявка
                     
-               </a><div class="order__inner-main-icon"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <div class="order__inner-main-icon"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M35 26.6751V8.33341C35 7.41341 34.2533 6.66675 33.3333 6.66675H6.66667C5.74667 6.66675 5 7.41341 5 8.33341V33.3334L14.8483 28.4334L33.3417 28.3417C34.2583 28.3367 35 27.5917 35 26.6751Z" stroke="#1B74E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M11.666 12.7058H27.666" stroke="#1B74E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M11.666 21.906H22.866" stroke="#1B74E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M11.666 17.3059H22.866" stroke="#1B74E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                  </div>
-                </button></div></div>
+                  </div></a>
+                </div></div>
                 <div class="order__hidden-text">
                      <p>Уникальная акция<br> до 25 февраля 2022</p>
                 </div>
                 <div class="order__inner-content">
                     <h2>Заказывай УМку и получай подарки на выбор</h2>
                 <div class="order__inner-main-items">
-                    <div class="order__inner-main-item">
+                    <div class="order__inner-main-item aos-init"data-aos="flip-left"data-aos-duration="1000" data-aos-delay="500">
                         <span class="order__inner-num">01</span>
                         <p class="order__inner-main-item--text">
                             Минимойка Karcher<br> K 2 Power Control
                         </p>
                     </div>
-                    <div class="order__inner-main-item">
+                    <div class="order__inner-main-item aos-init"data-aos="flip-up"data-aos-duration="1000" data-aos-delay="500">
                         <span class="order__inner-num">02</span>
                         <p class="order__inner-main-item--text">
                             Дизельная тепловая пушка
                             Gigant DHG 30 D2
                         </p>
                     </div>
-                    <div class="order__inner-main-item">
+                    <div class="order__inner-main-item aos-init"data-aos="flip-right"data-aos-duration="1000" data-aos-delay="500">
                         <span class="order__inner-num">03</span>
                         <p class="order__inner-main-item--text">
                             набор инструментов на 151 предмет
@@ -2106,7 +2088,7 @@
 
 <section class="all">
     <div class="wide-container">
-        <div class="all__wrapper">
+        <div class="all__wrapper aos-init"data-aos="fade-up"data-aos-duration="1000">
             <div class="all__block">
                 <div class="all__title">
                     <h2>
@@ -2383,21 +2365,20 @@
                 <button class="swiper-button-prev"></button></div>
                 </div>
                 </div>
-                <button class="button">
-                    <a href="#callback-modal">посетить завод</a>
+             
+                    <a href="#callback-modal"class="button">посетить завод
                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M5.19625 20.7785C4.93458 20.2935 4.93458 19.7052 5.19625 19.2202C8.34958 13.3885 14.1746 8.3335 19.9996 8.3335C25.8246 8.3335 31.6496 13.3885 34.8029 19.2218C35.0646 19.7068 35.0646 20.2952 34.8029 20.7802C31.6496 26.6118 25.8246 31.6668 19.9996 31.6668C14.1746 31.6668 8.34958 26.6118 5.19625 20.7785Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M23.5355 16.4645C25.4881 18.4171 25.4881 21.5829 23.5355 23.5355C21.5829 25.4881 18.4171 25.4881 16.4645 23.5355C14.5118 21.5829 14.5118 18.4171 16.4645 16.4645C18.4171 14.5118 21.5829 14.5118 23.5355 16.4645" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                    
-                </button>
+        </a>
             </div>
             </div>
         </div>
     </div>
 
 </section>
-<section class="callback">
+<section class="callback aos-init" data-aos="zoom-in"data-aos-duration="1500">
     <div class="wide-container">
         <div class="callback__wrapper">
             <div class="callback__content-container">
@@ -2469,8 +2450,8 @@
                             <div class="callback__item">
                                 <input class="phone js-phone-input" required type="tel" id="name2"data-parsley-phone><label for="name2">ваш телефон</label>
                             </div>
-                            <button type="submit" class="button--light">
-                                <a href="#success-modal">Отправить</a>
+                            <button type="submit" >
+                                <a href="#success-modal"class="button--light">Отправить
                                 
                                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -2487,6 +2468,7 @@
                                     <path d="M3.33594 14.9998H9.33594" stroke="#1B74E3" stroke-width="2"
                                         stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
+                                </a>
                             </button>
                         </form>
                         <div class="expert__agree">

@@ -44,7 +44,9 @@
     &__content-container__first h2 {
         font: var(--title-L);
         font-size: calc(40px + (85 - 40) * (100vw - 360px) / (1680 - 360));
-
+        @media (min-width: 1681px) {
+            font-size: 8.5rem;
+        }
         @media (max-width: 550px) {
             width: 10rem;
         }
@@ -153,6 +155,10 @@
     &__content-container__second-mobile a {
         font: var(--title-L);
         font-size: calc(40px + (85 - 40) * (100vw - 360px) / (1680 - 360));
+
+        @media (min-width: 1681px) {
+            font-size: 8.5rem;
+        }
     }
 
     &__content-container__second-expert-name {
@@ -285,7 +291,7 @@
         }
     }
 
-    &__content-container__second-callback form button {
+    &__content-container__second-callback form a {
         border: 1px solid #fff;
         padding: 2.075rem 2.5rem 1.875rem 2.5rem;
         border-radius: 10px;
@@ -311,7 +317,7 @@
         }
     }
 
-    &__content-container__second-callback form button svg {
+    &__content-container__second-callback form a svg {
         fill: none;
     }
 
@@ -369,7 +375,7 @@
         }
     }
 
-    input:required+label {
+    input:required + label {
         transition: all 0.3s ease;
         font-size: 1.6rem;
         font-weight: 700;
@@ -378,7 +384,7 @@
         padding: 0 3px;
     }
 
-    input:invalid+label {
+    input:invalid + label {
         transition: all 0.3s ease;
         font: var(--body-XL);
         color: #fff;
@@ -396,7 +402,7 @@
         border-bottom: none;
     }
 
-    input:required+label {
+    input:required + label {
         transition: all 0.3s ease;
         font-size: 1.6rem;
         font-weight: 700;
@@ -407,7 +413,7 @@
         transform: translateY(0%);
     }
 
-    input:invalid+label {
+    input:invalid + label {
         transition: all 0.3s ease;
         font: var(--body-XL);
         color: #fff;

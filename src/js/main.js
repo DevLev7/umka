@@ -21,13 +21,12 @@ import features from './build-in/features';
 import fraturesSwiper from './build-in/fraturesSwiper';
 import timer from './build-in/timer';
 import calculateConfig from './build-in/calculate';
-// import wow from './build-in/wow.js'
 import why from './build-in/why';
 import validation from './build-in/validation';
 import masks from './build-in/masks';
 import media from './build-in/media';
 import modals from './build-in/modals';
-
+import aos from './build-in/aos';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -36,12 +35,11 @@ import editableTextContainer from './custom/editableTextContainer';
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener('DOMContentLoaded', function () {
-    // wow();
+    aos();
     detectTouch();
     setScrollbarWidth();
     anchorLinks();
     menuBurger();
-    //sectionScrolling();
     statsScrolling();
     headerScrolling();
     gallerySwiper();

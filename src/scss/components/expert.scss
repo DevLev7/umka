@@ -74,20 +74,18 @@
         width: 24rem;
         font-size: 2.5rem;
         height: 8rem;
-       
+
         &::placeholder {
-            color: #fff
+            color: #fff;
         }
 
         @media (max-width: 560px) {
             height: 6rem;
             border-radius: 5px;
-           
         }
         @media (max-width: 550px) {
-           width: unset;
+            width: unset;
             width: 100%;
-           
         }
     }
 
@@ -159,20 +157,14 @@
         }
     }
 
-    &__container-form form button {
+    &__container-form form a {
         border: 1px solid #fff;
         padding: 2.075rem 2.5rem 1.875rem 2.5rem;
-        border-radius: 10px;
-        color: #1b74e3;
-        font: var(--body-XL);
         width: 24rem;
-        font-size: 2.5rem;
         background-color: #ffffff;
         display: flex;
         align-items: center;
         justify-content: space-between;
-
-       
 
         @media (max-width: 560px) {
             height: 6rem;
@@ -184,7 +176,7 @@
         }
     }
 
-    &__container-form form button svg {
+    &__container-form form a svg {
         fill: none;
 
         @media (max-width: 560px) {
