@@ -21,9 +21,9 @@ export default function statsScrolling() {
 
     tlMobile.to(statFirst, { duration: 0.11 });
     tlMobile.to(statFirst, { opacity: 0, duration: 0.1 });
-    tlMobile.to(statSecond, { opacity: 1, duration: 0.1, delay: 0.1 }, '-=0.2');
+    tlMobile.to(statSecond, { opacity: 1, duration: 0.1, delay: 0.1 }, '-=0.1');
     tlMobile.to(statSecond, { opacity: 0, delay: 0.1, duration: 0.1 });
-    tlMobile.to(statThird, { opacity: 0, duration: 0.1 });
+    tlMobile.to(statThird, { opacity: 1, duration: 0.1 });
 
     ScrollTrigger.matchMedia({
         '(min-width: 1081px)': function () {
