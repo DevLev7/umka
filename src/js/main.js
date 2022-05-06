@@ -24,9 +24,11 @@ import calculateConfig from './build-in/calculate';
 import why from './build-in/why';
 import validation from './build-in/validation';
 import masks from './build-in/masks';
-import media from './build-in/media';
+import medianew from './build-in/media';
+import opacity from './build-in/opacity';
 import modals from './build-in/modals';
 import aos from './build-in/aos';
+import services from './build-in/services';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -36,12 +38,17 @@ gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener('DOMContentLoaded', function () {
     aos();
+    headerScrolling();
+    medianew();
     detectTouch();
     setScrollbarWidth();
     anchorLinks();
     menuBurger();
+    opacity();
+    services();
+    modals();
     statsScrolling();
-    headerScrolling();
+
     gallerySwiper();
     moreButon();
     reviews();
@@ -62,8 +69,6 @@ document.addEventListener('DOMContentLoaded', function () {
     why();
     calculateConfig();
     masks();
-    media();
-    modals();
 });
 
 document.addEventListener('lazyloaded', () => {
