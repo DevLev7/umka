@@ -22,7 +22,7 @@
                     </div>
 
                 </div>
-                <div class="button">Записаться на ТО
+                <a class="button" href="#callback-modal-expert">Записаться на ТО
                    <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M35.8408 26.6748V8.33317C35.8408 7.41317 35.0942 6.6665 34.1742 6.6665H7.50749C6.58749 6.6665 5.84082 7.41317 5.84082 8.33317V33.3332L15.6892 28.4332L34.1825 28.3415C35.0992 28.3365 35.8408 27.5915 35.8408 26.6748Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M12.5068 12.7058H28.5068" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -31,7 +31,7 @@
 </svg>
 
 
-                </div>
+                </a>
             </div>
             <div class="all__cards">
                         <div class="all__cards__item now">
@@ -137,5 +137,61 @@
 
 </section>
  {{> form }}
+
+  <div id="order"  style="display: none; width: 500px;" class="popup ct">
+    <div class="form form-style-1 hideLabels">
+        <div class="form-header">
+            <div class="form-head animate-top">
+                Оставьте заявку на модель           
+                 </div>
+            <div class="form-desk animate-top">
+                Заполните форму и наш менеджер свяжется с вами в ближайшее время </div>
+        </div>
+
+        <form id="form"  data-parsley-focus="none" data-need-validation>
+            <div class="expert__item">
+                <input data-options='{"autoFocus" : false}' type="text" required id="name3" data-parsley-name><label for="name">Ваше имя</label>
+            </div>
+            <div class="expert__item">
+                <input class="phone js-phone-input" required id="phone3" type="tel" data-parsley-phone><label for="name">ваш
+                    телефон</label>
+            </div>
+            <button class="button" type="submit"data-fancybox data-src="#thanks_manager">Отправить
+                <svg width="36" height="26" viewBox="0 0 36 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M15.469 24.1833L33.7807 14.4633C34.9624 13.8366 34.9624 12.15 33.7807 11.5216L15.4957 1.81665C14.1157 1.08331 12.569 2.46665 13.154 3.90998L16.8024 12.91L13.124 22.0933C12.5474 23.5383 14.0924 24.9133 15.469 24.1833Z"
+                        stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M16.8047 12.9167L34.6714 13" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M4.67188 17.9998H7.33854" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M3 12.9998H7.33333" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M1.33594 7.99984H7.33594" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+
+            </button>
+        </form>
+        <div class="expert__agree">
+                    <div class="expert__agree-star">*</div>
+                    <div class="expert__agree-text">Нажимая кнопку «Отправить» вы соглашаетесь с <a target="blank" href="#">политикой
+                        конфиденциальности</a></div>
+                </div>
+    </div>
+</div>
+<div id="thanks" style="display: none; width: 500px;" class="popup ct thanks">
+    <div class="form form-style-1 hideLabels">
+        <div class="form-header">
+            <div class="form-head animate-top">
+               Ваша заявка успешно отправлена          
+                 </div>
+            <div class="form-desk animate-top">
+                Наш эксперт свяжется с вами в ближайшее время </div>
+        </div>
+            <button class="button"  data-src="#consultant" data-fancybox="" type="submit">Отправить еще раз</button>
+
+    </div>
+</div>
 {{/content}}
 {{/extend}}

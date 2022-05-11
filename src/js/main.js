@@ -29,6 +29,7 @@ import opacity from './build-in/opacity';
 import modals from './build-in/modals';
 import aos from './build-in/aos';
 import services from './build-in/services';
+import cookie from './build-in/cookie';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -37,7 +38,12 @@ import editableTextContainer from './custom/editableTextContainer';
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener('DOMContentLoaded', function () {
+    validation();
+
     aos();
+    masks();
+    plants();
+    reviews();
     headerScrolling();
     medianew();
     detectTouch();
@@ -45,30 +51,26 @@ document.addEventListener('DOMContentLoaded', function () {
     anchorLinks();
     menuBurger();
     opacity();
+    cookie();
     services();
     modals();
     statsScrolling();
-
     gallerySwiper();
     moreButon();
-    reviews();
     initSliders();
     intro();
     moreButon();
     editableTextContainer();
-    validation();
     swipercharacters();
     tabs();
     mapswiper();
     configuretabs();
-    plants();
     cardsHover();
     features();
     fraturesSwiper();
     timer();
     why();
     calculateConfig();
-    masks();
 });
 
 document.addEventListener('lazyloaded', () => {

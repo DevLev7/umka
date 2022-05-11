@@ -1,3 +1,11 @@
 .contact__form {
     padding-top: 13rem;
 }
+.map_contacts {
+    background-image: url(/img/map_con.png);
+    min-height: 46.4vh;
+    background-size: cover;
+    @media (max-width: 533px) {
+        min-height: 29.4vh;
+    }
+}

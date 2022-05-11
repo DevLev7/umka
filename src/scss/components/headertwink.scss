@@ -1,71 +1,74 @@
 .header.twink {
-     @media (max-width: 500px) {
-        padding: 0;
-        
-     }
-.header__menu li a {
-    color: var(--main-primary);
-    font-size: 1.3rem;
-    font-weight: bold;
-    transition: all 0.3s ease-in-out;
-}
-.header__menu li a:hover {
-    color: var(--accent-primary);
-}
-
-.button-ellipse {
-    background-color: var(--accent-primary);
-     @media (max-width: 500px) {
-        background-color: #fff;
-        border: 1px solid #1B74E3!important;
-        color: #1B74E3;
-     }
-}
-
-.button-ellipse:hover {
-    background-color: var(--accent-primary-hover);
     @media (max-width: 500px) {
-        color: #196BD1;
-        background-color: #fff;
-     }
-}
-.header__logo__nav {
-    display: flex;
-    gap: 6.4rem;
-     @media (max-width: 500px) {
-        gap: 4rem;
-        
-     }
-   
-}
-.header__nav {
-    align-self: center;
-}
-.button-ellipse {
-    border: none;
-}
-.header__burger {
-    display: none;
-}
+        padding: 0;
+    }
+    .header__menu li a {
+        color: var(--main-primary);
+        font-size: 1.3rem;
+        font-weight: bold;
+        transition: all 0.3s ease-in-out;
+    }
+    .header__menu li a:hover {
+        color: var(--accent-primary);
+    }
+
+    .button-ellipse {
+        background-color: var(--accent-primary);
+        @media (max-width: 500px) {
+            background-color: #fff;
+            border: 1px solid #1b74e3 !important;
+            color: #1b74e3;
+        }
+    }
+
+    .button-ellipse:hover {
+        background-color: var(--accent-primary-hover);
+        @media (max-width: 500px) {
+            color: #196bd1;
+            background-color: #fff;
+        }
+    }
+    .header__logo__nav {
+        display: flex;
+        gap: 6.4rem;
+        @media (max-width: 500px) {
+            gap: 4rem;
+        }
+        @media (max-width: 359px) {
+            gap: 2rem;
+        }
+    }
+    .header__nav {
+        align-self: center;
+    }
+    .button-ellipse {
+        border: none;
+    }
+    .header__burger {
+        display: none;
+    }
     @media (max-width: 1145px) {
         .header__burger {
             display: block;
-            color: #1B74E3;  
-     }
-    @media (max-width: 500px) {
-        .header__burger {
-           margin-left: 0; 
-     }
-    }
-    .header__inner {
-          @media (max-width: 500px) {
-            gap: 5.4rem;
-     }
-    }
+            color: #1b74e3;
+        }
+        @media (max-width: 500px) {
+            .header__burger {
+                margin-left: 0;
+            }
+        }
+        .header__inner {
+            @media (max-width: 500px) {
+                gap: 5.4rem;
+            }
+            @media (max-width: 359px) {
+                gap: 0;
+            }
+        }
     }
     .container {
-          @media (max-width: 500px) {
-           padding: 1.5rem;
-     }
+        @media (max-width: 500px) {
+            padding: 1.5rem;
+        }
     }
 }

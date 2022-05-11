@@ -75,6 +75,11 @@
         display: flex;
         align-items: center;
         gap: 2.5rem;
+        color: #fff;
+        font-size: 1.4rem;
+        :hover {
+            color: #196BD1;
+        }
     }
 
     &__menu-item {
@@ -97,6 +102,10 @@
 
     &--white {
         background-color: #fff;
+        
+        .header__menu li {
+            color: var(--main-primary);
+        }
 
         .header__logo {
             color: var(--accent-primary);
