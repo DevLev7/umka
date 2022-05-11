@@ -16,6 +16,7 @@
     }
     .characters__button {
         position: relative;
+        transition: .1s linear all;
     }
     .characters__button.button--light:hover a {
         color: #196bd1;
@@ -187,7 +188,7 @@
 
     &__button {
         padding: 2.7rem 15.2rem 2.5rem 2.5rem;
-
+        transition: .1s linear all;
         @media (max-width: 550px) {
             padding: 2.5rem 14.2rem 2.5rem 2.5rem;
             border-radius: 5px;
@@ -202,6 +203,10 @@
         @media (max-width: 411px) {
             width: 100%;
         }
+        &:hover img{
+            width: 105px;
+            transition: .1s linear all;
+        }
     }
 
     &__button img {
@@ -211,6 +216,7 @@
         // height: 110px;
         bottom: 0;
         right: 5%;
+        transition: .1s linear all;
         @media (max-width: 715px) {
             width: 80px;
             height: 80px;
@@ -303,7 +309,7 @@
         font: var(--body-M-narrow);
         color: #0f1926;
         opacity: 0.6;
-        width: 78%;
+        width: 86%;
         margin: 0 auto;
 
         @media (max-width: 1524px) {
@@ -326,6 +332,7 @@
         position: relative;
         padding-top: 121px;
         padding-left: 2rem;
+        min-width: 193px;
 
         @media (max-width: 1524px) {
             padding-left: 0;
@@ -339,6 +346,7 @@
         @media (max-width: 1000px) {
             padding-top: 0px;
             padding-bottom: 3rem;
+            min-width: unset;
         }
         @media (max-width: 885px) {
             flex: 0 0 50%;
