@@ -44,6 +44,38 @@
     text-shadow: 0 4px 50px rgba(21, 36, 90, 0.25);
 }
 
+.animateTextWhite {
+    background: linear-gradient(90deg, transparent, #fff 0%);
+}
+
+.animateTextBlue {
+    background: linear-gradient(90deg, transparent, var(--accent-primary) 0%);
+}
+
+.animateTextBlack {
+    background: linear-gradient(90deg, transparent, var(--main-primary) 0%);
+}
+
+.animateTextWhite, .animateTextBlue, .animateTextBlack {
+    opacity: 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-repeat: no-repeat;
+    animation: animateText1 2s ease-in-out forwards;
+}
+
+@keyframes animateText1 {
+    0% {
+        background-size: 0%;
+        opacity: 1;
+    }
+    100% {
+        background-size: 100%;
+        opacity: 1;
+    }
+}
+
 .button {
     display: flex;
     align-items: center;

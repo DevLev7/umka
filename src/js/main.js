@@ -30,6 +30,7 @@ import modals from './build-in/modals';
 import aos from './build-in/aos';
 import services from './build-in/services';
 import cookie from './build-in/cookie';
+import animateText from './build-in/animateText'
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -71,6 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
     timer();
     why();
     calculateConfig();
+    animateText();
 });
 
 document.addEventListener('lazyloaded', () => {
