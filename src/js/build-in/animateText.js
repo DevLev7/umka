@@ -14,13 +14,21 @@ export default function animateText() {
           titleContact   = document.querySelector('.callback__content-container__first h2'),
           header         = document.querySelector('.header'),
           tabsAnimate    = document.querySelector('.intro-slider'),
-          videoBlock     = document.querySelector('.overview__inner')
+          videoBlock     = document.querySelector('.overview__inner'),
+          characterBtn   = document.querySelectorAll('.characters__button')
+          
     window.addEventListener('DOMContentLoaded', () => {
         title.classList.add('animateTextWhite')
         header.classList.add('active')
         setTimeout(() => {
             tabsAnimate.classList.add('active')
         }, 2300);
+
+        if(window.innerWidth < 1024) {
+            characterBtn.forEach(btn => {
+                btn.classList.add('disableHover')
+            })
+        }
     })
 
     window.addEventListener('scroll', () => {

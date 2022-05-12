@@ -190,6 +190,15 @@
     &__button {
         padding: 2.7rem 15.2rem 2.5rem 2.5rem;
         transition: .1s linear all;
+        &:hover img{
+            width: 105px;
+            transition: .1s linear all;
+        }
+
+        &.disableHover:hover img {
+            width: 95px;
+        }
+
         @media (max-width: 550px) {
             padding: 2.5rem 14.2rem 2.5rem 2.5rem;
             border-radius: 5px;
@@ -204,10 +213,7 @@
         @media (max-width: 411px) {
             width: 100%;
         }
-        &:hover img{
-            width: 105px;
-            transition: .1s linear all;
-        }
+      
     }
 
     &__button img {
