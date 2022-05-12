@@ -3,22 +3,32 @@ export default function animateText() {
           titleVideo     = document.querySelector('.overview__video-description'),
           titleConfig    = document.querySelector('.configure-poster__text'),
           titleUmka      = document.querySelector('.configure__title'),
-          titleWhy       = document.querySelector('.why__expert-title'),
-          titleGet       = document.querySelector('.expert__expert-title'),
+          titleWhy       = document.querySelector('.why__expert-title h2'),
+          titleGet       = document.querySelector('.expert__expert-title h3'),
           titleMedia     = document.querySelector('.gallery__wrapper h2'),
-          titleCharacter = document.querySelector('.characters__title'),
+          titleCharacter = document.querySelector('.characters__title h2'),
           titleReview    = document.querySelector('.reviews__inner h2'),
           titleOrder     = document.querySelector('.order__inner-content h2'),
           titleCenter    = document.querySelector('.all__title h2'),
           titlePlant     = document.querySelector('.plant__title h2'),
-          titleContact   = document.querySelector('.callback__content-container__first h2')
+          titleContact   = document.querySelector('.callback__content-container__first h2'),
+          header         = document.querySelector('.header'),
+          tabsAnimate    = document.querySelector('.intro-slider'),
+          videoBlock     = document.querySelector('.overview__inner')
     window.addEventListener('DOMContentLoaded', () => {
         title.classList.add('animateTextWhite')
+        header.classList.add('active')
+        setTimeout(() => {
+            tabsAnimate.classList.add('active')
+        }, 2300);
     })
 
     window.addEventListener('scroll', () => {
         if(titleVideo.getBoundingClientRect().y <= 600) {
-            titleVideo.classList.add('animateTextWhite')
+            videoBlock.classList.add('active')
+            setTimeout(() => {
+                titleVideo.classList.add('animateTextWhite')
+            }, 2000);
         }
         if(titleConfig.getBoundingClientRect().y <= 800) {
             titleConfig.querySelectorAll('span')[0].classList.add('animateTextBlack')

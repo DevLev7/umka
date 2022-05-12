@@ -26,6 +26,7 @@
         margin-right: 19rem;
     }
     h2 {
+        opacity: 0;
         font: var(--title-L);
         font-size: var(--calc--title-L);
         margin-bottom: calc(35px + (75 - 35) * (100vw - 360px) / (1680 - 360));

@@ -42,13 +42,14 @@
     }
 
     &__content-container__first h2 {
+        opacity: 0;
         font: var(--title-L);
         font-size: calc(40px + (85 - 40) * (100vw - 360px) / (1680 - 360));
         @media (min-width: 1681px) {
             font-size: 8.5rem;
         }
         @media (max-width: 550px) {
-            width: 10rem;
+            width: 15rem;
         }
     }
 

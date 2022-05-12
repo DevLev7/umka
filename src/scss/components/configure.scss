@@ -45,6 +45,8 @@
         max-width: 64.1rem;
         margin-bottom: 6rem;
         font-size: calc(40px + (85 - 40) * (100vw - 360px) / (1680 - 360));
+        opacity: 0;
+        
         @media (max-width: 958px) {
             margin-bottom: 3rem;
         }
@@ -203,6 +205,10 @@
         border-radius: 1rem;
         position: relative;
         transition: 0.3s ease-in-out;
+
+        &[data-choise='equipment']:hover {
+            background: #2d89fab3;
+        }
 
         @media (max-width: 400px) {
             border-radius: 0.7rem;
@@ -364,6 +370,7 @@
         gap: 1.5rem;
         justify-content: center;
         padding: 1.8rem 2rem;
+
         @media (max-width: 400px) {
             padding: 0.6rem 1rem 0.6rem 1.5rem;
         }
@@ -407,6 +414,10 @@
         background: var(--accent-primary);
         label {
             pointer-events: all;
+        }
+
+        &:hover {
+            background: var(--accent-primary);
         }
     }
 

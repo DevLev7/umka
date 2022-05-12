@@ -13,6 +13,11 @@
         background-position: top center;
         align-items: center;
         aspect-ratio: 1550 / 500;
+        opacity: 0;
+
+        &.active {
+            animation: animateVideoBlock 2s ease-in-out forwards;
+        }
 
         @media (max-width: 1355px) {
             justify-content: flex-start;
@@ -52,6 +57,7 @@
         transform: translateY(-50%);
         display: block;
         max-width: 34.6rem;
+        opacity: 0;
 
         font: var(--title-L);
         color: #fff;
@@ -99,4 +105,17 @@
         background: #000;
     }
   
+}
+
+
+@keyframes animateVideoBlock {
+    0%{
+        opacity: 0;
+    } 50%{
+        opacity: 1;
+        transform: scale(1.2);
+    }100% {
+        opacity: 1;
+        transform: scale(1)
+    }
 }

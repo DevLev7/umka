@@ -4,6 +4,7 @@
 
 .gallery__wrapper {
     h2 {
+        opacity: 0;
         margin-bottom: calc(25px + (43 - 25) * (100vw - 360px) / (1680 - 360));
         font: var(--title-L);
         font-size: var(--calc--title-L);

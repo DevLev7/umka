@@ -19,6 +19,7 @@
     }
 
     &__expert-title h2 {
+        opacity: 0;
         font: var(--title-L);
 
         @media (max-width: 1240px) {

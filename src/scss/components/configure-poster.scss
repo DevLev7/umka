@@ -48,9 +48,14 @@
                 font-size: 3rem;
             }
 
-            span:last-child {
-                color: var(--accent-primary);
+            span {
+                opacity: 0;
+
+                &:last-child {
+                    color: var(--accent-primary);
+                }
             }
+
         }
     }
 
