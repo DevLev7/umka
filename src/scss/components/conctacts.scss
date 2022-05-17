@@ -3,9 +3,5 @@
 }
 .map_contacts {
     background-image: url(../img/map.png);
-    min-height: 46.4vh;
     background-size: cover;
-    @media (max-width: 533px) {
-        min-height: 29.4vh;
-    }
 }

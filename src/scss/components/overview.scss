@@ -2,6 +2,10 @@
     position: relative;
     padding-bottom: calc(30px + (80 - 30) * (100vw - 360px) / (1680 - 360));
 
+    @media (min-width: 1640px) {
+        padding-bottom: 80px;
+    }
+    
     &__inner {
        position: relative;
         display: flex;
@@ -39,6 +43,7 @@
         border-radius: 1rem;
         object-fit: cover;
         overflow: hidden;
+        transition: 0.3s ease-in-out;
     }
 
     &__video-billet {
@@ -97,13 +102,13 @@
 .play-button:hover{
     background-color: #196BD1;
   }
-  .play-button:hover {
-        background-color: #196bd1;
-    }
-    .billet:hover .overview__video {
-        filter: brightness(40%);
-        background: #000;
-    }
+.play-button:hover {
+    background-color: #196bd1;
+}
+.billet:hover .overview__video {
+    filter: brightness(90%);
+    transition: 0.3s ease-in-out;
+}
   
 }
 

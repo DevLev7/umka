@@ -3,12 +3,13 @@ export default function moreButon() {
     let point = document.querySelector('.svg-map');
     let test = document.querySelector('.all__container');
 
-    for (let i = 0; i < point.children.length; i++) {
-        point.children[i].addEventListener('mouseenter', function (event) {
-            getImage();
-        });
+    if(card.length > 1) {
+        for (let i = 0; i < point.children.length; i++) {
+            point.children[i].addEventListener('mouseenter', function (event) {
+                getImage();
+            });
+        }
     }
-
 
     function getImage() {
        const random = Math.floor(Math.random() * card.length);

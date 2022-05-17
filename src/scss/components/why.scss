@@ -2,6 +2,10 @@
     position: relative;
     padding: calc(32px + (80 - 32) * (100vw - 360px) / (1680 - 360)) 0;
 
+    @media (min-width: 1640px) {
+        padding: 80px 0;
+    }
+
     @keyframes animate_opacity {
         0% {
             transform: scale3d(1, 1, 1);
@@ -115,6 +119,9 @@
         padding-top: 7.8rem;
         column-gap: 2rem;
         margin-right: 1.5rem;
+        @media (min-width: 1640px) {
+            row-gap: 65px;
+        }
         @media (max-width: 1580px) {
             margin-right: 0;
             // justify-content: flex-start;

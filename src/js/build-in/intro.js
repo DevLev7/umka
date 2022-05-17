@@ -21,7 +21,7 @@ export default function intro() {
     const header = document.querySelector('.header');
     const headerHeight = header.clientHeight;
 
-    const introPaddingTop = headerHeight + 30 + 'px';
+    const introPaddingTop = headerHeight + 167 + 'px';
 
     intro.style.setProperty('--intro-padding-top', introPaddingTop);
 

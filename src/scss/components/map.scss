@@ -2,6 +2,10 @@
     position: relative;
     padding-bottom: calc(30px + (80 - 30) * (100vw - 360px) / (1680 - 360));
 
+    @media (min-width: 1640px) {
+        padding-bottom: 80px;
+    }
+
     &__wrapper {
         background-image: url(../img/map.png);
         border-radius: 10px;

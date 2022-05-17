@@ -1,5 +1,10 @@
 .configure-poster {
     padding-bottom: calc(53px + (100 - 53) * (100vw - 360px) / (1680 - 360));
+
+    @media (min-width: 1640px) {
+        padding-bottom: 80px;
+    }
+    
     &__wrapper {
         display: flex;
         align-items: center;

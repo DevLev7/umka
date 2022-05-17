@@ -29,16 +29,41 @@ html {
 body {
     font-size: 1.6rem;
     line-height: 1.2;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     font-family: 'Montserrat', sans-serif;
     color: var(--main-primary);
+
     @media (min-width: 1750px) {
-        zoom: 1.2;
+        zoom: 1.135;
     }
+
     @media (min-width: 2000px) {
-        zoom: 1.33;
+        zoom: 1.26;
+    }
+
+    @media (min-width: 2400px) {
+        zoom: 1.415;
+    }
+
+    @media (min-width: 2500px) {
+        zoom: 1.515;
+    }
+
+    @media (min-width: 2800px) {
+        zoom: 1.7;
+    }
+
+    @media (min-width: 3500px) {
+        zoom: 2.3;
+    }
+
+    @media (min-width: 4500px) {
+        zoom: 3.4;
+    }
+
+    @media (min-width: 6000px) {
+        zoom: 4.53;
     }
 }
 

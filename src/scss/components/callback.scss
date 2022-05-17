@@ -3,6 +3,10 @@
     color: #ffffff;
     padding-bottom: calc(30px + (80 - 30) * (100vw - 360px) / (1680 - 360));
 
+    @media (min-width: 1640px) {
+        padding-bottom: 80px;
+    }
+
     &__wrapper {
         background: #2f83eb;
         border-radius: 10px;
@@ -57,6 +61,10 @@
         font: var(--title-S-narrow);
         font-size: calc(25px + (40 - 25) * (100vw - 360px) / (1680 - 360));
         padding-top: 19.5rem;
+
+        @media (min-width: 1640px) {
+            font-size: 40px;
+        }
 
         @media (max-width: 1040px) {
             display: none;
@@ -217,6 +225,10 @@
     &__content-container__second-callback p {
         font: var(--title-S-narrow);
         font-size: calc(25px + (40 - 25) * (100vw - 360px) / (1680 - 360));
+
+        @media (min-width: 1640px) {
+            font-size: 40px;
+        }
     }
 
     &__content-container__second-callback {

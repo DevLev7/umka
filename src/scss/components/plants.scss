@@ -1,6 +1,11 @@
 .plant {
     padding-top: calc(32px + (80 - 32) * (100vw - 360px) / (1680 - 360));
     padding-bottom: calc(65px + (80 - 65) * (100vw - 360px) / (1680 - 360));
+
+    @media (min-width: 1640px) {
+        padding-top: 120px;
+        padding-bottom: 80px;
+    }
 }
 
 .plant__wrapper {
@@ -131,47 +136,37 @@
                 }
             }
         }
-        .swiper-button-prev {
+
+        .swiper-button-prev,
+        .swiper-button-next {
             background-color: transparent;
             border-radius: 50%;
-            left: 21%;
             width: 3.3vw;
             height: 3.3vw;
-            // opacity: 0.5;
             border: 2px solid #ffffff;
             bottom: 3rem;
             top: unset;
+
+            @media (min-width: 1640px) {
+                width: 55px;
+                height: 55px;
+            }
+
             @media (max-width: 1023px) {
                 & {
                     display: none;
                 }
             }
+        }
+
+        .swiper-button-prev {
+            left: 21%;
         }
         .swiper-button-next {
             left: 27%;
-            width: 3.3vw;
-            height: 3.3vw;
-            // opacity: 0.5;
-            border: 2px solid #ffffff;
-            background-color: transparent;
-            bottom: 3rem;
-            top: unset;
-            border-radius: 50%;
-            @media (max-width: 1023px) {
-                & {
-                    display: none;
-                }
-            }
         }
-        .swiper-button-prev::after {
-            color: #fff;
-            font-size: 16px;
-            @media (max-width: 1180px) {
-                & {
-                    font-size: 12px;
-                }
-            }
-        }
+
+        .swiper-button-prev::after,
         .swiper-button-next::after {
             color: #fff;
             font-size: 16px;
@@ -181,6 +176,7 @@
                 }
             }
         }
+
         .swiper-slide .swiper-button-prev,
         .swiper-slide .swiper-button-next {
             display: none;
@@ -292,6 +288,9 @@
 
         .swiper {
             overflow: visible;
+            max-width: 210px;
+            margin: 0;
+            
             .swiper-slide {
                 opacity: 0;
             }
@@ -310,12 +309,23 @@
                 padding: 0;
                 margin-top: 0;
                 top: 0;
+
+                @media (min-width: 1640px) {
+                    width: 40px;
+                    height: 40px;
+                }
             }
             .swiper__nav {
                 position: absolute;
                 top: 18px;
                 right: -23px;
                 width: 5.6vw;
+
+                @media (min-width: 1640px) {
+                    top: 10px;
+                    right: -40px;
+                    width: 95px;
+                }
             }
 
             .swiper-button-prev {

@@ -74,6 +74,10 @@
             color: var(--accent-primary);
             font-size: calc(18px + (30 - 18) * (100vw - 360px) / (1920 - 535));
             line-height: 1.1;
+
+            @media (min-width: 1640px) {
+                font-size: 30px
+            }
         }
         li:hover a {
             color: var(--accent-primary-hover);

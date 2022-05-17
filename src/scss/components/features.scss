@@ -1,11 +1,12 @@
 .features {
     display: flex;
     width: 100%;
-    min-height: 100vh;
     padding: calc(32px + (80 - 32) * (100vw - 360px) / (1680 - 360)) 0;
-    @media (min-width: 2000px) {
-        min-height: 75vh;
+
+    @media (min-width: 1640px) {
+        padding: 120px 0; 
     }
+    
     @media (max-width: 580px) {
         padding-bottom: 6.5rem;
     }

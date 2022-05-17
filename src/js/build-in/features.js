@@ -3,10 +3,13 @@ export default function features() {
     let point = document.querySelector('.features__list');
     // let test = document.querySelector('.all__container');
 
-    for (let i = 0; i < point.children.length; i++) {
-        point.children[i].querySelector('.features__item').addEventListener('mouseover', function (event) {
-            getImage();
-        });
+
+    if(card.length > 1) {
+        for (let i = 0; i < point.children.length; i++) {
+            point.children[i].querySelector('.features__item').addEventListener('mouseover', function (event) {
+                getImage();
+            });
+        }
     }
 
     function getImage() {

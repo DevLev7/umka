@@ -1,76 +1,27 @@
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
-
 export default function statsScrolling() {
-    const statsList = document.querySelector('.stats__img-wrapper');
-    const statFirst = document.querySelector('.stats-img-1');
-    const statSecond = document.querySelector('.stats-img-2');
-    const statThird = document.querySelector('.stats-img-3');
+    const list      = document.querySelectorAll('.stats__list .stats__item-wrapper'),
+          listItem1 = document.querySelectorAll('.stats__list .stats__item-wrapper')[0],
+          listItem2 = document.querySelectorAll('.stats__list .stats__item-wrapper')[1],
+          listImg1  = document.querySelector('.stats-img-1'),
+          listImg2  = document.querySelector('.stats-img-2'),
+          listImg3  = document.querySelector('.stats-img-3')
 
-    let tl = gsap.timeline();
-    tl.to(statSecond, { opacity: 0 });
-    tl.to(statFirst, { opacity: 1, delay: 0, duration: 0 }, '-=0.5');
-    tl.to(statFirst, { opacity: 0 });
-
-    tl.to(statSecond, { opacity: 1, delay: 0.1 }, '-=0.2');
-    tl.to(statSecond, { opacity: 0, delay: 0.2 }, '-=0.3');
-    tl.to(statThird, { opacity: 1 });
-    let tlMobile = gsap.timeline();
-
-    tlMobile.to(statFirst, { duration: 0.11 });
-    tlMobile.to(statFirst, { opacity: 0, duration: 0.1 });
-    tlMobile.to(statSecond, { opacity: 1, duration: 0.1, delay: 0.1 }, '-=0.1');
-    tlMobile.to(statSecond, { opacity: 0, delay: 0.1, duration: 0.1 });
-    tlMobile.to(statThird, { opacity: 1, duration: 0.1 });
-
-    ScrollTrigger.matchMedia({
-        '(min-width: 1081px)': function () {
-            ScrollTrigger.create({
-                animation: tl,
-                trigger: statsList,
-                start: '20% center',
-                end: '85% 50%',
-                scrub: 0.4,
-                pin: true,
-            });
-        },
-        '(max-width: 1080px)': function () {
-            ScrollTrigger.create({
-                animation: tl,
-                trigger: statsList,
-                start: '20% center',
-                end: '75% 40%',
-                scrub: true,
-                pin: true,
-            });
-        },
-        '(max-width: 960px)': function () {
-            tl.kill();
-
-            ScrollTrigger.create({
-                animation: tlMobile,
-                trigger: statsList,
-                start: 'top center',
-                end: '60% 50%',
-                scrub: true,
-                pin: true,
-            });
-        },
-    });
-
-    /* Задаю высоты общего блока с фотографий с белым фоном */
-
-    if (window.innerWidth <= 960) {
-        const imgBlock = document.querySelector('.stats__img-block');
-        const images = document.querySelectorAll('.stats__img');
-        let height = 0;
-
-        images.forEach((img) => {
-            if (img.clientHeight >= height) height = img.clientHeight;
-        });
-
-        imgBlock.style.height = height + 'px';
-    }
+    window.addEventListener('scroll', () => {
+        if(list.length > 1) {
+            if(listItem1.getBoundingClientRect().top < 110 && !listImg1.classList.contains('stats-img-hide')) {
+                listImg1.classList.add('stats-img-hide')
+                listImg2.classList.remove('stats-img-hide')
+            }else if (listItem1.getBoundingClientRect().top > 110 && !listImg2.classList.contains('stats-img-hide')) {
+                listImg1.classList.remove('stats-img-hide')
+                listImg2.classList.add('stats-img-hide')
+            }
+            if(listItem2.getBoundingClientRect().top < 0 && !listImg2.classList.contains('stats-img-hide')) {
+                listImg2.classList.add('stats-img-hide')
+                listImg3.classList.remove('stats-img-hide')
+            } else if(listItem2.getBoundingClientRect().top > 0 && !listImg3.classList.contains('stats-img-hide')) {
+                listImg3.classList.add('stats-img-hide')
+                listImg2.classList.remove('stats-img-hide')
+            }
+        }
+    })
 }

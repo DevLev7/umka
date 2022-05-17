@@ -1,6 +1,10 @@
 .reviews {
     padding: calc(32px + (80 - 32) * (100vw - 360px) / (1680 - 360)) 0;
     overflow: hidden;
+
+    @media (min-width: 1640px) {
+        padding: 80px 0;
+    }
 }
 
 .reviews__inner {
@@ -22,17 +26,28 @@
         width: 11vw;
         height: 58px;
         display: flex;
-        gap: 1rem;
         margin-right: 19rem;
+
+        @media (min-width: 1640px) {
+            width: 195px;
+        }
     }
     h2 {
         opacity: 0;
         font: var(--title-L);
         font-size: var(--calc--title-L);
         margin-bottom: calc(35px + (75 - 35) * (100vw - 360px) / (1680 - 360));
+
+        @media (min-width: 1640px) {
+            margin-bottom: 75px;
+        }
     }
     .swiper {
         width: 97vw;
+
+        @media (min-width: 1640px) {
+            width: 120%;
+        }
         @media (max-width: 1024px) {
             padding-bottom: 5rem;
         }
@@ -51,6 +66,11 @@
         font-size: var(--calc-title-S);
         padding-bottom: 2rem;
         padding-top: calc(45px + (65 - 45) * (100vw - 360px) / (1680 - 360));
+
+        @media (min-width: 1640px) {
+            font-size: 40px;
+            padding-top: 65px;
+        }
     }
     p {
         font: var(--body-L);
@@ -74,51 +94,66 @@
         justify-content: space-between;
         align-items: baseline;
         max-width: 43.5rem;
-        &-img {
-            // border-radius: 50%;
-        }
     }
     &_item_video {
         // border-radius: 50%;
     }
+
+    .swiper-button-prev,
     .swiper-button-next {
         border-radius: 50%;
         width: 4.4vw;
         height: 4.4vw;
-        background-color: var(--accent-primary);
         transition: all 0.5s ease;
+
+        @media (min-width: 1640px) {
+            width: 80px;
+            height: 80px;
+        }
     }
+    .swiper-button-next {
+        background-color: var(--accent-primary);
+    }
+
+    .swiper-button-prev {
+        background-color: var(--main-tertiary);
+    }
+
     .swiper-button-next:hover {
         background-color: var(--accent-primary-hover);
     }
+
     .swiper-button-prev:hover {
         background-color: var(--accent-primary-hover);
     }
+
     .swiper-button-prev:hover::after {
         color: #fff;
     }
-    .swiper-button-prev {
-        border-radius: 50%;
-        width: 4.4vw;
-        height: 4.4vw;
-        background-color: var(--main-tertiary);
-    }
+    
     .swiper-pagination {
         width: 100%;
         bottom: 0;
         display: none;
     }
 }
-.swiper-button-next::after {
-    transition: all 0.5s linear;
 
-    color: #fff;
-    font-size: calc(15px + (30 - 15) * (100vw - 400px) / (1680 - 360));
-}
+.swiper-button-next::after,
 .swiper-button-prev::after {
     transition: all 0.5s linear;
-    color: var(--accent-primary);
+
     font-size: calc(15px + (30 - 15) * (100vw - 400px) / (1680 - 360));
+
+    @media (min-width: 1640px) {
+        font-size: 23px;
+    }
+}
+.swiper-button-next::after {
+    color: #fff;
+}
+
+.swiper-button-prev::after {
+    color: var(--accent-primary);
 }
 
 @media (max-width: 1023px) {
