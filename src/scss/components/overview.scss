@@ -62,10 +62,12 @@
         transform: translateY(-50%);
         display: block;
         max-width: 34.6rem;
-        opacity: 0;
-
         font: var(--title-L);
         color: #fff;
+
+        & span {
+            opacity: 0;
+        }
 
         @media (max-width: 910px) {
             position: static;
@@ -81,7 +83,7 @@
             max-width: 18rem;
         }
 
-        sup {
+        &-smallTitle {
             position: absolute;
             padding-left: 1rem;
             top: 54%;

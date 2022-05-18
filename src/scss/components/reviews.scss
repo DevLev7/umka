@@ -124,12 +124,9 @@
     }
 
     .swiper-button-prev:hover {
-        background-color: var(--accent-primary-hover);
+        background-color: #E4ECFF;
     }
 
-    .swiper-button-prev:hover::after {
-        color: #fff;
-    }
     
     .swiper-pagination {
         width: 100%;

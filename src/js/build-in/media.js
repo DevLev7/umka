@@ -17,8 +17,9 @@ export default function app() {
                 }
                 if (isShowAll) {
                     btn1.style.display = 'flex';
-                    for (let i = 7; i < box.length; i++) {
-                        item.classList.add('hide');
+                    item.classList.add('hide')
+                    for (let i = 0; i < items.length -2; i++) {
+                        items[i].classList.remove('hide');
                     }
                 }
                 btn1.addEventListener('click', function () {
@@ -26,8 +27,9 @@ export default function app() {
                 });
                 document.querySelector('.btn_type_all').addEventListener('click', function () {
                     btn1.style.display = 'flex';
-                    for (let i = 7; i < box.length; i++) {
-                        item.classList.add('hide');
+                    item.classList.add('hide')
+                    for (let i = 0; i < items.length -2; i++) {
+                        items[i].classList.remove('hide');
                     }
                 });
             });

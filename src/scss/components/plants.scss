@@ -98,7 +98,7 @@
 
     @media (max-width: 1279px) {
         & {
-            gap: 5.5rem;
+            gap: 2.5rem;
         }
     }
     @media (max-width: 1023px) {
@@ -299,6 +299,10 @@
             }
             .swiper-slide-next {
                 opacity: 0.6;
+
+                @media (min-width: 1024px) {
+                    transform: translate3d(-119px, 30px, -200px) rotateX(0deg) rotateY(-2deg) scale(1) !important;
+                }
             }
             .swiper-button-next,
             .swiper-button-prev {
@@ -323,8 +327,8 @@
 
                 @media (min-width: 1640px) {
                     top: 10px;
-                    right: -40px;
-                    width: 95px;
+                    right: -50px;
+                    width: 100px;
                 }
             }
 
@@ -352,12 +356,12 @@
                 background-color: var(--accent-primary-hover);
             }
             .swiper-button-prev:hover {
-                background-color: var(--accent-primary-hover);
+                background-color: #E4ECFF;
             }
-            .swiper-button-prev:hover::after {
-                color: #fff;
-            }
+
             @media (max-width: 1023px) {
+                max-width: inherit;
+
                 .swiper-slide {
                     opacity: 1;
                 }
@@ -370,7 +374,7 @@
             // padding: 2rem 2.5rem;
             gap: 3.6rem;
             width: 100%;
-            margin-top: 2rem;
+            margin-top: 7rem;
             white-space: nowrap;
             padding-top: 2.8rem;
 

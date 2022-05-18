@@ -67,6 +67,10 @@
         page-break-inside: avoid;
         margin-bottom: calc(20px + (50 - 20) * (100vw - 360px) / (1680 - 360));
         cursor: pointer;
+
+        @media (min-width: 1640px) {
+            margin-bottom: 55px
+        }
     }
     .card img {
         width: 100%;

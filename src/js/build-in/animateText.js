@@ -1,7 +1,7 @@
 export default function animateText() {
     if(document.querySelector('.main-title') !== null ) {
       const title          = document.querySelector('.main-title'),
-            titleVideo     = document.querySelector('.overview__video-description'),
+            titleVideo     = document.querySelectorAll('.overview__video-description span'),
             titleConfig    = document.querySelector('.configure-poster__text'),
             titleUmka      = document.querySelector('.configure__title'),
             titleWhy       = document.querySelector('.why__expert-title h2'),
@@ -33,10 +33,12 @@ export default function animateText() {
         })
 
         window.addEventListener('scroll', () => {
-            if(titleVideo.getBoundingClientRect().y <= 600) {
+            if(titleVideo[0].getBoundingClientRect().y <= 600) {
                 videoBlock.classList.add('active')
                 setTimeout(() => {
-                    titleVideo.classList.add('animateTextWhite')
+                    titleVideo.forEach(item=> {
+                        item.classList.add('animateTextWhite')
+                    })
                 }, 2000);
             }
             if(titleConfig.getBoundingClientRect().y <= 800) {
