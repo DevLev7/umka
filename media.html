@@ -490,12 +490,12 @@
                        </div>
                        <div class='callback__content-container__second-callback'>
                            <p>Закажите звонок</p>
-                           <form action='' data-parsley-focus='none' data-need-validation>
+                           <form id="form_call" data-parsley-focus='none' data-need-validation>
                                <div class='callback__item'>
                                    <input required type='text' id='name1' data-parsley-name /><label for='name1'>Ваше имя</label>
                                </div>
                                <div class='callback__item'>
-                                   <input class='phone js-phone-input' required type='tel' id='name2' data-parsley-phone /><label for='name2'>ваш телефон</label>
+                                   <input class='phone js-phone-input' required type='tel' id='phone1' data-parsley-phone /><label for='phone1'>ваш телефон</label>
                                </div>
                                <button type='submit'>
                                    <a href='#success-modal' class='button--light'>Отправить
@@ -563,12 +563,12 @@
                 Заполните форму и наш менеджер свяжется с вами в ближайшее время </div>
         </div>
 
-        <form id="form"  data-parsley-focus="none" data-need-validation>
+        <form id="form_media"  data-parsley-focus="none" data-need-validation>
             <div class="expert__item">
-                <input data-options='{"autoFocus" : false}' type="text" required id="name3" data-parsley-name><label for="name">Ваше имя</label>
+                <input data-options='{"autoFocus" : false}' type="text" required id="name3" data-parsley-name><label for="name3">Ваше имя</label>
             </div>
             <div class="expert__item">
-                <input class="phone js-phone-input" required id="phone3" type="tel" data-parsley-phone><label for="name">ваш
+                <input class="phone js-phone-input" required id="phone3" type="tel" data-parsley-phone><label for="phone3">ваш
                     телефон</label>
             </div>
             <button class="button" type="submit"data-fancybox data-src="#thanks_manager">Отправить
@@ -767,12 +767,12 @@
                     </div>
                 </div>
         
-                <form id='form' data-parsley-focus='none' data-need-validation>
+                <form id='form_request' data-parsley-focus='none' data-need-validation>
                     <div class='expert__item'>
-                        <input type='text' required id='name3' data-parsley-name /><label for='name'>Ваше имя</label>
+                        <input type='text' required id='name3' data-parsley-name /><label for='name3'>Ваше имя</label>
                     </div>
                     <div class='expert__item'>
-                        <input class='phone js-phone-input' required id='phone3' type='tel' data-parsley-phone /><label for='name'>Ваш телeфон</label>
+                        <input class='phone js-phone-input' required id='phone3' type='tel' data-parsley-phone /><label for='phone3'>Ваш телeфон</label>
                     </div>
                     <button class='button' type='submit'>Отправить
                         <svg width='36' height='26' viewBox='0 0 36 26' fill='none' xmlns='http://www.w3.org/2000/svg'>
@@ -821,12 +821,12 @@
                     </div>
                 </div>
         
-                <form id='form' data-parsley-focus='none' data-need-validation>
+                <form id='form_teh_doc' data-parsley-focus='none' data-need-validation>
                     <div class='expert__item'>
-                        <input type='text' required id='name6' data-parsley-name /><label for='name'>Ваше имя</label>
+                        <input type='text' required id='name6' data-parsley-name /><label for='name6'>Ваше имя</label>
                     </div>
                     <div class='expert__item'>
-                        <input class='' required id='email6' type='text' data-parsley-email/><label for='name'>ваш Email</label>
+                        <input class='' required id='email6' type='text' data-parsley-email/><label for='email6'>ваш Email</label>
                     </div>
                     <button class='button' type='submit'><a href="#success-modal-doc"> Отправить</a>
                         <svg width='36' height='26' viewBox='0 0 36 26' fill='none' xmlns='http://www.w3.org/2000/svg'>
@@ -929,12 +929,12 @@
                     </div>
                 </div>
         
-                <form id='form' data-parsley-focus='none' data-need-validation>
+                <form id='form_consultation' data-parsley-focus='none' data-need-validation>
                     <div class='expert__item'>
-                        <input type='text' required id='name4' data-parsley-name /><label for='name'>Ваше имя</label>
+                        <input type='text' required id='name4' data-parsley-name /><label for='name4'>Ваше имя</label>
                     </div>
                     <div class='expert__item'>
-                        <input class='phone js-phone-input' required id='phone4' type='tel' data-parsley-phone /><label for='name'>Ваш телефон</label>
+                        <input class='phone js-phone-input' required id='phone4' type='tel' data-parsley-phone /><label for='phone4'>Ваш телефон</label>
                     </div>
                     <button class='button' type='submit'>
                     <a href="#success-modal-expert" >Отправить </a>
