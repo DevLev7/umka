@@ -2,9 +2,9 @@ export default function statsScrolling() {
     const list      = document.querySelectorAll('.stats__list .stats__item-wrapper'),
           listItem1 = document.querySelectorAll('.stats__list .stats__item-wrapper')[0],
           listItem2 = document.querySelectorAll('.stats__list .stats__item-wrapper')[1],
-          listImg1  = document.querySelector('.stats-img-1'),
-          listImg2  = document.querySelector('.stats-img-2'),
-          listImg3  = document.querySelector('.stats-img-3')
+          listImg1  = document.querySelector('.stats__img-wrapper .stats-img-1'),
+          listImg2  = document.querySelector('.stats__img-wrapper .stats-img-2'),
+          listImg3  = document.querySelector('.stats__img-wrapper .stats-img-3')
 
     window.addEventListener('scroll', () => {
         if(list.length > 1 && window.innerWidth > 1024) {
