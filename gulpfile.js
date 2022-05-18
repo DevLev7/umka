@@ -226,3 +226,8 @@ gulp.task('build', gulp.series('clean', 'images', 'sprite', 'handlebars', gulp.p
 gulp.task('build-production', gulp.series('clean', 'images', 'sprite', 'handlebars', 'beautify-html', gulp.parallel('assets', 'styles', 'scripts-production')));
 
 gulp.task('default', gulp.series('build', 'serve'));
+
+const {src, task}= require('gulp');
+const ghPages = require('gulp-gh-pages');
+
+task('deploy', () => src('./build/**/*').pipe(ghPages()));

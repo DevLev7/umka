@@ -14,7 +14,7 @@
     }
 
     @media (max-width: 960px) {
-        padding-top: 30rem;
+        padding-top: 6.5rem;
         padding-bottom: 6.5rem;
     }
 
@@ -49,6 +49,20 @@
                     max-width: 18rem;
                 }
             }
+        }
+    }
+
+    .hideOnDesktop {
+        display: none;
+
+        @media (max-width: 1023px) {
+            display: block;
+        }
+    }
+
+    .hideOnMobile {
+        @media (max-width: 1023px) {
+            display: none;
         }
     }
 

@@ -7,7 +7,7 @@ export default function statsScrolling() {
           listImg3  = document.querySelector('.stats-img-3')
 
     window.addEventListener('scroll', () => {
-        if(list.length > 1) {
+        if(list.length > 1 && window.innerWidth > 1024) {
             if(listItem1.getBoundingClientRect().top < 110 && !listImg1.classList.contains('stats-img-hide')) {
                 listImg1.classList.add('stats-img-hide')
                 listImg2.classList.remove('stats-img-hide')
