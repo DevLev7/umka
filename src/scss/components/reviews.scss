@@ -98,6 +98,10 @@
     &_item_video {
         // border-radius: 50%;
     }
+    &_wrapper{
+        border-radius: 999px;
+        overflow: hidden;
+    }
 
     .swiper-button-prev,
     .swiper-button-next {
