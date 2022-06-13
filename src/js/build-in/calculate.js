@@ -31,7 +31,7 @@ export default function calculateConfig() {
         document.querySelectorAll('[data-configName="Ледозаливочное оборудование «Умка»"]').forEach(item => {
             item.removeAttribute('data-importantCheck')
         })
-
+        
         document.querySelectorAll('[data-configName="Емкость для воды 2,0 куб. м."]').forEach(item => {
             item.removeAttribute('data-importantCheck')
         })
@@ -255,6 +255,37 @@ export default function calculateConfig() {
                 }else if (item.getAttribute('data-configname') === 'Агрегат фронтальной мойки (АФМ)' && importantElementFront.classList.contains('added') && !importantElementBack.classList.contains('added')) {
                     setTimeout(()=>{importantElementBack.dispatchEvent(clickEvent)},100)
                     importantElementBack.checked = true
+                }else if (
+                    item.getAttribute('data-configname') === 'Ледозаливочное оборудование «Умка»' && 
+                    document.querySelector('[data-carName="uaz"]').classList.contains('active') &&
+                    document.querySelector('.tuazCar').querySelector('[data-option="Емкость для воды 2,0 куб. м."]').classList.contains('show')
+                ) {
+                    document.querySelector('.tuazCar').querySelector('[data-option="Емкость для воды 2,0 куб. м."]').classList.remove('show')
+                    document.querySelector('.tuazCar').querySelector('[data-option="Емкость для воды 2,0 куб. м."]').classList.add('thide')
+                }
+                else if (
+                    item.getAttribute('data-configname') === 'Ледозаливочное оборудование «Умка»' && 
+                    document.querySelector('[data-carName="isuzu"]').classList.contains('active') &&
+                    document.querySelector('.kisuzuCar').querySelector('[data-option="Емкость для воды 2,0 куб. м."]').classList.contains('show')
+                ) {
+                    document.querySelector('.kisuzuCar').querySelector('[data-option="Емкость для воды 2,0 куб. м."]').classList.remove('show')
+                    document.querySelector('.kisuzuCar').querySelector('[data-option="Емкость для воды 2,0 куб. м."]').classList.add('khide')
+                }
+                else if (
+                    item.getAttribute('data-configname') === 'Емкость для воды 2,0 куб. м.' && 
+                    document.querySelector('[data-carName="uaz"]').classList.contains('active') &&
+                    document.querySelector('.tuazCar').querySelector('[data-option="Ледозаливочное оборудование «Умка»"]').classList.contains('show')
+                ) {
+                    document.querySelector('.tuazCar').querySelector('[data-option="Ледозаливочное оборудование «Умка»"]').classList.remove('show')
+                    document.querySelector('.tuazCar').querySelector('[data-option="Ледозаливочное оборудование «Умка»"]').classList.add('thide')
+                }
+                else if (
+                    item.getAttribute('data-configname') === 'Емкость для воды 2,0 куб. м.' && 
+                    document.querySelector('[data-carName="isuzu"]').classList.contains('active') &&
+                    document.querySelector('.kisuzuCar').querySelector('[data-option="Ледозаливочное оборудование «Умка»"]').classList.contains('show')
+                ) {
+                    document.querySelector('.kisuzuCar').querySelector('[data-option="Ледозаливочное оборудование «Умка»"]').classList.remove('show')
+                    document.querySelector('.kisuzuCar').querySelector('[data-option="Ледозаливочное оборудование «Умка»"]').classList.add('khide')
                 }
                 if(configOfUaz.classList.contains('tab-content_show')) {
                     showOrHideSvgElement('plus', item, uazElementOfSVG, arrOfUaz, 'thide', configOfUaz)
@@ -281,7 +312,55 @@ export default function calculateConfig() {
                     if(configCar.querySelector('[data-configname="Агрегат фронтальной мойки (АФМ)"]').classList.contains('added')) {
                         configCar.querySelector('[data-configname="Агрегат фронтальной мойки (АФМ)"]').dispatchEvent(clickEvent)
                         configCar.querySelector('[data-configname="Агрегат фронтальной мойки (АФМ)"]').checked = false
+                        if(
+                            document.querySelector('[data-carName="uaz"]').classList.contains('active') &&
+                            document.querySelector('.tuazCar').querySelector('[data-option="Ледозаливочное оборудование «Умка»"]').classList.contains('thide') &&
+                            configCar.querySelector('[data-configname="Ледозаливочное оборудование «Умка»"]').checked == true
+                        ) {
+                            document.querySelector('.tuazCar').querySelector('[data-option="Ледозаливочное оборудование «Умка»"]').classList.remove('thide')
+                            document.querySelector('.tuazCar').querySelector('[data-option="Ледозаливочное оборудование «Умка»"]').classList.add('show')
+                        }
+                        if(
+                            document.querySelector('[data-carName="isuzu"]').classList.contains('active') &&
+                            document.querySelector('.kisuzuCar').querySelector('[data-option="Ледозаливочное оборудование «Умка»"]').classList.contains('khide') &&
+                            configCar.querySelector('[data-configname="Ледозаливочное оборудование «Умка»"]').checked == true
+                        ) {
+                            document.querySelector('.kisuzuCar').querySelector('[data-option="Ледозаливочное оборудование «Умка»"]').classList.remove('khide')
+                            document.querySelector('.kisuzuCar').querySelector('[data-option="Ледозаливочное оборудование «Умка»"]').classList.add('show')
+                        }
+                    }else if (
+                        document.querySelector('[data-carName="uaz"]').classList.contains('active') &&
+                        document.querySelector('.tuazCar').querySelector('[data-option="Ледозаливочное оборудование «Умка»"]').classList.contains('thide') &&
+                        configCar.querySelector('[data-configname="Ледозаливочное оборудование «Умка»"]').checked == true
+                    ) {
+                        document.querySelector('.tuazCar').querySelector('[data-option="Ледозаливочное оборудование «Умка»"]').classList.remove('thide')
+                        document.querySelector('.tuazCar').querySelector('[data-option="Ледозаливочное оборудование «Умка»"]').classList.add('show')
                     }
+                    else if (
+                        document.querySelector('[data-carName="isuzu"]').classList.contains('active') &&
+                        document.querySelector('.kisuzuCar').querySelector('[data-option="Ледозаливочное оборудование «Умка»"]').classList.contains('khide') &&
+                        configCar.querySelector('[data-configname="Ледозаливочное оборудование «Умка»"]').checked == true
+                    ) {
+                        document.querySelector('.kisuzuCar').querySelector('[data-option="Ледозаливочное оборудование «Умка»"]').classList.remove('khide')
+                        document.querySelector('.kisuzuCar').querySelector('[data-option="Ледозаливочное оборудование «Умка»"]').classList.add('show')
+                    }
+                }else if(
+                    item.getAttribute('data-configname') === 'Ледозаливочное оборудование «Умка»' &&
+                    document.querySelector('[data-carName="uaz"]').classList.contains('active') &&
+                    document.querySelector('.tuazCar').querySelector('[data-option="Емкость для воды 2,0 куб. м."]').classList.contains('thide') &&
+                    configCar.querySelector('[data-configname="Емкость для воды 2,0 куб. м."]').checked == true
+                ) {
+                    document.querySelector('.tuazCar').querySelector('[data-option="Емкость для воды 2,0 куб. м."]').classList.remove('thide')
+                    document.querySelector('.tuazCar').querySelector('[data-option="Емкость для воды 2,0 куб. м."]').classList.add('show')
+                }
+                else if(
+                    item.getAttribute('data-configname') === 'Ледозаливочное оборудование «Умка»' &&
+                    document.querySelector('[data-carName="isuzu"]').classList.contains('active') &&
+                    document.querySelector('.kisuzuCar').querySelector('[data-option="Емкость для воды 2,0 куб. м."]').classList.contains('khide') &&
+                    configCar.querySelector('[data-configname="Емкость для воды 2,0 куб. м."]').checked == true
+                ) {
+                    document.querySelector('.kisuzuCar').querySelector('[data-option="Емкость для воды 2,0 куб. м."]').classList.remove('khide')
+                    document.querySelector('.kisuzuCar').querySelector('[data-option="Емкость для воды 2,0 куб. м."]').classList.add('show')
                 }
                 if(configOfUaz.classList.contains('tab-content_show')) {
                     showOrHideSvgElement('minus', item, uazElementOfSVG, arrOfUaz, 'thide', configOfUaz, '.thide',)
