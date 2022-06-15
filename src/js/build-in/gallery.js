@@ -42,10 +42,9 @@ export default function gallerySwiper() {
         grabCursor: true,
         centeredSlides: true,
         // loop: true,
-        slidesPerView: 1.5,
         coverflowEffect: {
-            rotate: -2,
-            stretch: '-87%',
+             rotate: -2,
+            stretch: '-90%',
             depth: 200,
             modifier: -1,
             slideShadows: false,

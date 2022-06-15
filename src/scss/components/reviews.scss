@@ -43,7 +43,7 @@
         }
     }
     .swiper {
-        width: 97vw;
+        // width: 97vw;
 
         @media (min-width: 1640px) {
             width: 120%;
@@ -93,7 +93,7 @@
         flex-direction: column;
         justify-content: space-between;
         align-items: baseline;
-        max-width: 43.5rem;
+        // max-width: 43.5rem;
     }
     &_item_video {
         // border-radius: 50%;

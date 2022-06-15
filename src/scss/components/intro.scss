@@ -4,15 +4,19 @@
     align-items: flex-end;
     width: 100%;
     padding-top: var(--intro-padding-top);
-    padding-bottom: 10rem;
+    padding-bottom: 6rem;
 
     @media (max-width: 992px) {
         align-items: stretch;
     }
 
     @media (max-width: 1024px) {
-        min-height: 64rem;
+        min-height: 67rem;
         padding-bottom: 3rem;
+    }
+
+    @media (max-width: 499px) {
+       padding-top: 86px;
     }
 
     &__bg {
@@ -35,6 +39,10 @@
         flex-direction: column;
         height: 100%;
         padding-bottom: 3rem;
+
+        @media (max-width: 499px) {
+            padding-bottom: 0rem;
+         }
     }
 
     &__title {
@@ -134,7 +142,7 @@
         }
 
         @media (max-width: 500px) {
-            max-width: 28rem;
+            max-width: 30rem;
         }
 
         @media (max-width: 340px) {
