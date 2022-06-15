@@ -218,6 +218,8 @@
         }
         @media (max-width: 411px) {
             width: 100%;
+            padding: 1.5rem 1.5rem 1.2rem;
+            font-size: 1.6rem;
         }
       
     }
@@ -265,6 +267,9 @@
 
         @media (max-width: 550px) {
             gap: 1rem;
+        }
+        @media (max-width: 411px) {
+            gap: 2.5rem;
         }
     }
 
