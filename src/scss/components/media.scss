@@ -1,7 +1,7 @@
 .media {
     padding: 14.8rem 0 12rem 0;
     @media (max-width: 500px) {
-        padding: 8.6rem 0 6.5rem;
+        padding: 8.6rem 0 4.5rem;
     }
     h1 {
         font: var(--title-XL);
@@ -19,7 +19,7 @@
     }
     .button--light {
         border: 1px solid #1b74e3;
-        padding: 2rem 2.5rem;
+        padding: 1.15rem 2.5rem;
 
         @media (max-width: 500px) {
             padding: 1.2rem 2.2rem;
@@ -48,7 +48,7 @@
     }
     @media (max-width: 550px) {
         .media__wrapper {
-            padding: 2.5rem 0.5rem;
+            padding: 2.5rem 0.5rem 0;
             border-radius: 5px;
         }
     }
@@ -118,6 +118,10 @@
         :focus {
             background-color: #196bd1;
             color: #fff;
+        }
+
+        @media (max-width: 499px) {
+            margin-top: 1rem;
         }
     }
     @media (max-width: 767px) {

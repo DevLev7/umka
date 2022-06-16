@@ -213,7 +213,7 @@
         }
 
         @media (max-width: 400px) {
-            min-height: 420px;
+            min-height: 306px;
         }
     }
 
@@ -574,6 +574,14 @@
 
         @media (max-width: 800px) {
             margin-top: 30px;
+        }
+        
+        @media (max-width: 800px) {
+            margin-top: 30px;
+        }
+
+        @media (max-width: 499px) {
+            margin-top: 12px;
         }
     }
 

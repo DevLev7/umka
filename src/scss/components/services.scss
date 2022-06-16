@@ -191,8 +191,8 @@
         }
     }
     &__inner-content {
-        width: 46%;
-        margin-left: 10rem;
+        width: 44%;
+        margin-left: 7rem;
         @media (max-width: 1179px) {
             margin-left: 0;
         }
@@ -213,6 +213,7 @@
         flex-direction: column;
         row-gap: 4.5rem;
         margin-right: 20rem;
+        width: 30%;
         @media (max-width: 1365px) {
             margin-right: 0;
         }

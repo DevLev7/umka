@@ -45,6 +45,14 @@
 
     &__tab-item {
         display: none;
+
+        img{
+            
+            @media (max-width: 1000px) {
+                width: 100%;
+                margin: 25px 0;
+            }
+        }
     }
 
     &__tab-item.active {
@@ -197,12 +205,14 @@
         padding: 2.7rem 15.2rem 2.5rem 2.5rem;
         transition: .1s linear all;
         &:hover img{
-            width: 105px;
+            width: 115px;
+            height: 115px;
             transition: .1s linear all;
         }
 
         &.disableHover:hover img {
-            width: 95px;
+            width: 115px;
+            height: 115px;
         }
 
         @media (max-width: 550px) {
@@ -224,7 +234,8 @@
 
     &__button img {
         position: absolute;
-        width: 95px;
+        width: 110px;
+        height: 110px;
         max-width: unset;
         // height: 110px;
         bottom: 0;
@@ -235,8 +246,8 @@
             height: 80px;
         }
         @media (max-width: 550px) {
-            width: 64px;
-            height: 64px;
+            width: 57px;
+            height: 57px;
         }
     }
 
@@ -457,8 +468,6 @@
 
 .hidden-m{
     display: none;
-    width: 100%;
-    margin: 25px 0;
     @media (max-width: 1000px) {
         display: block;
     }

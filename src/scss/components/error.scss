@@ -1,5 +1,11 @@
 .error {
     margin: 13rem 0;
+
+    
+    @media (max-width: 499px) {
+      margin: 9rem 0 2rem;
+    }
+
     h2 {
         font: var(--title-XL);
         font-size: var(--calc--title-XL);

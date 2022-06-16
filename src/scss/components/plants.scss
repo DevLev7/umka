@@ -200,6 +200,10 @@
             width: 100%;
             max-width: unset;
             position: relative;
+
+            @media (max-width: 1023px) {
+                width: 95%;
+            }
         }
         .video__icon {
             position: absolute;
@@ -255,8 +259,8 @@
                 gap: 3rem;
             }
             .swiper {
-                margin-left: -17%;
-                width: 123vw !important;
+                margin-left: 0%;
+                width: 100% !important;
             }
             .swiper-slide {
                 opacity: 0;
@@ -266,6 +270,7 @@
             }
             .swiper-slide-next {
                 opacity: 0.5;
+                padding-top: 3rem;
             }
         }
         p {
