@@ -1443,6 +1443,43 @@
                     </div>
                 </div>
             </div>
+            <div id="sign-up-modal" class="modal js-modal">
+                <div class="form form-style-1 hideLabels">
+                    <div class="form-header">
+                        <button class="modal__close js-close-modal">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="6.40039" y="4.7998" width="40" height="3.2" transform="rotate(45 6.40039 4.7998)" fill="#A3AFCD" />
+                                <rect x="4.7998" y="33.6001" width="40" height="3.2" transform="rotate(-45 4.7998 33.6001)" fill="#A3AFCD" />
+                            </svg>
+                        </button>
+                        <div class="form-head animate-top">Записаться на просмотр завода</div>
+                        <div class="form-desk animate-top">Заполните форму и наш менеджер свяжется с вами в ближайшее время</div>
+                    </div>
+                    <form id="form_request" data-parsley-focus="none" data-need-validation>
+                        <div class="expert__item">
+                            <input type="text" required id="name3" data-parsley-name>
+                            <label for="name3">Ваше имя</label>
+                        </div>
+                        <div class="expert__item">
+                            <input class="phone js-phone-input" required id="phone3" type="tel" data-parsley-phone>
+                            <label for="phone3">Ваш телeфон</label>
+                        </div>
+                        <button class="button" type="submit">Отправить<svg width="36" height="26" viewBox="0 0 36 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M15.469 24.1833L33.7807 14.4633C34.9624 13.8366 34.9624 12.15 33.7807 11.5216L15.4957 1.81665C14.1157 1.08331 12.569 2.46665 13.154 3.90998L16.8024 12.91L13.124 22.0933C12.5474 23.5383 14.0924 24.9133 15.469 24.1833Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M16.8047 12.9167L34.6714 13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M4.67188 17.9998H7.33854" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M3 12.9998H7.33333" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M1.33594 7.99984H7.33594" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </button>
+                    </form>
+                    <div class="expert__agree">
+                        <div class="expert__agree-star">*</div>
+                        <div class="expert__agree-text">Нажимая кнопку «Отправить» вы соглашаетесь с <a target="blank" href="#">политикой конфиденциальности</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div id="callback-doc" class="modal js-modal">
                 <div class="form form-style-1 hideLabels">
                     <div class="form-header">
