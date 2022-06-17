@@ -373,7 +373,8 @@
     width: 21.9rem;
     margin-top: 4rem;
     padding: 3rem 2.5rem;
-    border: 1px solid #fff;
+    border: 1px solid var(--accent-primary-hover);
+    justify-content: center;
     @media (max-width: 767px) {
         width: unset;
         width: 100%;

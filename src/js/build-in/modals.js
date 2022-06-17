@@ -33,7 +33,6 @@ export default function modals() {
         };
         if (window.activeModal) {
             closeModal(window.activeModal);
-
             setTimeout(() => {
                 openHandler();
             }, 400);
@@ -64,7 +63,7 @@ export default function modals() {
             const hash = link.hash;
             if (!hash) return;
             openModal(hash, event);
-        } else if (event.target.matches('.js-close-modal') || event.target.closest('.js-close-modal')) {
+        } else if (event.target.matches('.js-close-modal') || event.target.closest('.js-close-modal') || event.target.classList.contains('closeModal')) {
             // event.preventDefault();
             const modalToClose = event.target.closest('.js-modal');
             closeModal(modalToClose);
