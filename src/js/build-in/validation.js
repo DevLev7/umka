@@ -32,7 +32,7 @@ window.Parsley.addValidator('name', {
     requirementType: 'string',
     validateString: function (value) {
         if (value.trim() === '') return true;
-        return /^[а-яё -]+$/.test(value);
+        return /^[а-яА-Я]+$/.test(value);
     },
     messages: {
         en: 'This value should be a mobile number',
@@ -93,7 +93,6 @@ Parsley.setLocale('ru');
 
 export default function validation() {
     const formsToValidate = Array.from(document.querySelectorAll('form[data-need-validation]'));
-
     formsToValidate.forEach((form) => {
         $(form).parsley();
     });
