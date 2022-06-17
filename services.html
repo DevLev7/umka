@@ -1205,8 +1205,8 @@
                                                 <input class="phone js-phone-input" required type="tel" id="phone1" data-parsley-phone>
                                                 <label for="phone1">ваш телефон</label>
                                             </div>
-                                            <button type="submit">
-                                                <a href="#success-modal" class="button--light">Отправить<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <button href="#success-modal" type="submit">
+                                                <a class="button--light">Отправить<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M17.469 31.1833L35.7807 21.4633C36.9624 20.8366 36.9624 19.15 35.7807 18.5216L17.4957 8.81665C16.1157 8.08331 14.569 9.46665 15.154 10.91L18.8024 19.91L15.124 29.0933C14.5474 30.5383 16.0924 31.9133 17.469 31.1833Z" stroke="#1B74E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                                                         <path d="M18.8047 19.9167L36.6714 20" stroke="#1B74E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                                                         <path d="M6.67188 24.9998H9.33854" stroke="#1B74E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -1481,7 +1481,7 @@
                         <div class="form-head animate-top">Ваша заявка успешно отправлена</div>
                         <div class="form-desk animate-top">Наш менеджер свяжется с вами в ближайшее время</div>
                     </div>
-                    <a class="button--light" href="#callback-modal">Отправить еще раз</a>
+                    <button class="button--light closeModal">Отлично</button>
                 </div>
             </div>
             <div class="modal js-modal popup ct thanks" id="success-modal-doc">
@@ -1501,9 +1501,7 @@
                         <div class="form-head animate-top">Ваша заявка успешно отправлена</div>
                         <div class="form-desk animate-top">Мы вышлем вам документацию на указанную электронную почту в ближайшее время</div>
                     </div>
-                    <button class="button--light">
-                        <a href="#callback-doc">Отправить еще раз</a>
-                    </button>
+                    <button class="button--light closeModal">Отлично</button>
                 </div>
             </div>
             <div id="callback-modal-expert" class="modal js-modal">
@@ -1561,9 +1559,7 @@
                         </button>
                         <div class="form-head animate-top">Ваша заявка успешно отправлена</div>
                         <div class="form-desk animate-top">Наш эксперт свяжется с вами в ближайшее время</div>
-                        <button class="button--light">
-                            <a href="#callback-expert">Отправить еще раз</a>
-                        </button>
+                        <button class="button--light closeModal">Отлично</button>
                     </div>
                 </div>
                 <style>
