@@ -143,6 +143,9 @@
     &__img-slider {
         grid-column: span 4;
         position: relative;
+        max-height: 600px;
+        height: 100%;
+
         @media (max-width: 1024px) {
             display: none;
         }
@@ -177,7 +180,6 @@
             opacity: 1;
             right: 0rem;
             bottom: 0rem;
-            position: relative;
         }
     }
 

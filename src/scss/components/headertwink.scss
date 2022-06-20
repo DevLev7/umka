@@ -8,6 +8,10 @@
         font-weight: bold;
         transition: all 0.3s ease-in-out;
     }
+
+    .header__menu li.activeMenuItem a {
+        color: var(--accent-primary);
+    }
     .header__menu li a:hover {
         color: var(--accent-primary);
     }

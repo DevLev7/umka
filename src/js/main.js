@@ -83,4 +83,12 @@ window.addEventListener('load', function () {
     document.body.classList.add('loaded');
     ScrollTrigger.refresh();
     setTimeout(() => document.body.classList.add('animatable'), 300);
+    
+    const menuItems = document.querySelectorAll('.header__menu li')
+    let url = window.location.href
+    menuItems.forEach(menuItem => {
+        if(url.indexOf(menuItem.getAttribute('data-page')) !== -1 ) {
+            menuItem.classList.add('activeMenuItem')
+        }
+    })
 });
