@@ -12,10 +12,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     .parsley()
                     .isValid()
             ) {
+                form.querySelectorAll('input').forEach(item => {
+                    console.log(item.value);
+                })
                 form.reset();
-                $(form)
-                    .parsley()
-                    .reset();
+                // form.querySelectorAll('input').forEach(item => {
+                //     console.log(item.value);
+                // })
+                form.querySelectorAll('input').forEach(item => {
+                    console.log(item.value);
+                })
                window.openModal('#success-modal');
             }
         });
