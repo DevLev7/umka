@@ -375,13 +375,22 @@
                 }
             }
         }
-        a {
+        button {
             // padding: 2rem 2.5rem;
             gap: 3.6rem;
             width: 100%;
             margin-top: 7rem;
             white-space: nowrap;
             padding-top: 2.8rem;
+
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 3.6rem;
+                margin: -2.5rem;
+                padding: 2.5rem;
+            }
 
             svg {
                 fill: transparent;
