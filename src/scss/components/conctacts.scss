@@ -1,5 +1,18 @@
 .contact__form {
     padding-top: 13rem;
+
+    .callback__content-container__second {
+        flex: auto;
+    }
+
+    .callback__content-container__second-mobile {
+        gap: initial;
+        justify-content: space-between;
+    }
+
+    @media (max-width: 1023px) {
+        padding-top: 9rem;
+    }
 }
 .map_contacts {
     background-image: url(../img/map.webp);

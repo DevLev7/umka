@@ -147,6 +147,31 @@
     }
 }
 
+.services_callback {
+    .callback__content-container__second-callback.mobile{
+        display: none;
+    }
+    @media (max-width: 1040px) {
+        .callback__content-container__second-callback.mobile{
+            display: block;
+        }
+
+        #form_call button {
+            width: 100%;
+        }
+
+        .callback__content-container__contacts-mobile p {
+            font-family: 'Montserrat';
+            opacity: 1;
+            max-width: 32rem;
+    
+            @media (max-width: 440px) {
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+
 .info {
     padding-top: 3.7rem;
     padding-bottom: 13.5rem;

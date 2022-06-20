@@ -53,6 +53,10 @@
         flex-direction: column;
     }
 
+    &__content-container__first__contacts h2 {
+        max-width: 20rem;
+    }
+
     &__content-container__first h2 {
         opacity: 0;
         font: var(--title-L);
@@ -298,8 +302,21 @@
     &__content-container__second-callback {
         padding-top: 4.5rem;
 
+        &.mobile {
+            display: none;
+        }
+
         @media (max-width: 1040px) {
             display: none;
+
+            &.mobile {
+                display: block;
+
+                button {
+                    width: 100%;
+                }
+                
+            }
         }
     }
 
@@ -463,6 +480,8 @@
         display: none;
 
         @media (max-width: 1040px) {
+            font-family: 'Montserrat';
+            opacity: 1;
             display: block;
             padding-top: 2.5rem;
         }
