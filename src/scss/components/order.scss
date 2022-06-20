@@ -119,6 +119,14 @@
         text-transform: uppercase;
         padding: 2rem 2.5rem;
         border-radius: 10px;
+        position: relative;
+
+        a {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+        }
         @media (max-width: 500px) {
             padding: 1rem 2.5rem;
             }
