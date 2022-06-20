@@ -2,9 +2,9 @@ import Swiper, { Navigation, Pagination, Autoplay, EffectFade, Scrollbar } from 
 Swiper.use([Navigation, Pagination, Autoplay, EffectFade, Scrollbar]);
 export default function reviews() {
     var swiperReviews = new Swiper('.reviews__inner-slider', {
-        slidesPerView: 4,
+        slidesPerView: 3.7,
         spaceBetween: 90,
-        loop: true,
+        loop: false,
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
@@ -14,7 +14,7 @@ export default function reviews() {
         },
         breakpoints: {
             1440: {
-                slidesPerView: 4,
+                slidesPerView: 3.7,
                 spaceBetween: 90,
             },
             1210: {

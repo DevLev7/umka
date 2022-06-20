@@ -1,6 +1,5 @@
 .footer {
     margin: 0rem auto 3.125rem auto;
-    max-width: 135.5rem;
     width: 100%;
     @media (max-width: 1023px) {
         max-width: unset;
@@ -60,9 +59,11 @@
         font-size: 3rem;
         justify-content: flex-start;
         column-gap: 3.1rem;
+        width: 36%;
         @media (max-width: 1023px) {
             flex-direction: column;
             // row-gap: 0.5rem;
+            width: auto;
         }
         @media (max-width: 533px) {
             flex-direction: row;

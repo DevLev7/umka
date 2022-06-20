@@ -5,16 +5,29 @@
     @media (min-width: 1640px) {
         padding: 80px 0;
     }
+    .wide-container{
+        padding-right: 0;
+        max-width: 100%;
+        padding-left: 6rem;
+    }
+
+    @media (max-width: 1600px) {
+        .wide-container{
+            padding-left: 4rem;
+        }
+    }
+
+    @media (max-width: 1100px) {
+        .wide-container{
+            padding-left: 2rem;
+        }
+    }
 }
 
 .reviews__inner {
     position: relative;
-    @media (max-width: 1439px) {
-        padding: 0 2rem;
-    }
-    @media (max-width: 767px) {
-        padding: 0 1rem;
-    }
+
+  
 
     &-wrap {
         display: flex;
@@ -46,7 +59,7 @@
         // width: 97vw;
 
         @media (min-width: 1640px) {
-            width: 120%;
+            width: 100%;
         }
         @media (max-width: 1024px) {
             padding-bottom: 5rem;

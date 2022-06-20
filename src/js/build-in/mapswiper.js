@@ -7,7 +7,7 @@ export default function mapswiper() {
         effect: 'coverflow',
         // grabCursor: true,
         // loop: true,
-        slidesPerView: 1.1,
+        slidesPerView: 1,
         coverflowEffect: {
             rotate: -2,
             stretch: '-75%',
